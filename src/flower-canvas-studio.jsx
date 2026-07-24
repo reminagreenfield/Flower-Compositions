@@ -611,17 +611,19 @@ export default function FlowerCanvasStudio() {
   const [brushOpacity, setBrushOpacity] = useState(0.8);
   const [brushShape, setBrushShape] = useState("soft"); // soft | hard | spray
   const [brushColor, setBrushColor] = useState("#1E3A8A");
-  const [paintOnTop, setPaintOnTop] = useState(false);
-  const [paintBlend, setPaintBlend] = useState("normal");
-  const [paintOpacity, setPaintOpacity] = useState(1);
+  const [strokeBlend, setStrokeBlend] = useState("normal"); // blend handed to the next stroke
 
-  /* content */
+  /* content — ONE ordered stack holding both flowers and paint strokes.
+     Position in the list is depth: earlier entries are deeper in the resin. */
+  const [layers, setLayers] = useState([]);
   const [uploads, setUploads] = useState([]);
-  const [stamps, setStamps] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
   const [uploadH, setUploadH] = useState(30);
 
-  const paintRef = useRef(null);
+  const paintRef = useRef(null);      // live canvas: only ever holds the stroke in progress
+  const strokeCv = useRef({});        // layer id -> that stroke's own cropped canvas
+  const layersRef = useRef(layers);   // for pointer handlers, which see stale state otherwise
+  layersRef.current = layers;
   const meshRef = useRef(null);
   const dragRef = useRef(null);
   const fileRef = useRef(null);
@@ -631,7 +633,7 @@ export default function FlowerCanvasStudio() {
     ...uploads,
   ], [uploads]);
 
-  const selected = stamps.find(s => s.id === selectedId) || null;
+  const selected = layers.find(l => l.id === selectedId) || null;
   const meshWpx = canvasW * zoom, meshHpx = canvasH * zoom;
 
   /* svg cache so random dots don't reshuffle every render */
@@ -649,16 +651,14 @@ export default function FlowerCanvasStudio() {
   };
   const assetH = (asset, variant) => asset.builtin ? (variant === "bud" ? asset.hBud : asset.hStem) : asset.hCm;
 
-  /* ------- paint canvas: keep physical size on resize ------- */
+  /* The live canvas only ever holds the stroke being drawn right now, so it
+     can simply be resized. Finished strokes carry their own position and size
+     in cm, which means they stay physically anchored through a resize for
+     free — no re-rastering. */
   useEffect(() => {
     const cv = paintRef.current; if (!cv) return;
-    const newW = Math.round(canvasW * PAINT_RES), newH = Math.round(canvasH * PAINT_RES);
-    if (cv.width === newW && cv.height === newH) return;
-    const tmp = document.createElement("canvas");
-    tmp.width = cv.width || 1; tmp.height = cv.height || 1;
-    tmp.getContext("2d").drawImage(cv, 0, 0);
-    cv.width = newW; cv.height = newH;
-    cv.getContext("2d").drawImage(tmp, 0, 0);
+    const w = Math.round(canvasW * PAINT_RES), h = Math.round(canvasH * PAINT_RES);
+    if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
   }, [canvasW, canvasH]);
 
   /* ------- painting ------- */
@@ -671,12 +671,6 @@ export default function FlowerCanvasStudio() {
   };
   const dab = (ctx, x, y) => {
     const R = (brushSize / 2) * PAINT_RES;
-    if (tool === "erase") {
-      ctx.globalCompositeOperation = "destination-out";
-      ctx.globalAlpha = 1;
-      ctx.beginPath(); ctx.arc(x, y, R, 0, 7); ctx.fillStyle = "#000"; ctx.fill();
-      return;
-    }
     ctx.globalCompositeOperation = "source-over";
     ctx.globalAlpha = brushOpacity * (brushShape === "soft" ? 0.55 : 1);
     if (tool === "chrome") {
@@ -701,37 +695,118 @@ export default function FlowerCanvasStudio() {
       ctx.beginPath(); ctx.arc(x, y, R, 0, 7); ctx.fill();
     }
   };
+  /* Erasing is not a layer of its own — it lifts paint back out of the stroke
+     layers underneath, the way a real eraser does. */
+  const eraseAt = (x, y) => {
+    const R = (brushSize / 2) * PAINT_RES;
+    for (const l of layersRef.current) {
+      if (l.kind !== "stroke") continue;
+      const cv = strokeCv.current[l.id]; if (!cv) continue;
+      const c = cv.getContext("2d");
+      c.save();
+      c.globalCompositeOperation = "destination-out";
+      c.beginPath();
+      c.arc(x - l.x * PAINT_RES, y - l.y * PAINT_RES, R, 0, 7);
+      c.fillStyle = "#000"; c.fill();
+      c.restore();
+      dragRef.current.touched.add(l.id);
+    }
+  };
+
+  /* Lift the finished stroke off the live canvas, crop it to just the pixels
+     that were painted, and file it as its own layer. Cropping matters: a full
+     artwork-sized canvas per stroke would run to megabytes each. */
+  const commitStroke = () => {
+    const cv = paintRef.current, ctx = cv.getContext("2d");
+    const W = cv.width, H = cv.height;
+    const d = ctx.getImageData(0, 0, W, H).data;
+    let x0 = W, y0 = H, x1 = -1, y1 = -1;
+    for (let y = 0; y < H; y++)
+      for (let x = 0; x < W; x++)
+        if (d[(y * W + x) * 4 + 3] > 2) {
+          if (x < x0) x0 = x; if (x > x1) x1 = x;
+          if (y < y0) y0 = y; if (y > y1) y1 = y;
+        }
+    if (x1 < 0) { ctx.clearRect(0, 0, W, H); return; }     // nothing landed
+    const pad = 2;
+    x0 = Math.max(0, x0 - pad); y0 = Math.max(0, y0 - pad);
+    x1 = Math.min(W - 1, x1 + pad); y1 = Math.min(H - 1, y1 + pad);
+    const w = x1 - x0 + 1, h = y1 - y0 + 1;
+    const crop = document.createElement("canvas");
+    crop.width = w; crop.height = h;
+    crop.getContext("2d").drawImage(cv, x0, y0, w, h, 0, 0, w, h);
+    ctx.clearRect(0, 0, W, H);          // only once the pixels are safely copied
+    const id = uid();
+    strokeCv.current[id] = crop;
+    setLayers(v => [...v, {
+      kind: "stroke", id,
+      x: x0 / PAINT_RES, y: y0 / PAINT_RES,      // cm, top-left — physically anchored
+      w: w / PAINT_RES, h: h / PAINT_RES,
+      url: crop.toDataURL(), opacity: 1, blend: strokeBlend,
+      brush: tool === "chrome" ? "chrome" : brushShape,
+      color: tool === "chrome" ? null : brushColor,
+    }]);
+    setSelectedId(id);
+  };
+
+  const refreshTouched = () => {
+    const ids = dragRef.current?.touched;
+    if (!ids?.size) return;
+    setLayers(v => v.map(l => ids.has(l.id)
+      ? { ...l, url: strokeCv.current[l.id].toDataURL() } : l));
+  };
+
   const onPaintDown = (e) => {
     if (!["paint", "erase", "chrome"].includes(tool)) return;
     e.target.setPointerCapture(e.pointerId);
-    const ctx = paintRef.current.getContext("2d");
-    const p = paintPos(e); dab(ctx, p.x, p.y);
-    dragRef.current = { painting: true, last: p };
+    const p = paintPos(e);
+    dragRef.current = { painting: true, last: p, touched: new Set() };
+    if (tool === "erase") eraseAt(p.x, p.y);
+    else dab(paintRef.current.getContext("2d"), p.x, p.y);
   };
   const onPaintMove = (e) => {
     if (!dragRef.current?.painting) return;
-    const ctx = paintRef.current.getContext("2d");
     const p = paintPos(e), last = dragRef.current.last;
     const d = Math.hypot(p.x - last.x, p.y - last.y);
     const step = Math.max(2, (brushSize / 2) * PAINT_RES * (brushShape === "soft" ? 0.35 : 0.5));
-    for (let t = step; t <= d; t += step)
-      dab(ctx, last.x + (p.x - last.x) * t / d, last.y + (p.y - last.y) * t / d);
+    const ctx = paintRef.current.getContext("2d");
+    for (let t = step; t <= d; t += step) {
+      const x = last.x + (p.x - last.x) * t / d, y = last.y + (p.y - last.y) * t / d;
+      if (tool === "erase") eraseAt(x, y); else dab(ctx, x, y);
+    }
     if (d >= step) dragRef.current.last = p;
   };
-  const onPaintUp = () => { dragRef.current = null; };
+  const onPaintUp = () => {
+    if (!dragRef.current?.painting) { dragRef.current = null; return; }
+    if (tool === "erase") refreshTouched(); else commitStroke();
+    dragRef.current = null;
+  };
 
-  /* ------- stamps ------- */
+  /* ------- layers ------- */
   const addStamp = (asset) => {
     const s = {
-      id: uid(), assetId: asset.id,
+      kind: "flower", id: uid(), assetId: asset.id,
       x: canvasW / 2 + (Math.random() * 6 - 3), y: canvasH / 2 + (Math.random() * 6 - 3),
       scale: 1, rotation: 0, flip: false, opacity: 1, blend: "normal",
       variant: "stem", bend: 0, silhouette: false, silColor: "#111111",
     };
-    setStamps(v => [...v, s]); setSelectedId(s.id); setTool("select");
+    setLayers(v => [...v, s]); setSelectedId(s.id); setTool("select");
   };
-  const patch = (id, up) => setStamps(v => v.map(s => s.id === id ? { ...s, ...up } : s));
-  const removeStamp = (id) => { setStamps(v => v.filter(s => s.id !== id)); if (selectedId === id) setSelectedId(null); };
+  const patch = (id, up) => setLayers(v => v.map(l => l.id === id ? { ...l, ...up } : l));
+  const removeLayer = (id) => {
+    setLayers(v => v.filter(l => l.id !== id));
+    delete strokeCv.current[id];
+    if (selectedId === id) setSelectedId(null);
+  };
+  const moveLayer = (id, dir) => setLayers(v => {
+    const i = v.findIndex(l => l.id === id), j = i + dir;
+    if (i < 0 || j < 0 || j >= v.length) return v;
+    const n = [...v]; [n[i], n[j]] = [n[j], n[i]]; return n;
+  });
+  const clearPaint = () => {
+    setLayers(v => v.filter(l => l.kind !== "stroke"));
+    strokeCv.current = {};
+  };
 
   const onStampDown = (e, s) => {
     if (tool !== "select") return;
@@ -749,29 +824,38 @@ export default function FlowerCanvasStudio() {
   useEffect(() => {
     const onKey = (e) => {
       if ((e.key === "Delete" || e.key === "Backspace") && selectedId &&
-          !["INPUT", "SELECT", "TEXTAREA"].includes(document.activeElement?.tagName)) removeStamp(selectedId);
+          !["INPUT", "SELECT", "TEXTAREA"].includes(document.activeElement?.tagName)) removeLayer(selectedId);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   });
 
-  /* punch selected stamp out of the paint layer (negative stencil) */
+  /* Punch a flower's shape out of the paint — spraying over a stencil and
+     lifting it. It bites every stroke layer, each in its own coordinates. */
   const punchOut = async (s) => {
     const asset = allAssets.find(a => a.id === s.assetId); if (!asset) return;
     const img = new Image();
     img.src = assetUrl(asset, s.variant, asset.builtin ? "#000" : null, s.bend);
     await img.decode();
-    const cv = paintRef.current, ctx = cv.getContext("2d");
     const hPx = assetH(asset, s.variant) * s.scale * PAINT_RES;
     const wPx = hPx * (img.width / img.height);
-    ctx.save();
-    ctx.globalCompositeOperation = "destination-out";
-    ctx.globalAlpha = 1;
-    ctx.translate(s.x * PAINT_RES, s.y * PAINT_RES);
-    ctx.rotate(s.rotation * Math.PI / 180);
-    ctx.scale(s.flip ? -1 : 1, 1);
-    ctx.drawImage(img, -wPx / 2, -hPx / 2, wPx, hPx);
-    ctx.restore();
+    const hit = new Set();
+    for (const l of layersRef.current) {
+      if (l.kind !== "stroke") continue;
+      const cv = strokeCv.current[l.id]; if (!cv) continue;
+      const ctx = cv.getContext("2d");
+      ctx.save();
+      ctx.globalCompositeOperation = "destination-out";
+      ctx.globalAlpha = 1;
+      ctx.translate(s.x * PAINT_RES - l.x * PAINT_RES, s.y * PAINT_RES - l.y * PAINT_RES);
+      ctx.rotate(s.rotation * Math.PI / 180);
+      ctx.scale(s.flip ? -1 : 1, 1);
+      ctx.drawImage(img, -wPx / 2, -hPx / 2, wPx, hPx);
+      ctx.restore();
+      hit.add(l.id);
+    }
+    if (hit.size) setLayers(v => v.map(l => hit.has(l.id)
+      ? { ...l, url: strokeCv.current[l.id].toDataURL() } : l));
   };
 
   /* ------- uploads ------- */
@@ -802,42 +886,43 @@ export default function FlowerCanvasStudio() {
     ctx.fillStyle = WALL.flat; ctx.fillRect(0, 0, W, H);
     ctx.fillStyle = `rgba(${rgbOf(meshColor)},${meshOpacity})`; ctx.fillRect(0, 0, W, H);
 
-    const drawPaint = () => {
-      ctx.save();
-      ctx.globalAlpha = paintOpacity;
-      ctx.globalCompositeOperation = paintBlend === "normal" ? "source-over" : paintBlend;
-      ctx.drawImage(paintRef.current, 0, 0, W, H);
-      ctx.restore();
-    };
-    if (!paintOnTop) drawPaint();
-
-    for (const s of stamps) {
-      const asset = allAssets.find(a => a.id === s.assetId); if (!asset) continue;
+    /* one pass down the stack, so strokes and flowers export in exactly the
+       order they are stacked on screen */
+    for (const l of layers) {
+      if (l.kind === "stroke") {
+        const cv = strokeCv.current[l.id]; if (!cv) continue;
+        ctx.save();
+        ctx.globalAlpha = l.opacity;
+        ctx.globalCompositeOperation = l.blend === "normal" ? "source-over" : l.blend;
+        ctx.drawImage(cv, l.x * R, l.y * R, l.w * R, l.h * R);
+        ctx.restore();
+        continue;
+      }
+      const asset = allAssets.find(a => a.id === l.assetId); if (!asset) continue;
       const img = new Image();
-      img.src = assetUrl(asset, s.variant, s.silhouette && asset.builtin ? s.silColor : null, s.bend);
+      img.src = assetUrl(asset, l.variant, l.silhouette && asset.builtin ? l.silColor : null, l.bend);
       try { await img.decode(); } catch { continue; }
-      const hPx = assetH(asset, s.variant) * s.scale * R;
+      const hPx = assetH(asset, l.variant) * l.scale * R;
       const wPx = hPx * (img.width / img.height);
       let src = img;
-      if (s.silhouette && !asset.builtin) {
+      if (l.silhouette && !asset.builtin) {
         const t = document.createElement("canvas");
         t.width = img.width; t.height = img.height;
         const tc = t.getContext("2d");
         tc.drawImage(img, 0, 0);
         tc.globalCompositeOperation = "source-in";
-        tc.fillStyle = s.silColor; tc.fillRect(0, 0, t.width, t.height);
+        tc.fillStyle = l.silColor; tc.fillRect(0, 0, t.width, t.height);
         src = t;
       }
       ctx.save();
-      ctx.globalAlpha = s.opacity;
-      ctx.globalCompositeOperation = s.blend === "normal" ? "source-over" : s.blend;
-      ctx.translate(s.x * R, s.y * R);
-      ctx.rotate(s.rotation * Math.PI / 180);
-      ctx.scale(s.flip ? -1 : 1, 1);
+      ctx.globalAlpha = l.opacity;
+      ctx.globalCompositeOperation = l.blend === "normal" ? "source-over" : l.blend;
+      ctx.translate(l.x * R, l.y * R);
+      ctx.rotate(l.rotation * Math.PI / 180);
+      ctx.scale(l.flip ? -1 : 1, 1);
       ctx.drawImage(src, -wPx / 2, -hPx / 2, wPx, hPx);
       ctx.restore();
     }
-    if (paintOnTop) drawPaint();
     ctx.restore();
 
     const a = document.createElement("a");
@@ -851,7 +936,6 @@ export default function FlowerCanvasStudio() {
   const toCm = (v) => unit === "in" ? v * 2.54 : v;
 
   const S = styles;
-  const paintZ = paintOnTop ? 500 : 0;
 
   return (
     <div style={S.app}>
@@ -916,33 +1000,41 @@ export default function FlowerCanvasStudio() {
             }}>
               <div style={{ ...S.meshWeave, opacity: meshOpacity * 2.2, background: weaveBg(rgbOf(meshColor)) }} />
               <div style={S.meshSheen} />
-              <canvas
-                ref={paintRef}
-                style={{ ...S.paint, zIndex: paintZ, opacity: paintOpacity,
-                  mixBlendMode: paintBlend,
-                  pointerEvents: tool === "select" ? "none" : "auto",
-                  cursor: "crosshair" }}
-                onPointerDown={onPaintDown} onPointerMove={onPaintMove}
-                onPointerUp={onPaintUp} onPointerCancel={onPaintUp}
-              />
-              {stamps.map((s, i) => {
-                const asset = allAssets.find(a => a.id === s.assetId); if (!asset) return null;
-                const hPx = assetH(asset, s.variant) * s.scale * zoom;
-                const sil = s.silhouette;
-                const url = assetUrl(asset, s.variant, sil && asset.builtin ? s.silColor : null, s.bend);
+              {layers.map((l, i) => {
+                const picked = l.id === selectedId;
+                if (l.kind === "stroke") {
+                  return (
+                    <img key={l.id} src={l.url} alt="paint stroke" draggable={false}
+                      onPointerDown={e => onStampDown(e, l)} onPointerMove={onStampMove}
+                      onPointerUp={() => (dragRef.current = null)}
+                      style={{
+                        position: "absolute", left: l.x * zoom, top: l.y * zoom,
+                        width: l.w * zoom, height: l.h * zoom, zIndex: i + 1,
+                        opacity: l.opacity, mixBlendMode: l.blend,
+                        outline: picked ? "2px dashed #4A5D3A" : "none", outlineOffset: 2,
+                        cursor: tool === "select" ? "grab" : "default",
+                        pointerEvents: tool === "select" ? "auto" : "none",
+                        touchAction: "none", userSelect: "none",
+                      }} />
+                  );
+                }
+                const asset = allAssets.find(a => a.id === l.assetId); if (!asset) return null;
+                const hPx = assetH(asset, l.variant) * l.scale * zoom;
+                const sil = l.silhouette;
+                const url = assetUrl(asset, l.variant, sil && asset.builtin ? l.silColor : null, l.bend);
                 const uploadFilter = sil && !asset.builtin
-                  ? (s.silColor === "#FFFFFF" ? "brightness(0) invert(1)" : "brightness(0)") : "none";
+                  ? (l.silColor === "#FFFFFF" ? "brightness(0) invert(1)" : "brightness(0)") : "none";
                 return (
-                  <img key={s.id} src={url} alt={asset.name} draggable={false}
-                    onPointerDown={e => onStampDown(e, s)} onPointerMove={onStampMove}
+                  <img key={l.id} src={url} alt={asset.name} draggable={false}
+                    onPointerDown={e => onStampDown(e, l)} onPointerMove={onStampMove}
                     onPointerUp={() => (dragRef.current = null)}
                     style={{
-                      position: "absolute", left: s.x * zoom, top: s.y * zoom,
+                      position: "absolute", left: l.x * zoom, top: l.y * zoom,
                       height: hPx, zIndex: i + 1,
-                      transform: `translate(-50%,-50%) rotate(${s.rotation}deg) scaleX(${s.flip ? -1 : 1})`,
-                      opacity: s.opacity, mixBlendMode: s.blend,
+                      transform: `translate(-50%,-50%) rotate(${l.rotation}deg) scaleX(${l.flip ? -1 : 1})`,
+                      opacity: l.opacity, mixBlendMode: l.blend,
                       filter: uploadFilter,
-                      outline: s.id === selectedId ? "2px dashed #4A5D3A" : "none",
+                      outline: picked ? "2px dashed #4A5D3A" : "none",
                       outlineOffset: 3,
                       cursor: tool === "select" ? "grab" : "default",
                       pointerEvents: tool === "select" ? "auto" : "none",
@@ -950,6 +1042,16 @@ export default function FlowerCanvasStudio() {
                     }} />
                 );
               })}
+              {/* live stroke sits above everything while the pen is down, then
+                  becomes its own layer on release */}
+              <canvas
+                ref={paintRef}
+                style={{ ...S.paint, zIndex: layers.length + 2,
+                  pointerEvents: tool === "select" ? "none" : "auto",
+                  cursor: "crosshair" }}
+                onPointerDown={onPaintDown} onPointerMove={onPaintMove}
+                onPointerUp={onPaintUp} onPointerCancel={onPaintUp}
+              />
             </div>
           </div>
           <div style={S.dims}>{fmt(canvasW, unit)} × {fmt(canvasH, unit)} · bars {fmt(barW, unit)}</div>
@@ -997,20 +1099,56 @@ export default function FlowerCanvasStudio() {
               </div>
               {tool === "paint" && <label style={S.mini}>Color <input type="color" value={brushColor} onChange={e => setBrushColor(e.target.value)} /></label>}
             </>}
-            <div style={S.sectionLabel}>Paint layer</div>
-            <label style={S.mini}><input type="checkbox" checked={paintOnTop} onChange={e => setPaintOnTop(e.target.checked)} /> paint sits over flowers</label>
-            <label style={S.mini}>Blend <select style={S.select} value={paintBlend} onChange={e => setPaintBlend(e.target.value)}>
-              {BLEND_MODES.map(m => <option key={m}>{m}</option>)}</select></label>
-            <label style={S.slider}>Layer opacity — {(paintOpacity * 100) | 0}%
-              <input type="range" min="0" max="1" step="0.05" value={paintOpacity} onChange={e => setPaintOpacity(+e.target.value)} />
-            </label>
-            <button style={S.btn} onClick={() => {
-              const c = paintRef.current; c.getContext("2d").clearRect(0, 0, c.width, c.height);
-              setStamps(v => [...v]); // force refresh
-            }}>Clear paint layer</button>
+            {tool !== "erase" && <>
+              <label style={S.mini}>New stroke blend <select style={S.select} value={strokeBlend}
+                onChange={e => setStrokeBlend(e.target.value)}>
+                {BLEND_MODES.map(m => <option key={m}>{m}</option>)}</select></label>
+              <p style={S.hint}>Every stroke lands as its own layer. Switch to Select to
+                restack it, change its blend, or move it.</p>
+            </>}
+            {tool === "erase" && <p style={S.hint}>The eraser lifts paint out of the stroke
+              layers underneath rather than adding a layer of its own.</p>}
+            <button style={S.btn} onClick={clearPaint}>Clear all paint strokes</button>
           </>)}
 
-          {selected && (() => {
+          {/* ---- the stack ---- */}
+          <div style={S.sectionLabel}>Layers — deepest first</div>
+          {layers.length === 0
+            ? <p style={S.hint}>Nothing yet. Add a flower or paint a stroke.</p>
+            : <div style={S.layerList}>
+                {layers.map((l, i) => {
+                  const asset = l.kind === "flower" ? allAssets.find(a => a.id === l.assetId) : null;
+                  return (
+                    <button key={l.id} onClick={() => { setSelectedId(l.id); setTool("select"); }}
+                      style={{ ...S.layerRow, ...(l.id === selectedId ? S.layerRowOn : {}) }}>
+                      <span style={S.layerNum}>{layers.length - i}</span>
+                      <span style={S.layerName}>
+                        {l.kind === "stroke" ? `${l.brush} stroke` : (asset?.name || "flower")}
+                      </span>
+                      {l.blend !== "normal" && <span style={S.layerTag}>{l.blend}</span>}
+                    </button>
+                  );
+                })}
+              </div>}
+
+          {selected?.kind === "stroke" && (<>
+            <div style={S.sectionLabel}>{selected.brush} stroke</div>
+            <div style={S.libDim}>covers <b>{fmt(selected.w, unit)} × {fmt(selected.h, unit)}</b></div>
+            <label style={S.slider}>Opacity — {(selected.opacity * 100) | 0}%
+              <input type="range" min="0.05" max="1" step="0.05" value={selected.opacity}
+                onChange={e => patch(selected.id, { opacity: +e.target.value })} />
+            </label>
+            <label style={S.mini}>Blend <select style={S.select} value={selected.blend}
+              onChange={e => patch(selected.id, { blend: e.target.value })}>
+              {BLEND_MODES.map(m => <option key={m}>{m}</option>)}</select></label>
+            <div style={S.row}>
+              <button style={S.btn} onClick={() => moveLayer(selected.id, -1)}>Send back</button>
+              <button style={S.btn} onClick={() => moveLayer(selected.id, +1)}>Bring forward</button>
+            </div>
+            <button style={{ ...S.btn, color: "#8E3F49" }} onClick={() => removeLayer(selected.id)}>Delete stroke</button>
+          </>)}
+
+          {selected?.kind === "flower" && (() => {
             const asset = allAssets.find(a => a.id === selected.assetId);
             const realH = assetH(asset, selected.variant) * selected.scale;
             return (<>
@@ -1061,25 +1199,17 @@ export default function FlowerCanvasStudio() {
                 <button style={S.btn} onClick={() => patch(selected.id, { flip: !selected.flip })}>Flip</button>
                 <button style={S.btn} onClick={() => {
                   const c = { ...selected, id: uid(), x: selected.x + 3, y: selected.y + 3 };
-                  setStamps(v => [...v, c]); setSelectedId(c.id);
+                  setLayers(v => [...v, c]); setSelectedId(c.id);
                 }}>Duplicate</button>
               </div>
               <div style={S.row}>
-                <button style={S.btn} onClick={() => setStamps(v => {
-                  const i = v.findIndex(s => s.id === selected.id);
-                  if (i < 1) return v;
-                  const n = [...v]; [n[i - 1], n[i]] = [n[i], n[i - 1]]; return n;
-                })}>Send back</button>
-                <button style={S.btn} onClick={() => setStamps(v => {
-                  const i = v.findIndex(s => s.id === selected.id);
-                  if (i < 0 || i === v.length - 1) return v;
-                  const n = [...v]; [n[i], n[i + 1]] = [n[i + 1], n[i]]; return n;
-                })}>Bring forward</button>
+                <button style={S.btn} onClick={() => moveLayer(selected.id, -1)}>Send back</button>
+                <button style={S.btn} onClick={() => moveLayer(selected.id, +1)}>Bring forward</button>
               </div>
               <button style={S.btn} onClick={() => punchOut(selected)}
-                title="Erases this flower's shape from the paint layer — like lifting a stencil after spraying">
+                title="Erases this flower's shape from every paint stroke — like lifting a stencil after spraying">
                 Punch out of paint (stencil lift)</button>
-              <button style={{ ...S.btn, color: "#8E3F49" }} onClick={() => removeStamp(selected.id)}>Delete</button>
+              <button style={{ ...S.btn, color: "#8E3F49" }} onClick={() => removeLayer(selected.id)}>Delete</button>
             </>);
           })()}
 
@@ -1093,9 +1223,20 @@ export default function FlowerCanvasStudio() {
 }
 
 /* ---------- styles ---------- */
+const layerStyles = {
+  layerList: { display: "flex", flexDirection: "column", gap: 2, maxHeight: 190, overflowY: "auto", marginBottom: 6 },
+  layerRow: { display: "flex", alignItems: "center", gap: 6, width: "100%", textAlign: "left",
+    padding: "4px 6px", border: "1px solid #DCDACE", borderRadius: 3, background: "#FBFAF6",
+    font: "inherit", fontSize: 11, color: "#23281F", cursor: "pointer" },
+  layerRowOn: { background: "#E7EBDF", borderColor: "#4A5D3A" },
+  layerNum: { minWidth: 16, color: "#8A8B80", fontSize: 10 },
+  layerName: { flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" },
+  layerTag: { fontSize: 9, color: "#4A5D3A", background: "#E7EBDF", borderRadius: 2, padding: "1px 4px" },
+};
 const panelBg = "#F3F2EC";
 const ink = "#23281F";
 const styles = {
+  ...layerStyles,
   app: { display: "flex", flexDirection: "column", height: "100vh", fontFamily: "'Avenir Next','Segoe UI',system-ui,sans-serif", color: ink, background: "#DAD5C9" },
   header: { display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px 16px", background: panelBg, borderBottom: "1px solid #C9C4B6" },
   title: { fontFamily: "Georgia,'Times New Roman',serif", fontSize: 19, letterSpacing: 0.3 },
