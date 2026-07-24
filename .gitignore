@@ -2,3 +2,12 @@ node_modules/
 dist/
 .DS_Store
 *.local
+
+# Image libraries — large binaries, rebuildable from the manifests + scripts.
+# Abraflora pipeline
+assets/
+raw/
+# ScansLibrary scrape
+scans/
+scans_split/
+_stage_*/
