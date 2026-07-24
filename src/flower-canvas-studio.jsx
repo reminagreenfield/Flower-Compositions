@@ -289,7 +289,7 @@ const ASSETS = [
     /* Nigella bleached — custom starburst head; no archetype fits a radial crown.
        Head = 12 pointed outer petals + 8 shorter inner petals + fine bract needles.
        Colors sampled from photo: near-white petals, warm straw shadows, tan stem. */
-    id: "nigella", name: "Nigella bleached", hStem: 50, hBud: 7, aspect: 0.27,
+    id: "nigella", name: "Nigella bleached", hStem: 50, hBud: 9.4, aspect: 0.27,
     color: "#F0EAD6",
     svg(variant, mono) {
       const petal  = mono || "#F7F3EA";   // near-white petal face
@@ -297,39 +297,48 @@ const ASSETS = [
       const bract  = mono || "#D9C28A";   // straw needle bracts
       const stemC  = mono || "#C4A96E";   // tan stem
 
-      const head = (cx, cy, s) => {
-        let f = "";
+      /* `spread` is the angular span of the crown.
+         On a stem the head is a ~230° fan centred straight up, so the
+         flower points up the way it really sits; stemless (bud) it is
+         the full 360° star, seen face-on.
+         Both variants keep the same petal length in cm — hBud is set so
+         the head measures the same whether or not the stem is attached. */
+      const head = (cx, cy, s, spread) => {
+        const UP = -Math.PI / 2;
+        const full = spread >= Math.PI * 2 - 1e-6;
+        const angOf = (i, n) => full
+          ? UP + (i / n) * Math.PI * 2
+          : UP - spread / 2 + spread * (i / (n - 1));
+        // petals nearest straight-up run longest, edges of the fan shorter
+        const taper = (a) => full ? 1 : 0.70 + 0.30 * Math.cos(a - UP);
+
         const pl = 34 * s;  // outer petal length
+        let f = "";
 
-        // ── Thin straw needle-bracts behind petals (18, deterministic length variation)
+        const spoke = (a, len, rx, fill, op) => {
+          const mx = cx + Math.cos(a) * len * 0.5;
+          const my = cy + Math.sin(a) * len * 0.5;
+          const deg = (a * 180 / Math.PI) - 90;
+          f += `<ellipse cx="${mx}" cy="${my}" rx="${rx}" ry="${len * 0.52}" fill="${fill}" transform="rotate(${deg} ${mx} ${my})"${op ? ` opacity="${op}"` : ""}/>`;
+        };
+
+        // ── Thin straw needle-bracts behind the petals
         for (let i = 0; i < 18; i++) {
-          const a = (i / 18) * Math.PI * 2 + 0.17;
-          const len = pl * (1.18 + 0.22 * Math.sin(i * 2.7));
-          const mx = cx + Math.cos(a) * len * 0.52;
-          const my = cy + Math.sin(a) * len * 0.52;
-          const deg = (a * 180 / Math.PI) - 90;
-          f += `<ellipse cx="${mx}" cy="${my}" rx="${1.8 * s}" ry="${len * 0.52}" fill="${bract}" transform="rotate(${deg} ${mx} ${my})" opacity="0.72"/>`;
+          const a = angOf(i, 18) + (full ? 0.17 : 0);
+          spoke(a, pl * (1.18 + 0.22 * Math.sin(i * 2.7)) * taper(a) * 1.04, 1.8 * s, bract, 0.72);
         }
 
-        // ── Outer petals (12, narrow pointed ellipses, slight length variation)
+        // ── Outer petals (narrow pointed ellipses, slight length variation)
         for (let i = 0; i < 12; i++) {
-          const a = (i / 12) * Math.PI * 2;
-          const len = pl * (0.84 + 0.16 * Math.sin(i * 1.9 + 0.6));
-          const mx = cx + Math.cos(a) * len * 0.5;
-          const my = cy + Math.sin(a) * len * 0.5;
-          const deg = (a * 180 / Math.PI) - 90;
-          const fill = (i % 4 === 0) ? shadow : petal;
-          f += `<ellipse cx="${mx}" cy="${my}" rx="${5 * s}" ry="${len * 0.52}" fill="${fill}" transform="rotate(${deg} ${mx} ${my})"/>`;
+          const a = angOf(i, 12);
+          spoke(a, pl * (0.84 + 0.16 * Math.sin(i * 1.9 + 0.6)) * taper(a), 5 * s,
+                i % 4 === 0 ? shadow : petal);
         }
 
-        // ── Inner petal layer (8, shorter, between outer petals, slightly wider)
+        // ── Inner petal whorl (shorter, offset between the outer petals)
         for (let i = 0; i < 8; i++) {
-          const a = ((i + 0.5) / 8) * Math.PI * 2;
-          const len = pl * 0.54;
-          const mx = cx + Math.cos(a) * len * 0.5;
-          const my = cy + Math.sin(a) * len * 0.5;
-          const deg = (a * 180 / Math.PI) - 90;
-          f += `<ellipse cx="${mx}" cy="${my}" rx="${6.5 * s}" ry="${len * 0.52}" fill="${petal}" transform="rotate(${deg} ${mx} ${my})" opacity="0.9"/>`;
+          const a = full ? angOf(i + 0.5, 8) : angOf(i + 0.5, 9);
+          spoke(a, pl * 0.54 * taper(a), 6.5 * s, petal, 0.9);
         }
 
         // ── Center knot
@@ -338,11 +347,103 @@ const ASSETS = [
         return f;
       };
 
-      if (variant === "bud") return svgWrap(100, 100, head(50, 50, 1));
+      if (variant === "bud") return svgWrap(100, 100, head(50, 50, 1, Math.PI * 2));
       return svgWrap(100, 470,
-        stemPath(50, 82, 468, 10, stemC, 2.2) +
-        head(50, 48, 0.88));
+        stemPath(50, 50, 468, 10, stemC, 2.2) +
+        head(50, 48, 0.88, Math.PI * 230 / 180));
     },
+  },
+
+  /* ── More dried & preserved stems ─────────────────────────────── */
+  {
+    id: "statice", name: "Statice", hStem: 45, hBud: 9, aspect: 0.2,
+    color: "#7B5EA7",
+    ...spike({ palette: ["#8C6EB8", "#6A4C93"], stemColor: "#8A9367", stemThickness: 3, density: 14, droop: 7, proportions: { floretW: 7, floretH: 4.5, spread: 20, spacing: 10 } }),
+  },
+  {
+    id: "wheat", name: "Wheat ear", hStem: 58, hBud: 11, aspect: 0.13,
+    color: "#D5B15E",
+    ...spike({ palette: ["#DDBB6A", "#C39B47"], stemColor: "#C7B183", stemThickness: 2.5, density: 12, droop: 5, floretShape: "diamond", proportions: { floretW: 5, floretH: 7, spread: 9, spacing: 11 } }),
+  },
+  {
+    id: "strawflower", name: "Strawflower", hStem: 32, hBud: 5, aspect: 0.32,
+    color: "#E0A02A",
+    ...rosette({ palette: ["#E0A02A", "#C2801A", "#F0C25C"], stemColor: "#8A8A57", stemThickness: 3.5, droop: 9 }),
+  },
+  {
+    id: "peony-dried", name: "Dried peony", hStem: 38, hBud: 8, aspect: 0.34,
+    color: "#C98894",
+    ...rosette({ palette: ["#C98894", "#A9636F", "#E0AAB2"], stemColor: "#6E7B4E", stemThickness: 4.5, droop: 10, proportions: { headScale: 1.25 } }),
+  },
+  {
+    id: "gypsophila", name: "Baby's breath", hStem: 40, hBud: 14, aspect: 0.34,
+    color: "#F2EFE6",
+    ...plume({ palette: ["#F7F5EE", "#E4DFD0"], stemColor: "#A8B089", stemThickness: 2, density: 90, droop: 8, proportions: { spread: 46 } }),
+  },
+  {
+    id: "caspia", name: "Caspia", hStem: 44, hBud: 15, aspect: 0.32,
+    color: "#C7B6D6",
+    ...plume({ palette: ["#C7B6D6", "#AFA0C2"], stemColor: "#9A9A7A", stemThickness: 2, density: 100, droop: 9, proportions: { spread: 44 } }),
+  },
+  {
+    id: "broombloom", name: "Broom bloom", hStem: 38, hBud: 13, aspect: 0.33,
+    color: "#EFE7D2",
+    ...plume({ palette: ["#F2EBD8", "#DCD2B8"], stemColor: "#A9A484", stemThickness: 2, density: 80, droop: 7, proportions: { spread: 42 } }),
+  },
+  {
+    id: "setaria", name: "Foxtail (setaria)", hStem: 60, hBud: 12, aspect: 0.12,
+    color: "#C9B676",
+    ...plume({ palette: ["#D2BF80", "#B8A45F"], stemColor: "#A89566", stemThickness: 2.5, density: 130, droop: 14, proportions: { spread: 20 } }),
+  },
+  {
+    id: "amaranthus", name: "Amaranthus", hStem: 55, hBud: 20, aspect: 0.3,
+    color: "#7E3B45",
+    ...plume({ palette: ["#8C424D", "#6B2F38"], stemColor: "#7A6A4E", stemThickness: 3, density: 120, droop: 20, proportions: { spread: 40 } }),
+  },
+  {
+    id: "echinops", name: "Globe thistle", hStem: 62, hBud: 4.5, aspect: 0.2,
+    color: "#7C89A8",
+    ...ball({ palette: ["#7C89A8", "#94A0BC", "#65728F"], stemColor: "#8A8E6E", stemThickness: 4.5, density: 90, droop: 10, proportions: { headR: 26, budHeadR: 46, dotRMin: 1.2, dotRMax: 2.2, budDotRMin: 2, budDotRMax: 3.6 } }),
+  },
+  {
+    id: "yarrow", name: "Yarrow (achillea)", hStem: 52, hBud: 7, aspect: 0.3,
+    color: "#D6B33C",
+    ...ball({ palette: ["#D6B33C", "#E3C55C", "#BE9B24"], stemColor: "#7E8B55", stemThickness: 4, density: 120, droop: 8, proportions: { headR: 34, budHeadR: 48, dotRMin: 2, dotRMax: 3.4, budDotRMin: 2.6, budDotRMax: 4.4 } }),
+  },
+  {
+    id: "gomphrena", name: "Globe amaranth", hStem: 36, hBud: 2.5, aspect: 0.16,
+    color: "#B34A82",
+    ...ball({ palette: ["#B34A82", "#C86098", "#98376C"], stemColor: "#7E8B55", stemThickness: 3, density: 55, droop: 12, proportions: { headR: 20, budHeadR: 46, dotRMin: 1.4, dotRMax: 2.6, budDotRMin: 2.4, budDotRMax: 4.2 } }),
+  },
+  {
+    id: "poppypod", name: "Poppy seed pod", hStem: 46, hBud: 5, aspect: 0.18,
+    color: "#9BA68C",
+    ...seedPod({ palette: ["#9BA68C", "#B0BA9E"], stemColor: "#8B9476", stemThickness: 3.5, droop: 8, fuzz: false, proportions: { rx: 30, ry: 30, innerRx: 20, innerRy: 18, offsetX: -6, offsetY: -4 } }),
+  },
+  {
+    id: "lagurus-pink", name: "Bunny tail (pink)", hStem: 48, hBud: 6, aspect: 0.14,
+    color: "#E7C3CB",
+    ...seedPod({ palette: ["#E7C3CB", "#F3DCE1"], stemColor: "#C9BC9C", stemThickness: 2.5, droop: 10, fuzz: true }),
+  },
+  {
+    id: "phalaris", name: "Canary grass", hStem: 46, hBud: 6, aspect: 0.15,
+    color: "#DCCBA6",
+    ...seedPod({ palette: ["#DCCBA6", "#EBDFC2"], stemColor: "#B9A87E", stemThickness: 2.2, droop: 12, fuzz: false, proportions: { rx: 18, ry: 34, innerRx: 11, innerRy: 24, offsetX: -5, offsetY: 6 } }),
+  },
+  {
+    id: "ruscus", name: "Ruscus sprig", hStem: 50, hBud: 50, aspect: 0.28,
+    color: "#4F6B45",
+    ...leafyBranch({ palette: ["#4F6B45", "#3E5837", "#6E7A4E"], stemColor: "#6E7A4E", stemThickness: 3, density: 11, droop: 8, leafShape: "oval", proportions: { leafR: 22, spacing: 38, offset: 30 } }),
+  },
+  {
+    id: "ruscus-bleached", name: "Ruscus bleached", hStem: 48, hBud: 48, aspect: 0.28,
+    color: "#E3DAC4",
+    ...leafyBranch({ palette: ["#E8E0CC", "#D6CBB0", "#C3B695"], stemColor: "#C3B695", stemThickness: 3, density: 11, droop: 8, leafShape: "oval", proportions: { leafR: 22, spacing: 38, offset: 30 } }),
+  },
+  {
+    id: "palmspear", name: "Palm spear (bleached)", hStem: 70, hBud: 70, aspect: 0.3,
+    color: "#E6DCC2",
+    ...frond({ palette: ["#E6DCC2"], stemColor: "#D2C4A2", stemThickness: 5, density: 26, proportions: { maxLen: 60, widthTaper: 2.8 } }),
   },
 ];
 
