@@ -9,129 +9,281 @@ import { useState, useRef, useEffect, useMemo } from "react";
 const PAINT_RES = 8;    // paint raster resolution, px per cm
 const EXPORT_RES = 12;  // export resolution, px per cm
 
-/* ---------- built-in botanical assets (procedural SVG) ---------- */
-/* each returns an SVG string; `mono` renders it as a flat stencil */
-
+/* ── SVG PRIMITIVES ───────────────────────────────────────────── */
 function svgWrap(w, h, inner) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}">${inner}</svg>`;
 }
 const stemPath = (x, topY, botY, sway, color, sw) =>
   `<path d="M ${x} ${botY} C ${x + sway} ${botY - (botY - topY) * 0.4}, ${x - sway} ${topY + (botY - topY) * 0.3}, ${x} ${topY}" fill="none" stroke="${color}" stroke-width="${sw}" stroke-linecap="round"/>`;
 
-const ASSETS = [
-  {
-    id: "craspedia", name: "Craspedia (billy ball)", hStem: 60, hBud: 3.5, aspect: 0.22,
-    color: "#D9A521",
+/* ── ARCHETYPE GENERATORS ─────────────────────────────────────── */
+/* Each accepts a params object and returns { svg(variant, mono) } */
+/* to be spread into an ASSETS entry.                              */
+/*                                                                 */
+/* Common params (all generators):                                 */
+/*   palette       – string[] of hex colors, primary first         */
+/*   stemColor     – hex for the stem / rachis                     */
+/*   stemThickness – SVG stroke-width for the main stem            */
+/*   density       – element count (florets, dots, strands, …)     */
+/*   proportions   – archetype-specific sizing overrides (object)  */
+/*   droop         – lateral sway applied to the stem bezier       */
+
+/** spike – alternating paired florets tapering to a point.
+ *  floretShape: "ellipse" (default) | "diamond"
+ *  proportions: { floretW, floretH, spread, spacing } */
+function spike({
+  palette = ["#8A76BC", "#6A559E"],
+  stemColor = "#7C8F5E",
+  stemThickness = 3,
+  density = 16,
+  proportions: { floretW = 6, floretH = 4, spread = 16, spacing = 9 } = {},
+  droop = 8,
+  floretShape = "ellipse",
+} = {}) {
+  return {
     svg(variant, mono) {
-      const c = mono || this.color, stem = mono || "#7A8B52";
-      if (variant === "bud") {
-        let dots = "";
-        for (let i = 0; i < 90; i++) {
-          const a = Math.random() * Math.PI * 2, r = Math.sqrt(Math.random()) * 46;
-          dots += `<circle cx="${50 + Math.cos(a) * r}" cy="${50 + Math.sin(a) * r}" r="${2 + Math.random() * 2}" fill="${mono || (Math.random() > .5 ? "#E7B637" : "#C4930F")}"/>`;
-        }
-        return svgWrap(100, 100, `<circle cx="50" cy="50" r="48" fill="${c}"/>${dots}`);
-      }
-      let dots = "";
-      for (let i = 0; i < 60; i++) {
-        const a = Math.random() * Math.PI * 2, r = Math.sqrt(Math.random()) * 26;
-        dots += `<circle cx="${50 + Math.cos(a) * r}" cy="${30 + Math.sin(a) * r}" r="${1.4 + Math.random()}" fill="${mono || "#E7B637"}"/>`;
-      }
-      return svgWrap(100, 455, stemPath(50, 56, 452, 16, stem, 4) + `<circle cx="50" cy="30" r="28" fill="${c}"/>` + dots);
-    },
-  },
-  {
-    id: "lavender", name: "Lavender spike", hStem: 42, hBud: 8, aspect: 0.16,
-    color: "#7E6BAE",
-    svg(variant, mono) {
-      const c1 = mono || "#8A76BC", c2 = mono || "#6A559E", stem = mono || "#7C8F5E";
-      const spike = (ox, oy, s) => {
+      const c1 = mono || palette[0], c2 = mono || (palette[1] || palette[0]);
+      const stem = mono || stemColor;
+      const floret = (cx, cy, col, angle, s) => {
+        const rx = floretW * s, ry = floretH * s;
+        return floretShape === "diamond"
+          ? `<polygon points="${cx},${cy - ry} ${cx + rx},${cy} ${cx},${cy + ry} ${cx - rx},${cy}" fill="${col}" transform="rotate(${angle} ${cx} ${cy})"/>`
+          : `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="${col}" transform="rotate(${angle} ${cx} ${cy})"/>`;
+      };
+      const body = (ox, oy, s) => {
         let f = "";
-        for (let i = 0; i < 16; i++) {
-          const y = oy + i * 9 * s, spread = (1 - i / 18) * 16 * s + 4;
-          f += `<ellipse cx="${ox - spread}" cy="${y}" rx="${6 * s}" ry="${4 * s}" fill="${i % 2 ? c1 : c2}" transform="rotate(-30 ${ox - spread} ${y})"/>`;
-          f += `<ellipse cx="${ox + spread}" cy="${y + 4}" rx="${6 * s}" ry="${4 * s}" fill="${i % 2 ? c2 : c1}" transform="rotate(30 ${ox + spread} ${y})"/>`;
+        for (let i = 0; i < density; i++) {
+          const y = oy + i * spacing * s;
+          const sp = (1 - i / (density + 2)) * spread * s + 4;
+          f += floret(ox - sp, y,     i % 2 ? c1 : c2, -30, s);
+          f += floret(ox + sp, y + 4, i % 2 ? c2 : c1,  30, s);
         }
         return f;
       };
-      if (variant === "bud") return svgWrap(64, 400, spike(32, 20, 2.4));
-      return svgWrap(64, 400, stemPath(32, 150, 398, 8, stem, 3) + spike(32, 10, 0.95));
+      if (variant === "bud") return svgWrap(64, 400, body(32, 20, 2.4));
+      return svgWrap(64, 400, stemPath(32, 150, 398, droop, stem, stemThickness) + body(32, 10, 0.95));
     },
-  },
-  {
-    id: "fern", name: "Fern frond", hStem: 45, hBud: 45, aspect: 0.34,
-    color: "#4E6B3C",
-    svg(_v, mono) {
-      const c = mono || this.color;
-      let pinnae = "";
-      for (let i = 0; i < 22; i++) {
-        const t = i / 22, y = 20 + t * 400, len = Math.sin(Math.PI * Math.min(1, t * 1.15 + 0.08)) * 66 + 6;
-        pinnae += `<path d="M 68 ${y} q -${len * 0.6} -${8} -${len} 4" stroke="${c}" stroke-width="${5 - t * 2.4}" fill="none" stroke-linecap="round"/>`;
-        pinnae += `<path d="M 68 ${y + 9} q ${len * 0.6} -${8} ${len} 4" stroke="${c}" stroke-width="${5 - t * 2.4}" fill="none" stroke-linecap="round"/>`;
+  };
+}
+
+/** ball – spherical head with scattered dot florets on a stem.
+ *  proportions: { headR, budHeadR, dotRMin, dotRMax, budDotRMin, budDotRMax } */
+function ball({
+  palette = ["#D9A521", "#E7B637", "#C4930F"],
+  stemColor = "#7A8B52",
+  stemThickness = 4,
+  density = 60,
+  proportions: {
+    headR = 28, budHeadR = 48,
+    dotRMin = 1.4, dotRMax = 2.4,
+    budDotRMin = 2, budDotRMax = 4,
+  } = {},
+  droop = 16,
+} = {}) {
+  return {
+    svg(variant, mono) {
+      const base = mono || palette[0];
+      const stem = mono || stemColor;
+      if (variant === "bud") {
+        let dots = "";
+        for (let i = 0; i < density * 1.5; i++) {
+          const a = Math.random() * Math.PI * 2, r = Math.sqrt(Math.random()) * (budHeadR - 2);
+          dots += `<circle cx="${50 + Math.cos(a) * r}" cy="${50 + Math.sin(a) * r}" r="${budDotRMin + Math.random() * (budDotRMax - budDotRMin)}" fill="${mono || (Math.random() > .5 ? palette[1] : palette[2])}"/>`;
+        }
+        return svgWrap(100, 100, `<circle cx="50" cy="50" r="${budHeadR}" fill="${base}"/>${dots}`);
       }
-      return svgWrap(136, 440, `<path d="M 68 436 C 74 300, 62 140, 68 10" stroke="${c}" stroke-width="4.5" fill="none"/>` + pinnae);
+      let dots = "";
+      for (let i = 0; i < density; i++) {
+        const a = Math.random() * Math.PI * 2, r = Math.sqrt(Math.random()) * (headR - 2);
+        dots += `<circle cx="${50 + Math.cos(a) * r}" cy="${30 + Math.sin(a) * r}" r="${dotRMin + Math.random() * (dotRMax - dotRMin)}" fill="${mono || palette[1]}"/>`;
+      }
+      return svgWrap(100, 455,
+        stemPath(50, 56, 452, droop, stem, stemThickness) +
+        `<circle cx="50" cy="30" r="${headR}" fill="${base}"/>` + dots);
     },
-  },
-  {
-    id: "bunny", name: "Bunny tail grass", hStem: 50, hBud: 6, aspect: 0.14,
-    color: "#EDE4D2",
+  };
+}
+
+/** plume – loose airy strands fanning from a central axis.
+ *  proportions: { spread } – max lateral reach of strands in SVG px */
+function plume({
+  palette = ["#E4D3B8", "#D3BE9C"],
+  stemColor = "#B9A57F",
+  stemThickness = 3,
+  density = 110,
+  proportions: { spread = 52 } = {},
+  droop = 6,
+} = {}) {
+  return {
     svg(variant, mono) {
-      const c = mono || this.color, stem = mono || "#C9BC9C";
-      const tail = (cx, cy, s) =>
-        `<g filter="url(#f)"><ellipse cx="${cx}" cy="${cy}" rx="${26 * s}" ry="${40 * s}" fill="${c}"/><ellipse cx="${cx - 8 * s}" cy="${cy + 8 * s}" rx="${18 * s}" ry="${30 * s}" fill="${mono || "#F7F1E4"}"/></g>`;
-      const blur = `<defs><filter id="f" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="${mono ? 0 : 3}"/></filter></defs>`;
-      if (variant === "bud") return svgWrap(80, 110, blur + tail(40, 55, 1.25));
-      return svgWrap(80, 420, blur + stemPath(40, 80, 418, 10, stem, 2.5) + tail(40, 46, 1));
+      const c1 = mono || palette[0], c2 = mono || (palette[1] || palette[0]);
+      const stem = mono || stemColor;
+      const plumeBody = (h) => {
+        let s = "";
+        for (let i = 0; i < density; i++) {
+          const t = Math.random(), y = 12 + t * h;
+          const sp = Math.sin(Math.PI * Math.min(1, t + .05)) * spread + 6;
+          const x = 66 + (Math.random() * 2 - 1) * sp;
+          s += `<path d="M 66 ${y + 24} Q ${x} ${y + 10} ${x + (Math.random() * 14 - 7)} ${y - 8}" stroke="${Math.random() > .5 ? c1 : c2}" stroke-width="${1 + Math.random() * 1.6}" fill="none" opacity="${mono ? 1 : 0.6 + Math.random() * 0.4}" stroke-linecap="round"/>`;
+        }
+        return s;
+      };
+      if (variant === "bud") return svgWrap(132, 300, plumeBody(270));
+      return svgWrap(132, 440, stemPath(66, 200, 438, droop, stem, stemThickness) + plumeBody(210));
     },
-  },
-  {
-    id: "rose", name: "Dried rose", hStem: 35, hBud: 5, aspect: 0.3,
-    color: "#A8555C",
+  };
+}
+
+/** leafyBranch – alternating leaves on petioles from a central stem.
+ *  leafShape: "round" (default) | "oval"
+ *  proportions: { leafR, spacing, offset } */
+function leafyBranch({
+  palette = ["#8FA48B", "#7C927A", "#9A8A6C"],
+  stemColor = "#9A8A6C",
+  stemThickness = 3.5,
+  density = 9,
+  proportions: { leafR = 20, spacing = 44, offset = 34 } = {},
+  droop = 10,
+  leafShape = "round",
+} = {}) {
+  return {
+    svg(_variant, mono) {
+      const l1 = mono || palette[0], l2 = mono || (palette[1] || palette[0]);
+      const stem = mono || palette[2] || stemColor;
+      let leaves = "";
+      for (let i = 0; i < density; i++) {
+        const y = 40 + i * spacing, side = i % 2 ? 1 : -1, r = leafR - i * 0.8;
+        if (leafShape === "oval") {
+          leaves += `<ellipse cx="${66 + side * offset}" cy="${y}" rx="${r * 0.65}" ry="${r}" fill="${i % 2 ? l1 : l2}"/>`;
+        } else {
+          leaves += `<circle cx="${66 + side * offset}" cy="${y}" r="${r}" fill="${i % 2 ? l1 : l2}"/>`;
+        }
+        leaves += `<line x1="66" y1="${y + 14}" x2="${66 + side * 30}" y2="${y + 4}" stroke="${stem}" stroke-width="2.5"/>`;
+      }
+      return svgWrap(132, 440, stemPath(66, 20, 436, droop, stem, stemThickness) + leaves);
+    },
+  };
+}
+
+/** frond – arching rachis with paired lateral pinnae.
+ *  proportions: { maxLen, widthTaper } */
+function frond({
+  palette = ["#4E6B3C"],
+  stemColor = "#4E6B3C",
+  stemThickness = 4.5,
+  density = 22,
+  proportions: { maxLen = 66, widthTaper = 2.4 } = {},
+} = {}) {
+  return {
+    svg(_variant, mono) {
+      const c = mono || palette[0];
+      let pinnae = "";
+      for (let i = 0; i < density; i++) {
+        const t = i / density, y = 20 + t * 400;
+        const len = Math.sin(Math.PI * Math.min(1, t * 1.15 + 0.08)) * maxLen + 6;
+        const sw = 5 - t * widthTaper;
+        pinnae += `<path d="M 68 ${y} q -${len * 0.6} -8 -${len} 4" stroke="${c}" stroke-width="${sw}" fill="none" stroke-linecap="round"/>`;
+        pinnae += `<path d="M 68 ${y + 9} q ${len * 0.6} -8 ${len} 4" stroke="${c}" stroke-width="${sw}" fill="none" stroke-linecap="round"/>`;
+      }
+      return svgWrap(136, 440,
+        `<path d="M 68 436 C 74 300, 62 140, 68 10" stroke="${c}" stroke-width="${stemThickness}" fill="none"/>` +
+        pinnae);
+    },
+  };
+}
+
+/** rosette – layered concentric petal whorls.
+ *  proportions: { headScale } */
+function rosette({
+  palette = ["#A8555C", "#8E3F49", "#C27078"],
+  stemColor = "#6E7B4E",
+  stemThickness = 4,
+  proportions: { headScale = 1 } = {},
+  droop = 12,
+} = {}) {
+  return {
     svg(variant, mono) {
-      const p1 = mono || "#A8555C", p2 = mono || "#8E3F49", p3 = mono || "#C27078", stem = mono || "#6E7B4E";
-      const head = (cx, cy, s) => `
-        <g transform="translate(${cx} ${cy}) scale(${s})">
+      const p1 = mono || palette[0], p2 = mono || (palette[1] || palette[0]), p3 = mono || (palette[2] || palette[0]);
+      const stem = mono || stemColor;
+      const head = (cx, cy, sc) => `
+        <g transform="translate(${cx} ${cy}) scale(${sc * headScale})">
           <path d="M -42 6 Q -50 -30 -14 -44 Q 30 -56 46 -18 Q 54 14 22 34 Q -14 52 -42 6 Z" fill="${p2}"/>
           <path d="M -30 2 Q -34 -26 -4 -34 Q 26 -40 34 -12 Q 38 12 12 24 Q -14 34 -30 2 Z" fill="${p1}"/>
           <path d="M -16 -2 Q -16 -20 2 -22 Q 20 -22 20 -6 Q 20 10 2 14 Q -14 14 -16 -2 Z" fill="${p3}"/>
           <circle cx="1" cy="-4" r="7" fill="${p2}"/>
         </g>`;
       if (variant === "bud") return svgWrap(120, 120, head(60, 60, 1.05));
-      return svgWrap(120, 400, stemPath(60, 90, 398, 12, stem, 4) +
-        `<path d="M 60 96 l -16 26 M 60 96 l 15 24" stroke="${stem}" stroke-width="3" stroke-linecap="round"/>` + head(60, 52, 0.92));
+      return svgWrap(120, 400,
+        stemPath(60, 90, 398, droop, stem, stemThickness) +
+        `<path d="M 60 96 l -16 26 M 60 96 l 15 24" stroke="${stem}" stroke-width="3" stroke-linecap="round"/>` +
+        head(60, 52, 0.92));
     },
+  };
+}
+
+/** seedPod – compact fuzzy elliptical pod on a slender stem.
+ *  fuzz: true = gaussian blur (suppressed in mono/stencil mode)
+ *  proportions: { rx, ry, innerRx, innerRy, offsetX, offsetY } */
+function seedPod({
+  palette = ["#EDE4D2", "#F7F1E4"],
+  stemColor = "#C9BC9C",
+  stemThickness = 2.5,
+  proportions: { rx = 26, ry = 40, innerRx = 18, innerRy = 30, offsetX = -8, offsetY = 8 } = {},
+  droop = 10,
+  fuzz = true,
+} = {}) {
+  return {
+    svg(variant, mono) {
+      const c = mono || palette[0], c2 = mono || (palette[1] || palette[0]);
+      const stem = mono || stemColor;
+      const blur = `<defs><filter id="f" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="${fuzz && !mono ? 3 : 0}"/></filter></defs>`;
+      const pod = (cx, cy, s) =>
+        `<g filter="url(#f)"><ellipse cx="${cx}" cy="${cy}" rx="${rx * s}" ry="${ry * s}" fill="${c}"/><ellipse cx="${cx + offsetX * s}" cy="${cy + offsetY * s}" rx="${innerRx * s}" ry="${innerRy * s}" fill="${c2}"/></g>`;
+      if (variant === "bud") return svgWrap(80, 110, blur + pod(40, 55, 1.25));
+      return svgWrap(80, 420, blur + stemPath(40, 80, 418, droop, stem, stemThickness) + pod(40, 46, 1));
+    },
+  };
+}
+
+/* ── BUILT-IN FLOWER LIBRARY ──────────────────────────────────── */
+/* Each entry spreads a generator's svg method and adds its own    */
+/* id, name, real heights (cm), aspect, and representative color.  */
+
+const ASSETS = [
+  {
+    id: "craspedia", name: "Craspedia (billy ball)", hStem: 60, hBud: 3.5, aspect: 0.22,
+    color: "#D9A521",
+    ...ball({ palette: ["#D9A521", "#E7B637", "#C4930F"], stemColor: "#7A8B52", stemThickness: 4, density: 60, droop: 16 }),
+  },
+  {
+    id: "lavender", name: "Lavender spike", hStem: 42, hBud: 8, aspect: 0.16,
+    color: "#7E6BAE",
+    ...spike({ palette: ["#8A76BC", "#6A559E"], stemColor: "#7C8F5E", stemThickness: 3, density: 16, droop: 8 }),
+  },
+  {
+    id: "fern", name: "Fern frond", hStem: 45, hBud: 45, aspect: 0.34,
+    color: "#4E6B3C",
+    ...frond({ palette: ["#4E6B3C"], stemColor: "#4E6B3C", stemThickness: 4.5, density: 22 }),
+  },
+  {
+    id: "bunny", name: "Bunny tail grass", hStem: 50, hBud: 6, aspect: 0.14,
+    color: "#EDE4D2",
+    ...seedPod({ palette: ["#EDE4D2", "#F7F1E4"], stemColor: "#C9BC9C", stemThickness: 2.5, droop: 10, fuzz: true }),
+  },
+  {
+    id: "rose", name: "Dried rose", hStem: 35, hBud: 5, aspect: 0.3,
+    color: "#A8555C",
+    ...rosette({ palette: ["#A8555C", "#8E3F49", "#C27078"], stemColor: "#6E7B4E", stemThickness: 4, droop: 12 }),
   },
   {
     id: "eucalyptus", name: "Eucalyptus stem", hStem: 55, hBud: 55, aspect: 0.3,
     color: "#8FA48B",
-    svg(_v, mono) {
-      const leaf = mono || "#8FA48B", leaf2 = mono || "#7C927A", stem = mono || "#9A8A6C";
-      let leaves = "";
-      for (let i = 0; i < 9; i++) {
-        const y = 40 + i * 44, side = i % 2 ? 1 : -1, r = 20 - i * 0.8;
-        leaves += `<circle cx="${66 + side * 34}" cy="${y}" r="${r}" fill="${i % 2 ? leaf : leaf2}"/>
-                   <line x1="66" y1="${y + 14}" x2="${66 + side * 30}" y2="${y + 4}" stroke="${stem}" stroke-width="2.5"/>`;
-      }
-      return svgWrap(132, 440, stemPath(66, 20, 436, 10, stem, 3.5) + leaves);
-    },
+    ...leafyBranch({ palette: ["#8FA48B", "#7C927A", "#9A8A6C"], stemColor: "#9A8A6C", stemThickness: 3.5, density: 9, droop: 10, leafShape: "round" }),
   },
   {
     id: "pampas", name: "Pampas plume", hStem: 90, hBud: 30, aspect: 0.3,
     color: "#E4D3B8",
-    svg(variant, mono) {
-      const c = mono || "#E4D3B8", c2 = mono || "#D3BE9C", stem = mono || "#B9A57F";
-      const plume = (h) => {
-        let s = "";
-        for (let i = 0; i < 110; i++) {
-          const t = Math.random(), y = 12 + t * h, spread = Math.sin(Math.PI * Math.min(1, t + .05)) * 52 + 6;
-          const x = 66 + (Math.random() * 2 - 1) * spread;
-          s += `<path d="M 66 ${y + 24} Q ${x} ${y + 10} ${x + (Math.random() * 14 - 7)} ${y - 8}" stroke="${Math.random() > .5 ? c : c2}" stroke-width="${1 + Math.random() * 1.6}" fill="none" opacity="${mono ? 1 : 0.6 + Math.random() * 0.4}" stroke-linecap="round"/>`;
-        }
-        return s;
-      };
-      if (variant === "bud") return svgWrap(132, 300, plume(270));
-      return svgWrap(132, 440, stemPath(66, 200, 438, 6, stem, 3) + plume(210));
-    },
+    ...plume({ palette: ["#E4D3B8", "#D3BE9C"], stemColor: "#B9A57F", stemThickness: 3, density: 110, droop: 6 }),
   },
 ];
 
