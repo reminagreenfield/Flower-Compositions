@@ -576,6 +576,17 @@ const CHROME_STOPS = [
 const cmToIn = (cm) => cm / 2.54;
 const fmt = (cm, unit) => unit === "in" ? `${cmToIn(cm).toFixed(1)}″` : `${cm.toFixed(0)} cm`;
 
+/* "#FAF9F5" -> "250,249,245", so a picked colour can be used at any alpha. */
+const rgbOf = (hex) => {
+  const h = hex.replace("#", "");
+  const n = parseInt(h.length === 3 ? h.split("").map(c => c + c).join("") : h, 16);
+  return `${(n >> 16) & 255},${(n >> 8) & 255},${n & 255}`;
+};
+/* The woven threads: fine lines of the mesh colour crossing at right angles. */
+const weaveBg = (rgb) =>
+  `repeating-linear-gradient(0deg, rgba(${rgb},.9) 0 .5px, transparent .5px 3px),` +
+  `repeating-linear-gradient(90deg, rgba(${rgb},.9) 0 .5px, transparent .5px 3px)`;
+
 let _id = 1;
 const uid = () => `s${_id++}`;
 
@@ -586,6 +597,7 @@ export default function FlowerCanvasStudio() {
   const [canvasH, setCanvasH] = useState(61);   // 24"
   const [barW, setBarW] = useState(3.8);        // 1.5"
   const [barColor, setBarColor] = useState("#7B5B3A");
+  const [meshColor, setMeshColor] = useState("#FAF9F5");   // the fabric itself, dyed or bare
   const [meshOpacity, setMeshOpacity] = useState(0.16);
   const [zoom, setZoom] = useState(7);
 
@@ -782,7 +794,7 @@ export default function FlowerCanvasStudio() {
     ctx.fillStyle = barColor; ctx.fillRect(0, 0, out.width, out.height);
     ctx.save(); ctx.translate(bw, bw);
     ctx.beginPath(); ctx.rect(0, 0, W, H); ctx.clip();
-    ctx.fillStyle = `rgba(250,249,245,${meshOpacity})`; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = `rgba(${rgbOf(meshColor)},${meshOpacity})`; ctx.fillRect(0, 0, W, H);
 
     const drawPaint = () => {
       ctx.save();
@@ -889,8 +901,12 @@ export default function FlowerCanvasStudio() {
         <main style={S.stage} onPointerDown={() => tool === "select" && setSelectedId(null)}>
           <div style={{ ...S.frame, padding: barW * zoom, background: barColor }}>
             <div style={S.frameGrain} />
-            <div ref={meshRef} style={{ ...S.mesh, width: meshWpx, height: meshHpx }}>
-              <div style={{ ...S.meshWeave, opacity: meshOpacity * 2.2 }} />
+            <div ref={meshRef} style={{
+              ...S.mesh, width: meshWpx, height: meshHpx,
+              /* the fabric's own tint — kept translucent so the wall reads through */
+              background: `rgba(${rgbOf(meshColor)},${meshOpacity})`,
+            }}>
+              <div style={{ ...S.meshWeave, opacity: meshOpacity * 2.2, background: weaveBg(rgbOf(meshColor)) }} />
               <div style={S.meshSheen} />
               <canvas
                 ref={paintRef}
@@ -947,8 +963,13 @@ export default function FlowerCanvasStudio() {
             <input type="range" min="1" max="10" step="0.1" value={barW} onChange={e => setBarW(+e.target.value)} />
           </label>
           <label style={S.mini}>Bar color <input type="color" value={barColor} onChange={e => setBarColor(e.target.value)} /></label>
-          <label style={S.slider}>Mesh visibility — {(meshOpacity * 100) | 0}%
-            <input type="range" min="0" max="0.5" step="0.01" value={meshOpacity} onChange={e => setMeshOpacity(+e.target.value)} />
+          <div style={S.row}>
+            <label style={S.mini}>Mesh color <input type="color" value={meshColor} onChange={e => setMeshColor(e.target.value)} /></label>
+            <button style={S.btn} onClick={() => setMeshColor("#FAF9F5")}>bare</button>
+          </div>
+          <label style={S.slider}>
+            Mesh opacity — {(meshOpacity * 100) | 0}% {meshOpacity < 0.02 ? "(invisible)" : meshOpacity > 0.9 ? "(solid)" : ""}
+            <input type="range" min="0" max="1" step="0.01" value={meshOpacity} onChange={e => setMeshOpacity(+e.target.value)} />
           </label>
 
           {["paint", "erase", "chrome"].includes(tool) && (<>
@@ -1078,7 +1099,8 @@ const styles = {
   frame: { position: "relative", boxShadow: "0 18px 40px rgba(40,35,25,.35), 0 2px 6px rgba(40,35,25,.25)", borderRadius: 2 },
   frameGrain: { position: "absolute", inset: 0, borderRadius: 2, pointerEvents: "none", background: "repeating-linear-gradient(92deg, rgba(255,255,255,.06) 0 2px, rgba(0,0,0,.07) 2px 5px)", mixBlendMode: "overlay" },
   mesh: { position: "relative", overflow: "hidden", background: "transparent", boxShadow: "inset 0 0 22px rgba(30,25,15,.28)" },
-  meshWeave: { position: "absolute", inset: 0, pointerEvents: "none", zIndex: 400, background: "repeating-linear-gradient(0deg, rgba(252,250,244,.9) 0 .5px, transparent .5px 3px), repeating-linear-gradient(90deg, rgba(252,250,244,.9) 0 .5px, transparent .5px 3px)" },
+  /* background is supplied inline from meshColor — see weaveBg() */
+  meshWeave: { position: "absolute", inset: 0, pointerEvents: "none", zIndex: 400 },
   meshSheen: { position: "absolute", inset: 0, pointerEvents: "none", zIndex: 401, background: "linear-gradient(112deg, rgba(255,255,255,.14) 0%, rgba(255,255,255,0) 34%, rgba(255,255,255,.05) 70%, rgba(255,255,255,0) 100%)" },
   paint: { position: "absolute", inset: 0, width: "100%", height: "100%" },
   dims: { marginTop: 14, fontSize: 12, color: "#5D6152", letterSpacing: 0.4 },
