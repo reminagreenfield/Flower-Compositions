@@ -8,13 +8,29 @@ import { useState, useRef, useEffect, useMemo } from "react";
 
 const PAINT_RES = 8;    // paint raster resolution, px per cm
 const EXPORT_RES = 12;  // export resolution, px per cm
+const BEND_REACH = 0.18; // furthest sideways lean of a stem tip, as a fraction of the flower's height
 
 /* ── SVG PRIMITIVES ───────────────────────────────────────────── */
 function svgWrap(w, h, inner) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}">${inner}</svg>`;
 }
-const stemPath = (x, topY, botY, sway, color, sw) =>
-  `<path d="M ${x} ${botY} C ${x + sway} ${botY - (botY - topY) * 0.4}, ${x - sway} ${topY + (botY - topY) * 0.3}, ${x} ${topY}" fill="none" stroke="${color}" stroke-width="${sw}" stroke-linecap="round"/>`;
+
+/* Bending a stem leans its tip sideways by `tipDx` SVG units. The
+   viewBox grows by that much on BOTH sides, so the flower never clips
+   and its centre — and therefore its real height — stays put. A bend of
+   0 adds no padding and renders exactly as it did before.
+   `build(tipDx)` draws the flower with its head shifted by tipDx.      */
+function bendWrap(w, h, bend, build) {
+  const tipDx = (bend || 0) * BEND_REACH * h;
+  const pad = Math.abs(tipDx);
+  return svgWrap(w + pad * 2, h, `<g transform="translate(${pad} 0)">${build(tipDx)}</g>`);
+}
+
+/* Fraction of the bend felt at height y — full at the tip, none at the base. */
+const bendAt = (y, topY, botY) => (botY - y) / (botY - topY);
+
+const stemPath = (x, topY, botY, sway, color, sw, tipDx = 0) =>
+  `<path d="M ${x} ${botY} C ${x + sway} ${botY - (botY - topY) * 0.4}, ${x - sway + tipDx * 0.35} ${topY + (botY - topY) * 0.3}, ${x + tipDx} ${topY}" fill="none" stroke="${color}" stroke-width="${sw}" stroke-linecap="round"/>`;
 
 /* ── ARCHETYPE GENERATORS ─────────────────────────────────────── */
 /* Each accepts a params object and returns { svg(variant, mono) } */
@@ -40,8 +56,13 @@ function spike({
   droop = 8,
   floretShape = "ellipse",
 } = {}) {
+  const S = 0.95;                                        // head scale, shared by both variants
+  // florets are rotated ±30°, so their reach is the ellipse's diagonal, not its ry
+  const reach = Math.hypot(floretW, floretH) * S;
+  const budH = (density - 1) * spacing * S + 4 + 2 * reach;
   return {
-    svg(variant, mono) {
+    budRatio: budH / 400,
+    svg(variant, mono, bend) {
       const c1 = mono || palette[0], c2 = mono || (palette[1] || palette[0]);
       const stem = mono || stemColor;
       const floret = (cx, cy, col, angle, s) => {
@@ -60,46 +81,39 @@ function spike({
         }
         return f;
       };
-      if (variant === "bud") return svgWrap(64, 400, body(32, 20, 2.4));
-      return svgWrap(64, 400, stemPath(32, 150, 398, droop, stem, stemThickness) + body(32, 10, 0.95));
+      if (variant === "bud") return svgWrap(64, budH, body(32, reach, S));
+      return bendWrap(64, 400, bend, (dx) =>
+        stemPath(32, 150, 398, droop, stem, stemThickness, dx) + body(32 + dx, 10, S));
     },
   };
 }
 
 /** ball – spherical head with scattered dot florets on a stem.
- *  proportions: { headR, budHeadR, dotRMin, dotRMax, budDotRMin, budDotRMax } */
+ *  proportions: { headR, dotRMin, dotRMax } */
 function ball({
   palette = ["#D9A521", "#E7B637", "#C4930F"],
   stemColor = "#7A8B52",
   stemThickness = 4,
   density = 60,
-  proportions: {
-    headR = 28, budHeadR = 48,
-    dotRMin = 1.4, dotRMax = 2.4,
-    budDotRMin = 2, budDotRMax = 4,
-  } = {},
+  proportions: { headR = 28, dotRMin = 1.4, dotRMax = 2.4 } = {},
   droop = 16,
 } = {}) {
   return {
-    svg(variant, mono) {
+    budRatio: (headR * 2) / 455,
+    svg(variant, mono, bend) {
       const base = mono || palette[0];
       const stem = mono || stemColor;
-      if (variant === "bud") {
+      const head = (cx, cy) => {
         let dots = "";
-        for (let i = 0; i < density * 1.5; i++) {
-          const a = Math.random() * Math.PI * 2, r = Math.sqrt(Math.random()) * (budHeadR - 2);
-          dots += `<circle cx="${50 + Math.cos(a) * r}" cy="${50 + Math.sin(a) * r}" r="${budDotRMin + Math.random() * (budDotRMax - budDotRMin)}" fill="${mono || (Math.random() > .5 ? palette[1] : palette[2])}"/>`;
+        for (let i = 0; i < density; i++) {
+          const a = Math.random() * Math.PI * 2, r = Math.sqrt(Math.random()) * (headR - 2);
+          dots += `<circle cx="${cx + Math.cos(a) * r}" cy="${cy + Math.sin(a) * r}" r="${dotRMin + Math.random() * (dotRMax - dotRMin)}" fill="${mono || palette[1]}"/>`;
         }
-        return svgWrap(100, 100, `<circle cx="50" cy="50" r="${budHeadR}" fill="${base}"/>${dots}`);
-      }
-      let dots = "";
-      for (let i = 0; i < density; i++) {
-        const a = Math.random() * Math.PI * 2, r = Math.sqrt(Math.random()) * (headR - 2);
-        dots += `<circle cx="${50 + Math.cos(a) * r}" cy="${30 + Math.sin(a) * r}" r="${dotRMin + Math.random() * (dotRMax - dotRMin)}" fill="${mono || palette[1]}"/>`;
-      }
-      return svgWrap(100, 455,
-        stemPath(50, 56, 452, droop, stem, stemThickness) +
-        `<circle cx="50" cy="30" r="${headR}" fill="${base}"/>` + dots);
+        return `<circle cx="${cx}" cy="${cy}" r="${headR}" fill="${base}"/>` + dots;
+      };
+      if (variant === "bud") return svgWrap(headR * 2, headR * 2, head(headR, headR));
+      return bendWrap(100, 455, bend, (dx) =>
+        stemPath(50, 56, 452, droop, stem, stemThickness, dx) + head(50 + dx, 30));
     },
   };
 }
@@ -114,22 +128,26 @@ function plume({
   proportions: { spread = 52 } = {},
   droop = 6,
 } = {}) {
+  const FIELD = 210;              // length of the strand field on the stem variant
+  const budH = FIELD + 32;        // strands overshoot 8 above and 24 below the field
   return {
-    svg(variant, mono) {
+    budRatio: budH / 440,
+    svg(variant, mono, bend) {
       const c1 = mono || palette[0], c2 = mono || (palette[1] || palette[0]);
       const stem = mono || stemColor;
-      const plumeBody = (h) => {
+      const plumeBody = (ox, oy, h) => {
         let s = "";
         for (let i = 0; i < density; i++) {
-          const t = Math.random(), y = 12 + t * h;
+          const t = Math.random(), y = oy + t * h;
           const sp = Math.sin(Math.PI * Math.min(1, t + .05)) * spread + 6;
-          const x = 66 + (Math.random() * 2 - 1) * sp;
-          s += `<path d="M 66 ${y + 24} Q ${x} ${y + 10} ${x + (Math.random() * 14 - 7)} ${y - 8}" stroke="${Math.random() > .5 ? c1 : c2}" stroke-width="${1 + Math.random() * 1.6}" fill="none" opacity="${mono ? 1 : 0.6 + Math.random() * 0.4}" stroke-linecap="round"/>`;
+          const x = ox + (Math.random() * 2 - 1) * sp;
+          s += `<path d="M ${ox} ${y + 24} Q ${x} ${y + 10} ${x + (Math.random() * 14 - 7)} ${y - 8}" stroke="${Math.random() > .5 ? c1 : c2}" stroke-width="${1 + Math.random() * 1.6}" fill="none" opacity="${mono ? 1 : 0.6 + Math.random() * 0.4}" stroke-linecap="round"/>`;
         }
         return s;
       };
-      if (variant === "bud") return svgWrap(132, 300, plumeBody(270));
-      return svgWrap(132, 440, stemPath(66, 200, 438, droop, stem, stemThickness) + plumeBody(210));
+      if (variant === "bud") return svgWrap(132, budH, plumeBody(66, 8, FIELD));
+      return bendWrap(132, 440, bend, (dx) =>
+        stemPath(66, 200, 438, droop, stem, stemThickness, dx) + plumeBody(66 + dx, 12, FIELD));
     },
   };
 }
@@ -147,20 +165,24 @@ function leafyBranch({
   leafShape = "round",
 } = {}) {
   return {
-    svg(_variant, mono) {
+    budRatio: 1,               // no separate head — the whole sprig is the flower
+    svg(_variant, mono, bend) {
       const l1 = mono || palette[0], l2 = mono || (palette[1] || palette[0]);
       const stem = mono || palette[2] || stemColor;
-      let leaves = "";
-      for (let i = 0; i < density; i++) {
-        const y = 40 + i * spacing, side = i % 2 ? 1 : -1, r = leafR - i * 0.8;
-        if (leafShape === "oval") {
-          leaves += `<ellipse cx="${66 + side * offset}" cy="${y}" rx="${r * 0.65}" ry="${r}" fill="${i % 2 ? l1 : l2}"/>`;
-        } else {
-          leaves += `<circle cx="${66 + side * offset}" cy="${y}" r="${r}" fill="${i % 2 ? l1 : l2}"/>`;
+      return bendWrap(132, 440, bend, (dx) => {
+        let leaves = "";
+        for (let i = 0; i < density; i++) {
+          const y = 40 + i * spacing, side = i % 2 ? 1 : -1, r = leafR - i * 0.8;
+          const ox = 66 + dx * bendAt(y, 20, 436);   // leaves ride the bend of the stem
+          if (leafShape === "oval") {
+            leaves += `<ellipse cx="${ox + side * offset}" cy="${y}" rx="${r * 0.65}" ry="${r}" fill="${i % 2 ? l1 : l2}"/>`;
+          } else {
+            leaves += `<circle cx="${ox + side * offset}" cy="${y}" r="${r}" fill="${i % 2 ? l1 : l2}"/>`;
+          }
+          leaves += `<line x1="${ox}" y1="${y + 14}" x2="${ox + side * 30}" y2="${y + 4}" stroke="${stem}" stroke-width="2.5"/>`;
         }
-        leaves += `<line x1="66" y1="${y + 14}" x2="${66 + side * 30}" y2="${y + 4}" stroke="${stem}" stroke-width="2.5"/>`;
-      }
-      return svgWrap(132, 440, stemPath(66, 20, 436, droop, stem, stemThickness) + leaves);
+        return stemPath(66, 20, 436, droop, stem, stemThickness, dx) + leaves;
+      });
     },
   };
 }
@@ -175,19 +197,21 @@ function frond({
   proportions: { maxLen = 66, widthTaper = 2.4 } = {},
 } = {}) {
   return {
-    svg(_variant, mono) {
+    budRatio: 1,               // no separate head — the whole frond is the flower
+    svg(_variant, mono, bend) {
       const c = mono || palette[0];
-      let pinnae = "";
-      for (let i = 0; i < density; i++) {
-        const t = i / density, y = 20 + t * 400;
-        const len = Math.sin(Math.PI * Math.min(1, t * 1.15 + 0.08)) * maxLen + 6;
-        const sw = 5 - t * widthTaper;
-        pinnae += `<path d="M 68 ${y} q -${len * 0.6} -8 -${len} 4" stroke="${c}" stroke-width="${sw}" fill="none" stroke-linecap="round"/>`;
-        pinnae += `<path d="M 68 ${y + 9} q ${len * 0.6} -8 ${len} 4" stroke="${c}" stroke-width="${sw}" fill="none" stroke-linecap="round"/>`;
-      }
-      return svgWrap(136, 440,
-        `<path d="M 68 436 C 74 300, 62 140, 68 10" stroke="${c}" stroke-width="${stemThickness}" fill="none"/>` +
-        pinnae);
+      return bendWrap(136, 440, bend, (dx) => {
+        let pinnae = "";
+        for (let i = 0; i < density; i++) {
+          const t = i / density, y = 20 + t * 400;
+          const ox = 68 + dx * bendAt(y, 10, 436);   // pinnae ride the bend of the rachis
+          const len = Math.sin(Math.PI * Math.min(1, t * 1.15 + 0.08)) * maxLen + 6;
+          const sw = 5 - t * widthTaper;
+          pinnae += `<path d="M ${ox} ${y} q -${len * 0.6} -8 -${len} 4" stroke="${c}" stroke-width="${sw}" fill="none" stroke-linecap="round"/>`;
+          pinnae += `<path d="M ${ox} ${y + 9} q ${len * 0.6} -8 ${len} 4" stroke="${c}" stroke-width="${sw}" fill="none" stroke-linecap="round"/>`;
+        }
+        return stemPath(68, 10, 436, 6, c, stemThickness, dx) + pinnae;
+      });
     },
   };
 }
@@ -201,8 +225,12 @@ function rosette({
   proportions: { headScale = 1 } = {},
   droop = 12,
 } = {}) {
+  const HEAD_BOX = 100;                        // nominal head bbox in local units
+  const S = 0.92;                              // head scale, shared by both variants
+  const budV = HEAD_BOX * S * headScale;
   return {
-    svg(variant, mono) {
+    budRatio: budV / 400,
+    svg(variant, mono, bend) {
       const p1 = mono || palette[0], p2 = mono || (palette[1] || palette[0]), p3 = mono || (palette[2] || palette[0]);
       const stem = mono || stemColor;
       const head = (cx, cy, sc) => `
@@ -212,11 +240,11 @@ function rosette({
           <path d="M -16 -2 Q -16 -20 2 -22 Q 20 -22 20 -6 Q 20 10 2 14 Q -14 14 -16 -2 Z" fill="${p3}"/>
           <circle cx="1" cy="-4" r="7" fill="${p2}"/>
         </g>`;
-      if (variant === "bud") return svgWrap(120, 120, head(60, 60, 1.05));
-      return svgWrap(120, 400,
-        stemPath(60, 90, 398, droop, stem, stemThickness) +
-        `<path d="M 60 96 l -16 26 M 60 96 l 15 24" stroke="${stem}" stroke-width="3" stroke-linecap="round"/>` +
-        head(60, 52, 0.92));
+      if (variant === "bud") return svgWrap(budV, budV, head(budV / 2, budV / 2, S));
+      return bendWrap(120, 400, bend, (dx) =>
+        stemPath(60, 90, 398, droop, stem, stemThickness, dx) +
+        `<path d="M ${60 + dx} 96 l -16 26 M ${60 + dx} 96 l 15 24" stroke="${stem}" stroke-width="3" stroke-linecap="round"/>` +
+        head(60 + dx, 52, S));
     },
   };
 }
@@ -232,15 +260,19 @@ function seedPod({
   droop = 10,
   fuzz = true,
 } = {}) {
+  const PAD = fuzz ? 8 : 2;                     // room for the blur to fall off
+  const budW = rx * 2 + PAD * 2, budH = ry * 2 + PAD * 2;
   return {
-    svg(variant, mono) {
+    budRatio: budH / 420,
+    svg(variant, mono, bend) {
       const c = mono || palette[0], c2 = mono || (palette[1] || palette[0]);
       const stem = mono || stemColor;
       const blur = `<defs><filter id="f" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="${fuzz && !mono ? 3 : 0}"/></filter></defs>`;
       const pod = (cx, cy, s) =>
         `<g filter="url(#f)"><ellipse cx="${cx}" cy="${cy}" rx="${rx * s}" ry="${ry * s}" fill="${c}"/><ellipse cx="${cx + offsetX * s}" cy="${cy + offsetY * s}" rx="${innerRx * s}" ry="${innerRy * s}" fill="${c2}"/></g>`;
-      if (variant === "bud") return svgWrap(80, 110, blur + pod(40, 55, 1.25));
-      return svgWrap(80, 420, blur + stemPath(40, 80, 418, droop, stem, stemThickness) + pod(40, 46, 1));
+      if (variant === "bud") return svgWrap(budW, budH, blur + pod(budW / 2, budH / 2, 1));
+      return bendWrap(80, 420, bend, (dx) =>
+        blur + stemPath(40, 80, 418, droop, stem, stemThickness, dx) + pod(40 + dx, 46, 1));
     },
   };
 }
@@ -249,39 +281,39 @@ function seedPod({
 /* Each entry spreads a generator's svg method and adds its own    */
 /* id, name, real heights (cm), aspect, and representative color.  */
 
-const ASSETS = [
+const RAW_ASSETS = [
   {
-    id: "craspedia", name: "Craspedia (billy ball)", hStem: 60, hBud: 3.5, aspect: 0.22,
+    id: "craspedia", name: "Craspedia (billy ball)", hStem: 60, aspect: 0.22,
     color: "#D9A521",
     ...ball({ palette: ["#D9A521", "#E7B637", "#C4930F"], stemColor: "#7A8B52", stemThickness: 4, density: 60, droop: 16 }),
   },
   {
-    id: "lavender", name: "Lavender spike", hStem: 42, hBud: 8, aspect: 0.16,
+    id: "lavender", name: "Lavender spike", hStem: 42, aspect: 0.16,
     color: "#7E6BAE",
     ...spike({ palette: ["#8A76BC", "#6A559E"], stemColor: "#7C8F5E", stemThickness: 3, density: 16, droop: 8 }),
   },
   {
-    id: "fern", name: "Fern frond", hStem: 45, hBud: 45, aspect: 0.34,
+    id: "fern", name: "Fern frond", hStem: 45, aspect: 0.34,
     color: "#4E6B3C",
     ...frond({ palette: ["#4E6B3C"], stemColor: "#4E6B3C", stemThickness: 4.5, density: 22 }),
   },
   {
-    id: "bunny", name: "Bunny tail grass", hStem: 50, hBud: 6, aspect: 0.14,
+    id: "bunny", name: "Bunny tail grass", hStem: 50, aspect: 0.14,
     color: "#EDE4D2",
     ...seedPod({ palette: ["#EDE4D2", "#F7F1E4"], stemColor: "#C9BC9C", stemThickness: 2.5, droop: 10, fuzz: true }),
   },
   {
-    id: "rose", name: "Dried rose", hStem: 35, hBud: 5, aspect: 0.3,
+    id: "rose", name: "Dried rose", hStem: 35, aspect: 0.3,
     color: "#A8555C",
     ...rosette({ palette: ["#A8555C", "#8E3F49", "#C27078"], stemColor: "#6E7B4E", stemThickness: 4, droop: 12 }),
   },
   {
-    id: "eucalyptus", name: "Eucalyptus stem", hStem: 55, hBud: 55, aspect: 0.3,
+    id: "eucalyptus", name: "Eucalyptus stem", hStem: 55, aspect: 0.3,
     color: "#8FA48B",
     ...leafyBranch({ palette: ["#8FA48B", "#7C927A", "#9A8A6C"], stemColor: "#9A8A6C", stemThickness: 3.5, density: 9, droop: 10, leafShape: "round" }),
   },
   {
-    id: "pampas", name: "Pampas plume", hStem: 90, hBud: 30, aspect: 0.3,
+    id: "pampas", name: "Pampas plume", hStem: 90, aspect: 0.3,
     color: "#E4D3B8",
     ...plume({ palette: ["#E4D3B8", "#D3BE9C"], stemColor: "#B9A57F", stemThickness: 3, density: 110, droop: 6 }),
   },
@@ -289,9 +321,12 @@ const ASSETS = [
     /* Nigella bleached — custom starburst head; no archetype fits a radial crown.
        Head = 12 pointed outer petals + 8 shorter inner petals + fine bract needles.
        Colors sampled from photo: near-white petals, warm straw shadows, tan stem. */
-    id: "nigella", name: "Nigella bleached", hStem: 50, hBud: 9.4, aspect: 0.27,
+    id: "nigella", name: "Nigella bleached", hStem: 50, aspect: 0.27,
     color: "#F0EAD6",
-    svg(variant, mono) {
+    /* head scale 0.88; ink reaches 1.39 x the petal length once the
+       bracts are counted, so the bud viewBox is sized to exactly that. */
+    budRatio: (2 * 1.39 * 34 * 0.88) / 470,
+    svg(variant, mono, bend) {
       const petal  = mono || "#F7F3EA";   // near-white petal face
       const shadow = mono || "#E4CFA0";   // warm cream shadow / center
       const bract  = mono || "#D9C28A";   // straw needle bracts
@@ -347,105 +382,116 @@ const ASSETS = [
         return f;
       };
 
-      if (variant === "bud") return svgWrap(100, 100, head(50, 50, 1, Math.PI * 2));
-      return svgWrap(100, 470,
-        stemPath(50, 50, 468, 10, stemC, 2.2) +
-        head(50, 48, 0.88, Math.PI * 230 / 180));
+      const V = 2 * 1.39 * 34 * 0.88;   // bud viewBox side = full starburst at head scale
+      if (variant === "bud") return svgWrap(V, V, head(V / 2, V / 2, 0.88, Math.PI * 2));
+      return bendWrap(100, 470, bend, (dx) =>
+        stemPath(50, 50, 468, 10, stemC, 2.2, dx) +
+        head(50 + dx, 48, 0.88, Math.PI * 230 / 180));
     },
   },
 
   /* ── More dried & preserved stems ─────────────────────────────── */
   {
-    id: "statice", name: "Statice", hStem: 45, hBud: 9, aspect: 0.2,
+    id: "statice", name: "Statice", hStem: 45, aspect: 0.2,
     color: "#7B5EA7",
     ...spike({ palette: ["#8C6EB8", "#6A4C93"], stemColor: "#8A9367", stemThickness: 3, density: 14, droop: 7, proportions: { floretW: 7, floretH: 4.5, spread: 20, spacing: 10 } }),
   },
   {
-    id: "wheat", name: "Wheat ear", hStem: 58, hBud: 11, aspect: 0.13,
+    id: "wheat", name: "Wheat ear", hStem: 58, aspect: 0.13,
     color: "#D5B15E",
     ...spike({ palette: ["#DDBB6A", "#C39B47"], stemColor: "#C7B183", stemThickness: 2.5, density: 12, droop: 5, floretShape: "diamond", proportions: { floretW: 5, floretH: 7, spread: 9, spacing: 11 } }),
   },
   {
-    id: "strawflower", name: "Strawflower", hStem: 32, hBud: 5, aspect: 0.32,
+    id: "strawflower", name: "Strawflower", hStem: 32, aspect: 0.32,
     color: "#E0A02A",
     ...rosette({ palette: ["#E0A02A", "#C2801A", "#F0C25C"], stemColor: "#8A8A57", stemThickness: 3.5, droop: 9 }),
   },
   {
-    id: "peony-dried", name: "Dried peony", hStem: 38, hBud: 8, aspect: 0.34,
+    id: "peony-dried", name: "Dried peony", hStem: 38, aspect: 0.34,
     color: "#C98894",
     ...rosette({ palette: ["#C98894", "#A9636F", "#E0AAB2"], stemColor: "#6E7B4E", stemThickness: 4.5, droop: 10, proportions: { headScale: 1.25 } }),
   },
   {
-    id: "gypsophila", name: "Baby's breath", hStem: 40, hBud: 14, aspect: 0.34,
+    id: "gypsophila", name: "Baby's breath", hStem: 40, aspect: 0.34,
     color: "#F2EFE6",
     ...plume({ palette: ["#F7F5EE", "#E4DFD0"], stemColor: "#A8B089", stemThickness: 2, density: 90, droop: 8, proportions: { spread: 46 } }),
   },
   {
-    id: "caspia", name: "Caspia", hStem: 44, hBud: 15, aspect: 0.32,
+    id: "caspia", name: "Caspia", hStem: 44, aspect: 0.32,
     color: "#C7B6D6",
     ...plume({ palette: ["#C7B6D6", "#AFA0C2"], stemColor: "#9A9A7A", stemThickness: 2, density: 100, droop: 9, proportions: { spread: 44 } }),
   },
   {
-    id: "broombloom", name: "Broom bloom", hStem: 38, hBud: 13, aspect: 0.33,
+    id: "broombloom", name: "Broom bloom", hStem: 38, aspect: 0.33,
     color: "#EFE7D2",
     ...plume({ palette: ["#F2EBD8", "#DCD2B8"], stemColor: "#A9A484", stemThickness: 2, density: 80, droop: 7, proportions: { spread: 42 } }),
   },
   {
-    id: "setaria", name: "Foxtail (setaria)", hStem: 60, hBud: 12, aspect: 0.12,
+    id: "setaria", name: "Foxtail (setaria)", hStem: 60, aspect: 0.12,
     color: "#C9B676",
     ...plume({ palette: ["#D2BF80", "#B8A45F"], stemColor: "#A89566", stemThickness: 2.5, density: 130, droop: 14, proportions: { spread: 20 } }),
   },
   {
-    id: "amaranthus", name: "Amaranthus", hStem: 55, hBud: 20, aspect: 0.3,
+    id: "amaranthus", name: "Amaranthus", hStem: 55, aspect: 0.3,
     color: "#7E3B45",
     ...plume({ palette: ["#8C424D", "#6B2F38"], stemColor: "#7A6A4E", stemThickness: 3, density: 120, droop: 20, proportions: { spread: 40 } }),
   },
   {
-    id: "echinops", name: "Globe thistle", hStem: 62, hBud: 4.5, aspect: 0.2,
+    id: "echinops", name: "Globe thistle", hStem: 62, aspect: 0.2,
     color: "#7C89A8",
-    ...ball({ palette: ["#7C89A8", "#94A0BC", "#65728F"], stemColor: "#8A8E6E", stemThickness: 4.5, density: 90, droop: 10, proportions: { headR: 26, budHeadR: 46, dotRMin: 1.2, dotRMax: 2.2, budDotRMin: 2, budDotRMax: 3.6 } }),
+    ...ball({ palette: ["#7C89A8", "#94A0BC", "#65728F"], stemColor: "#8A8E6E", stemThickness: 4.5, density: 90, droop: 10, proportions: { headR: 26, dotRMin: 1.2, dotRMax: 2.2 } }),
   },
   {
-    id: "yarrow", name: "Yarrow (achillea)", hStem: 52, hBud: 7, aspect: 0.3,
+    id: "yarrow", name: "Yarrow (achillea)", hStem: 52, aspect: 0.3,
     color: "#D6B33C",
-    ...ball({ palette: ["#D6B33C", "#E3C55C", "#BE9B24"], stemColor: "#7E8B55", stemThickness: 4, density: 120, droop: 8, proportions: { headR: 34, budHeadR: 48, dotRMin: 2, dotRMax: 3.4, budDotRMin: 2.6, budDotRMax: 4.4 } }),
+    ...ball({ palette: ["#D6B33C", "#E3C55C", "#BE9B24"], stemColor: "#7E8B55", stemThickness: 4, density: 120, droop: 8, proportions: { headR: 34, dotRMin: 2, dotRMax: 3.4 } }),
   },
   {
-    id: "gomphrena", name: "Globe amaranth", hStem: 36, hBud: 2.5, aspect: 0.16,
+    id: "gomphrena", name: "Globe amaranth", hStem: 36, aspect: 0.16,
     color: "#B34A82",
-    ...ball({ palette: ["#B34A82", "#C86098", "#98376C"], stemColor: "#7E8B55", stemThickness: 3, density: 55, droop: 12, proportions: { headR: 20, budHeadR: 46, dotRMin: 1.4, dotRMax: 2.6, budDotRMin: 2.4, budDotRMax: 4.2 } }),
+    ...ball({ palette: ["#B34A82", "#C86098", "#98376C"], stemColor: "#7E8B55", stemThickness: 3, density: 55, droop: 12, proportions: { headR: 20, dotRMin: 1.4, dotRMax: 2.6 } }),
   },
   {
-    id: "poppypod", name: "Poppy seed pod", hStem: 46, hBud: 5, aspect: 0.18,
+    id: "poppypod", name: "Poppy seed pod", hStem: 46, aspect: 0.18,
     color: "#9BA68C",
     ...seedPod({ palette: ["#9BA68C", "#B0BA9E"], stemColor: "#8B9476", stemThickness: 3.5, droop: 8, fuzz: false, proportions: { rx: 30, ry: 30, innerRx: 20, innerRy: 18, offsetX: -6, offsetY: -4 } }),
   },
   {
-    id: "lagurus-pink", name: "Bunny tail (pink)", hStem: 48, hBud: 6, aspect: 0.14,
+    id: "lagurus-pink", name: "Bunny tail (pink)", hStem: 48, aspect: 0.14,
     color: "#E7C3CB",
     ...seedPod({ palette: ["#E7C3CB", "#F3DCE1"], stemColor: "#C9BC9C", stemThickness: 2.5, droop: 10, fuzz: true }),
   },
   {
-    id: "phalaris", name: "Canary grass", hStem: 46, hBud: 6, aspect: 0.15,
+    id: "phalaris", name: "Canary grass", hStem: 46, aspect: 0.15,
     color: "#DCCBA6",
     ...seedPod({ palette: ["#DCCBA6", "#EBDFC2"], stemColor: "#B9A87E", stemThickness: 2.2, droop: 12, fuzz: false, proportions: { rx: 18, ry: 34, innerRx: 11, innerRy: 24, offsetX: -5, offsetY: 6 } }),
   },
   {
-    id: "ruscus", name: "Ruscus sprig", hStem: 50, hBud: 50, aspect: 0.28,
+    id: "ruscus", name: "Ruscus sprig", hStem: 50, aspect: 0.28,
     color: "#4F6B45",
     ...leafyBranch({ palette: ["#4F6B45", "#3E5837", "#6E7A4E"], stemColor: "#6E7A4E", stemThickness: 3, density: 11, droop: 8, leafShape: "oval", proportions: { leafR: 22, spacing: 38, offset: 30 } }),
   },
   {
-    id: "ruscus-bleached", name: "Ruscus bleached", hStem: 48, hBud: 48, aspect: 0.28,
+    id: "ruscus-bleached", name: "Ruscus bleached", hStem: 48, aspect: 0.28,
     color: "#E3DAC4",
     ...leafyBranch({ palette: ["#E8E0CC", "#D6CBB0", "#C3B695"], stemColor: "#C3B695", stemThickness: 3, density: 11, droop: 8, leafShape: "oval", proportions: { leafR: 22, spacing: 38, offset: 30 } }),
   },
   {
-    id: "palmspear", name: "Palm spear (bleached)", hStem: 70, hBud: 70, aspect: 0.3,
+    id: "palmspear", name: "Palm spear (bleached)", hStem: 70, aspect: 0.3,
     color: "#E6DCC2",
     ...frond({ palette: ["#E6DCC2"], stemColor: "#D2C4A2", stemThickness: 5, density: 26, proportions: { maxLen: 60, widthTaper: 2.8 } }),
   },
 ];
+
+/* hBud is never hand-typed. Each generator reports `budRatio` — how much
+   of its full-stem drawing the head occupies — so a stemless head comes
+   out at exactly the size it is when it is still on its stem.
+   budRatio 1 (foliage) means there is no separate head, so the bud/stem
+   toggle stays hidden for those. */
+const ASSETS = RAW_ASSETS.map(a => ({
+  ...a,
+  hBud: +(a.hStem * a.budRatio).toFixed(2),
+}));
 
 const BLEND_MODES = ["normal", "multiply", "screen", "overlay", "soft-light", "hard-light", "difference", "color-burn", "lighten", "darken"];
 const CHROME_STOPS = [
@@ -500,11 +546,11 @@ export default function FlowerCanvasStudio() {
 
   /* svg cache so random dots don't reshuffle every render */
   const svgCache = useRef({});
-  const assetUrl = (asset, variant, mono) => {
-    const key = `${asset.id}|${variant}|${mono || ""}`;
+  const assetUrl = (asset, variant, mono, bend = 0) => {
+    const key = `${asset.id}|${variant}|${mono || ""}|${bend}`;
     if (!svgCache.current[key]) {
       if (asset.builtin) {
-        svgCache.current[key] = "data:image/svg+xml;utf8," + encodeURIComponent(asset.svg(variant, mono));
+        svgCache.current[key] = "data:image/svg+xml;utf8," + encodeURIComponent(asset.svg(variant, mono, bend));
       } else {
         svgCache.current[key] = asset.dataUrl;
       }
@@ -590,7 +636,7 @@ export default function FlowerCanvasStudio() {
       id: uid(), assetId: asset.id,
       x: canvasW / 2 + (Math.random() * 6 - 3), y: canvasH / 2 + (Math.random() * 6 - 3),
       scale: 1, rotation: 0, flip: false, opacity: 1, blend: "normal",
-      variant: "stem", silhouette: false, silColor: "#111111",
+      variant: "stem", bend: 0, silhouette: false, silColor: "#111111",
     };
     setStamps(v => [...v, s]); setSelectedId(s.id); setTool("select");
   };
@@ -623,7 +669,7 @@ export default function FlowerCanvasStudio() {
   const punchOut = async (s) => {
     const asset = allAssets.find(a => a.id === s.assetId); if (!asset) return;
     const img = new Image();
-    img.src = assetUrl(asset, s.variant, asset.builtin ? "#000" : null);
+    img.src = assetUrl(asset, s.variant, asset.builtin ? "#000" : null, s.bend);
     await img.decode();
     const cv = paintRef.current, ctx = cv.getContext("2d");
     const hPx = assetH(asset, s.variant) * s.scale * PAINT_RES;
@@ -676,7 +722,7 @@ export default function FlowerCanvasStudio() {
     for (const s of stamps) {
       const asset = allAssets.find(a => a.id === s.assetId); if (!asset) continue;
       const img = new Image();
-      img.src = assetUrl(asset, s.variant, s.silhouette && asset.builtin ? s.silColor : null);
+      img.src = assetUrl(asset, s.variant, s.silhouette && asset.builtin ? s.silColor : null, s.bend);
       try { await img.decode(); } catch { continue; }
       const hPx = assetH(asset, s.variant) * s.scale * R;
       const wPx = hPx * (img.width / img.height);
@@ -785,7 +831,7 @@ export default function FlowerCanvasStudio() {
                 const asset = allAssets.find(a => a.id === s.assetId); if (!asset) return null;
                 const hPx = assetH(asset, s.variant) * s.scale * zoom;
                 const sil = s.silhouette;
-                const url = assetUrl(asset, s.variant, sil && asset.builtin ? s.silColor : null);
+                const url = assetUrl(asset, s.variant, sil && asset.builtin ? s.silColor : null, s.bend);
                 const uploadFilter = sil && !asset.builtin
                   ? (s.silColor === "#FFFFFF" ? "brightness(0) invert(1)" : "brightness(0)") : "none";
                 return (
@@ -884,6 +930,13 @@ export default function FlowerCanvasStudio() {
                 <input type="range" min="-180" max="180" step="1" value={selected.rotation}
                   onChange={e => patch(selected.id, { rotation: +e.target.value })} />
               </label>
+              {asset?.builtin && selected.variant !== "bud" && (
+                <label style={S.slider}>
+                  Stem bend — {selected.bend ? `${fmt(Math.abs(selected.bend) * BEND_REACH * realH, unit)} ${selected.bend < 0 ? "left" : "right"}` : "straight"}
+                  <input type="range" min="-1" max="1" step="0.05" value={selected.bend ?? 0}
+                    onChange={e => patch(selected.id, { bend: +e.target.value })} />
+                </label>
+              )}
               <label style={S.slider}>Opacity — {(selected.opacity * 100) | 0}%
                 <input type="range" min="0.05" max="1" step="0.05" value={selected.opacity}
                   onChange={e => patch(selected.id, { opacity: +e.target.value })} />
