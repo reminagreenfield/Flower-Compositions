@@ -10,6 +10,10 @@ const PAINT_RES = 8;    // paint raster resolution, px per cm
 const EXPORT_RES = 12;  // export resolution, px per cm
 const BEND_REACH = 0.18; // furthest sideways lean of a stem tip, as a fraction of the flower's height
 
+/* The plaster wall behind the piece. This is what you see THROUGH the mesh,
+   so the stage and the PNG export both read from here to stay in step. */
+const WALL = { light: "#E4DFD3", dark: "#CEC8BA", flat: "#D9D3C6" };
+
 /* ── SVG PRIMITIVES ───────────────────────────────────────────── */
 function svgWrap(w, h, inner) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}">${inner}</svg>`;
@@ -794,6 +798,8 @@ export default function FlowerCanvasStudio() {
     ctx.fillStyle = barColor; ctx.fillRect(0, 0, out.width, out.height);
     ctx.save(); ctx.translate(bw, bw);
     ctx.beginPath(); ctx.rect(0, 0, W, H); ctx.clip();
+    /* the open middle of the frame is wall, then the sheer mesh washes over it */
+    ctx.fillStyle = WALL.flat; ctx.fillRect(0, 0, W, H);
     ctx.fillStyle = `rgba(${rgbOf(meshColor)},${meshOpacity})`; ctx.fillRect(0, 0, W, H);
 
     const drawPaint = () => {
@@ -899,8 +905,10 @@ export default function FlowerCanvasStudio() {
 
         {/* ---------- center: the drum ---------- */}
         <main style={S.stage} onPointerDown={() => tool === "select" && setSelectedId(null)}>
-          <div style={{ ...S.frame, padding: barW * zoom, background: barColor }}>
-            <div style={S.frameGrain} />
+          {/* Bars are drawn as a border, not a filled box, so the middle of the
+              frame stays open and the wall — not the wood — shows through the mesh. */}
+          <div style={{ ...S.frame, borderWidth: barW * zoom, borderStyle: "solid", borderColor: barColor }}>
+            <div style={{ ...S.frameGrain, inset: -(barW * zoom) }} />
             <div ref={meshRef} style={{
               ...S.mesh, width: meshWpx, height: meshHpx,
               /* the fabric's own tint — kept translucent so the wall reads through */
@@ -1095,7 +1103,7 @@ const styles = {
   body: { display: "flex", flex: 1, minHeight: 0 },
   left: { width: 230, background: panelBg, borderRight: "1px solid #C9C4B6", padding: 12, overflowY: "auto", display: "flex", flexDirection: "column", gap: 10 },
   right: { width: 250, background: panelBg, borderLeft: "1px solid #C9C4B6", padding: 12, overflowY: "auto", display: "flex", flexDirection: "column", gap: 10 },
-  stage: { flex: 1, overflow: "auto", display: "grid", placeItems: "center", padding: 40, background: "radial-gradient(120% 100% at 50% 0%, #E4DFD3 0%, #CEC8BA 100%)" },
+  stage: { flex: 1, overflow: "auto", display: "grid", placeItems: "center", padding: 40, background: `radial-gradient(120% 100% at 50% 0%, ${WALL.light} 0%, ${WALL.dark} 100%)` },
   frame: { position: "relative", boxShadow: "0 18px 40px rgba(40,35,25,.35), 0 2px 6px rgba(40,35,25,.25)", borderRadius: 2 },
   frameGrain: { position: "absolute", inset: 0, borderRadius: 2, pointerEvents: "none", background: "repeating-linear-gradient(92deg, rgba(255,255,255,.06) 0 2px, rgba(0,0,0,.07) 2px 5px)", mixBlendMode: "overlay" },
   mesh: { position: "relative", overflow: "hidden", background: "transparent", boxShadow: "inset 0 0 22px rgba(30,25,15,.28)" },
