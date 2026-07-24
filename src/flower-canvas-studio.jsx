@@ -15,22 +15,82 @@ function svgWrap(w, h, inner) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}">${inner}</svg>`;
 }
 
-/* Bending a stem leans its tip sideways by `tipDx` SVG units. The
-   viewBox grows by that much on BOTH sides, so the flower never clips
-   and its centre — and therefore its real height — stays put. A bend of
-   0 adds no padding and renders exactly as it did before.
-   `build(tipDx)` draws the flower with its head shifted by tipDx.      */
-function bendWrap(w, h, bend, build) {
-  const tipDx = (bend || 0) * BEND_REACH * h;
-  const pad = Math.abs(tipDx);
-  return svgWrap(w + pad * 2, h, `<g transform="translate(${pad} 0)">${build(tipDx)}</g>`);
-}
+/* How far a stem tip leans sideways, in SVG units, for a given bend. */
+const bendDx = (bend, h) => (bend || 0) * BEND_REACH * h;
 
-/* Fraction of the bend felt at height y — full at the tip, none at the base. */
-const bendAt = (y, topY, botY) => (botY - y) / (botY - topY);
+/* The viewBox grows by `pad` on BOTH sides so a leaning flower never
+   clips and its centre — and therefore its real height — stays put.
+   pad 0 renders exactly as an unbent stem always did.                 */
+const padWrap = (w, h, pad, inner) =>
+  svgWrap(w + pad * 2, h, `<g transform="translate(${pad} 0)">${inner}</g>`);
 
 const stemPath = (x, topY, botY, sway, color, sw, tipDx = 0) =>
   `<path d="M ${x} ${botY} C ${x + sway} ${botY - (botY - topY) * 0.4}, ${x - sway + tipDx * 0.35} ${topY + (botY - topY) * 0.3}, ${x + tipDx} ${topY}" fill="none" stroke="${color}" stroke-width="${sw}" stroke-linecap="round"/>`;
+
+/* ── STEM GEOMETRY ────────────────────────────────────────────── */
+/* A stem is one cubic bezier. Sampling it gives every height along the
+   stem a real position AND a real direction, so heads and leaves can
+   sit on the curve and lean with it instead of sliding sideways while
+   staying bolt upright. Same control points as stemPath above.        */
+function stemFrame(x, topY, botY, sway, tipDx = 0) {
+  const P = [
+    [x, botY],
+    [x + sway, botY - (botY - topY) * 0.4],
+    [x - sway + tipDx * 0.35, topY + (botY - topY) * 0.3],
+    [x + tipDx, topY],
+  ];
+  const N = 48, pts = [];
+  for (let i = 0; i <= N; i++) {
+    const t = i / N, u = 1 - t;
+    const px = u*u*u*P[0][0] + 3*u*u*t*P[1][0] + 3*u*t*t*P[2][0] + t*t*t*P[3][0];
+    const py = u*u*u*P[0][1] + 3*u*u*t*P[1][1] + 3*u*t*t*P[2][1] + t*t*t*P[3][1];
+    const dx = 3*u*u*(P[1][0]-P[0][0]) + 6*u*t*(P[2][0]-P[1][0]) + 3*t*t*(P[3][0]-P[2][0]);
+    const dy = 3*u*u*(P[1][1]-P[0][1]) + 6*u*t*(P[2][1]-P[1][1]) + 3*t*t*(P[3][1]-P[2][1]);
+    pts.push({ x: px, y: py, a: Math.atan2(dx, -dy) * 180 / Math.PI }); // 0° = straight up, + = leans right
+  }
+  const tip = pts[N];
+  const at = (y) => {
+    for (let i = 0; i < N; i++) {
+      const A = pts[i], B = pts[i + 1];
+      if ((y <= A.y && y >= B.y) || (y >= A.y && y <= B.y)) {
+        const f = Math.abs(B.y - A.y) < 1e-6 ? 0 : (y - A.y) / (B.y - A.y);
+        return { x: A.x + (B.x - A.x) * f, angle: A.a + (B.a - A.a) * f };
+      }
+    }
+    const E = y > pts[0].y ? pts[0] : tip;   // above the tip: carry the tip's frame
+    return { x: E.x, angle: E.a };
+  };
+  return {
+    at,
+    tipAngle: tip.a,
+    /* A long head (spike, plume) hinges where it meets the stem, so it
+       pivots on the tip and swings as one piece. */
+    head: (inner) =>
+      `<g transform="rotate(${tip.a} ${tip.x} ${topY}) translate(${tipDx} 0)">${inner}</g>`,
+
+    /* A compact head (ball, rosette, pod, crown) instead rides out along
+       the stem's direction and turns about its OWN centre. Pivoting such
+       a head on the tip would swing its far edge upward and out of the
+       viewBox; carrying the centre keeps it inside and looks the same. */
+    crown: (inner, cx, cy) => {
+      const r = tip.a * Math.PI / 180, dist = topY - cy;
+      const nx = tip.x + dist * Math.sin(r), ny = topY - dist * Math.cos(r);
+      return `<g transform="rotate(${tip.a} ${nx} ${ny}) translate(${nx - cx} ${ny - cy})">${inner}</g>`;
+    },
+    /* A leaf or pinna drawn at height y off the axis x0: dropped onto the
+       curve at that height and turned to match the stem's lean there. */
+    along: (y, x0, inner) => {
+      const f = at(y);
+      // transform list applies right-to-left: spin about the attach point
+      // as drawn, THEN slide that point onto the curve.
+      return `<g transform="translate(${f.x - x0} 0) rotate(${f.angle} ${x0} ${y})">${inner}</g>`;
+    },
+    /* Margin the drawing needs once things swing out. `reach` is how far
+       the swinging part extends from its pivot. Over-padding only adds
+       transparent margin, so this errs generous. */
+    pad: (reach) => Math.abs(tipDx) + reach * Math.abs(Math.sin(tip.a * Math.PI / 180)),
+  };
+}
 
 /* ── ARCHETYPE GENERATORS ─────────────────────────────────────── */
 /* Each accepts a params object and returns { svg(variant, mono) } */
@@ -82,8 +142,10 @@ function spike({
         return f;
       };
       if (variant === "bud") return svgWrap(64, budH, body(32, reach, S));
-      return bendWrap(64, 400, bend, (dx) =>
-        stemPath(32, 150, 398, droop, stem, stemThickness, dx) + body(32 + dx, 10, S));
+      const dx = bendDx(bend, 400);
+      const fr = stemFrame(32, 150, 398, droop, dx);
+      return padWrap(64, 400, fr.pad(140 + reach),
+        stemPath(32, 150, 398, droop, stem, stemThickness, dx) + fr.head(body(32, 10, S)));
     },
   };
 }
@@ -112,8 +174,10 @@ function ball({
         return `<circle cx="${cx}" cy="${cy}" r="${headR}" fill="${base}"/>` + dots;
       };
       if (variant === "bud") return svgWrap(headR * 2, headR * 2, head(headR, headR));
-      return bendWrap(100, 455, bend, (dx) =>
-        stemPath(50, 56, 452, droop, stem, stemThickness, dx) + head(50 + dx, 30));
+      const dx = bendDx(bend, 455);
+      const fr = stemFrame(50, 56, 452, droop, dx);
+      return padWrap(100, 455, fr.pad(26 + headR),
+        stemPath(50, 56, 452, droop, stem, stemThickness, dx) + fr.crown(head(50, 30), 50, 30));
     },
   };
 }
@@ -146,8 +210,10 @@ function plume({
         return s;
       };
       if (variant === "bud") return svgWrap(132, budH, plumeBody(66, 8, FIELD));
-      return bendWrap(132, 440, bend, (dx) =>
-        stemPath(66, 200, 438, droop, stem, stemThickness, dx) + plumeBody(66 + dx, 12, FIELD));
+      const dx = bendDx(bend, 440);
+      const fr = stemFrame(66, 200, 438, droop, dx);
+      return padWrap(132, 440, fr.pad(196),
+        stemPath(66, 200, 438, droop, stem, stemThickness, dx) + fr.head(plumeBody(66, 12, FIELD)));
     },
   };
 }
@@ -169,20 +235,19 @@ function leafyBranch({
     svg(_variant, mono, bend) {
       const l1 = mono || palette[0], l2 = mono || (palette[1] || palette[0]);
       const stem = mono || palette[2] || stemColor;
-      return bendWrap(132, 440, bend, (dx) => {
-        let leaves = "";
-        for (let i = 0; i < density; i++) {
-          const y = 40 + i * spacing, side = i % 2 ? 1 : -1, r = leafR - i * 0.8;
-          const ox = 66 + dx * bendAt(y, 20, 436);   // leaves ride the bend of the stem
-          if (leafShape === "oval") {
-            leaves += `<ellipse cx="${ox + side * offset}" cy="${y}" rx="${r * 0.65}" ry="${r}" fill="${i % 2 ? l1 : l2}"/>`;
-          } else {
-            leaves += `<circle cx="${ox + side * offset}" cy="${y}" r="${r}" fill="${i % 2 ? l1 : l2}"/>`;
-          }
-          leaves += `<line x1="${ox}" y1="${y + 14}" x2="${ox + side * 30}" y2="${y + 4}" stroke="${stem}" stroke-width="2.5"/>`;
-        }
-        return stemPath(66, 20, 436, droop, stem, stemThickness, dx) + leaves;
-      });
+      const dx = bendDx(bend, 440);
+      const fr = stemFrame(66, 20, 436, droop, dx);
+      let leaves = "";
+      for (let i = 0; i < density; i++) {
+        const y = 40 + i * spacing, side = i % 2 ? 1 : -1, r = leafR - i * 0.8;
+        const blade = leafShape === "oval"
+          ? `<ellipse cx="${66 + side * offset}" cy="${y}" rx="${r * 0.65}" ry="${r}" fill="${i % 2 ? l1 : l2}"/>`
+          : `<circle cx="${66 + side * offset}" cy="${y}" r="${r}" fill="${i % 2 ? l1 : l2}"/>`;
+        const petiole = `<line x1="66" y1="${y + 14}" x2="${66 + side * 30}" y2="${y + 4}" stroke="${stem}" stroke-width="2.5"/>`;
+        leaves += fr.along(y, 66, blade + petiole);   // sits on the curve, turns with it
+      }
+      return padWrap(132, 440, fr.pad(offset + leafR),
+        stemPath(66, 20, 436, droop, stem, stemThickness, dx) + leaves);
     },
   };
 }
@@ -200,18 +265,20 @@ function frond({
     budRatio: 1,               // no separate head — the whole frond is the flower
     svg(_variant, mono, bend) {
       const c = mono || palette[0];
-      return bendWrap(136, 440, bend, (dx) => {
-        let pinnae = "";
-        for (let i = 0; i < density; i++) {
-          const t = i / density, y = 20 + t * 400;
-          const ox = 68 + dx * bendAt(y, 10, 436);   // pinnae ride the bend of the rachis
-          const len = Math.sin(Math.PI * Math.min(1, t * 1.15 + 0.08)) * maxLen + 6;
-          const sw = 5 - t * widthTaper;
-          pinnae += `<path d="M ${ox} ${y} q -${len * 0.6} -8 -${len} 4" stroke="${c}" stroke-width="${sw}" fill="none" stroke-linecap="round"/>`;
-          pinnae += `<path d="M ${ox} ${y + 9} q ${len * 0.6} -8 ${len} 4" stroke="${c}" stroke-width="${sw}" fill="none" stroke-linecap="round"/>`;
-        }
-        return stemPath(68, 10, 436, 6, c, stemThickness, dx) + pinnae;
-      });
+      const dx = bendDx(bend, 440);
+      const fr = stemFrame(68, 10, 436, 6, dx);
+      let pinnae = "";
+      for (let i = 0; i < density; i++) {
+        const t = i / density, y = 20 + t * 400;
+        const len = Math.sin(Math.PI * Math.min(1, t * 1.15 + 0.08)) * maxLen + 6;
+        const sw = 5 - t * widthTaper;
+        const pair =
+          `<path d="M 68 ${y} q -${len * 0.6} -8 -${len} 4" stroke="${c}" stroke-width="${sw}" fill="none" stroke-linecap="round"/>` +
+          `<path d="M 68 ${y + 9} q ${len * 0.6} -8 ${len} 4" stroke="${c}" stroke-width="${sw}" fill="none" stroke-linecap="round"/>`;
+        pinnae += fr.along(y, 68, pair);              // sits on the rachis, turns with it
+      }
+      return padWrap(136, 440, fr.pad(maxLen + 6),
+        stemPath(68, 10, 436, 6, c, stemThickness, dx) + pinnae);
     },
   };
 }
@@ -241,10 +308,13 @@ function rosette({
           <circle cx="1" cy="-4" r="7" fill="${p2}"/>
         </g>`;
       if (variant === "bud") return svgWrap(budV, budV, head(budV / 2, budV / 2, S));
-      return bendWrap(120, 400, bend, (dx) =>
+      const dx = bendDx(bend, 400);
+      const fr = stemFrame(60, 90, 398, droop, dx);
+      return padWrap(120, 400, fr.pad(38 + 45 * headScale),
         stemPath(60, 90, 398, droop, stem, stemThickness, dx) +
-        `<path d="M ${60 + dx} 96 l -16 26 M ${60 + dx} 96 l 15 24" stroke="${stem}" stroke-width="3" stroke-linecap="round"/>` +
-        head(60 + dx, 52, S));
+        fr.crown(
+          `<path d="M 60 96 l -16 26 M 60 96 l 15 24" stroke="${stem}" stroke-width="3" stroke-linecap="round"/>` +
+          head(60, 52, S), 60, 52));
     },
   };
 }
@@ -271,8 +341,10 @@ function seedPod({
       const pod = (cx, cy, s) =>
         `<g filter="url(#f)"><ellipse cx="${cx}" cy="${cy}" rx="${rx * s}" ry="${ry * s}" fill="${c}"/><ellipse cx="${cx + offsetX * s}" cy="${cy + offsetY * s}" rx="${innerRx * s}" ry="${innerRy * s}" fill="${c2}"/></g>`;
       if (variant === "bud") return svgWrap(budW, budH, blur + pod(budW / 2, budH / 2, 1));
-      return bendWrap(80, 420, bend, (dx) =>
-        blur + stemPath(40, 80, 418, droop, stem, stemThickness, dx) + pod(40 + dx, 46, 1));
+      const dx = bendDx(bend, 420);
+      const fr = stemFrame(40, 80, 418, droop, dx);
+      return padWrap(80, 420, fr.pad(34 + ry),
+        blur + stemPath(40, 80, 418, droop, stem, stemThickness, dx) + fr.crown(pod(40, 46, 1), 40, 46));
     },
   };
 }
@@ -384,9 +456,11 @@ const RAW_ASSETS = [
 
       const V = 2 * 1.39 * 34 * 0.88;   // bud viewBox side = full starburst at head scale
       if (variant === "bud") return svgWrap(V, V, head(V / 2, V / 2, 0.88, Math.PI * 2));
-      return bendWrap(100, 470, bend, (dx) =>
+      const dx = bendDx(bend, 470);
+      const fr = stemFrame(50, 50, 468, 10, dx);
+      return padWrap(100, 470, fr.pad(46),
         stemPath(50, 50, 468, 10, stemC, 2.2, dx) +
-        head(50 + dx, 48, 0.88, Math.PI * 230 / 180));
+        fr.crown(head(50, 48, 0.88, Math.PI * 230 / 180), 50, 48));
     },
   },
 
