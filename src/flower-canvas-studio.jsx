@@ -285,6 +285,65 @@ const ASSETS = [
     color: "#E4D3B8",
     ...plume({ palette: ["#E4D3B8", "#D3BE9C"], stemColor: "#B9A57F", stemThickness: 3, density: 110, droop: 6 }),
   },
+  {
+    /* Nigella bleached — custom starburst head; no archetype fits a radial crown.
+       Head = 12 pointed outer petals + 8 shorter inner petals + fine bract needles.
+       Colors sampled from photo: near-white petals, warm straw shadows, tan stem. */
+    id: "nigella", name: "Nigella bleached", hStem: 50, hBud: 7, aspect: 0.27,
+    color: "#F0EAD6",
+    svg(variant, mono) {
+      const petal  = mono || "#F7F3EA";   // near-white petal face
+      const shadow = mono || "#E4CFA0";   // warm cream shadow / center
+      const bract  = mono || "#D9C28A";   // straw needle bracts
+      const stemC  = mono || "#C4A96E";   // tan stem
+
+      const head = (cx, cy, s) => {
+        let f = "";
+        const pl = 34 * s;  // outer petal length
+
+        // ── Thin straw needle-bracts behind petals (18, deterministic length variation)
+        for (let i = 0; i < 18; i++) {
+          const a = (i / 18) * Math.PI * 2 + 0.17;
+          const len = pl * (1.18 + 0.22 * Math.sin(i * 2.7));
+          const mx = cx + Math.cos(a) * len * 0.52;
+          const my = cy + Math.sin(a) * len * 0.52;
+          const deg = (a * 180 / Math.PI) - 90;
+          f += `<ellipse cx="${mx}" cy="${my}" rx="${1.8 * s}" ry="${len * 0.52}" fill="${bract}" transform="rotate(${deg} ${mx} ${my})" opacity="0.72"/>`;
+        }
+
+        // ── Outer petals (12, narrow pointed ellipses, slight length variation)
+        for (let i = 0; i < 12; i++) {
+          const a = (i / 12) * Math.PI * 2;
+          const len = pl * (0.84 + 0.16 * Math.sin(i * 1.9 + 0.6));
+          const mx = cx + Math.cos(a) * len * 0.5;
+          const my = cy + Math.sin(a) * len * 0.5;
+          const deg = (a * 180 / Math.PI) - 90;
+          const fill = (i % 4 === 0) ? shadow : petal;
+          f += `<ellipse cx="${mx}" cy="${my}" rx="${5 * s}" ry="${len * 0.52}" fill="${fill}" transform="rotate(${deg} ${mx} ${my})"/>`;
+        }
+
+        // ── Inner petal layer (8, shorter, between outer petals, slightly wider)
+        for (let i = 0; i < 8; i++) {
+          const a = ((i + 0.5) / 8) * Math.PI * 2;
+          const len = pl * 0.54;
+          const mx = cx + Math.cos(a) * len * 0.5;
+          const my = cy + Math.sin(a) * len * 0.5;
+          const deg = (a * 180 / Math.PI) - 90;
+          f += `<ellipse cx="${mx}" cy="${my}" rx="${6.5 * s}" ry="${len * 0.52}" fill="${petal}" transform="rotate(${deg} ${mx} ${my})" opacity="0.9"/>`;
+        }
+
+        // ── Center knot
+        f += `<circle cx="${cx}" cy="${cy}" r="${8 * s}" fill="${shadow}"/>`;
+        f += `<circle cx="${cx}" cy="${cy}" r="${4.5 * s}" fill="${petal}"/>`;
+        return f;
+      };
+
+      if (variant === "bud") return svgWrap(100, 100, head(50, 50, 1));
+      return svgWrap(100, 470,
+        stemPath(50, 82, 468, 10, stemC, 2.2) +
+        head(50, 48, 0.88));
+    },
+  },
 ];
 
 const BLEND_MODES = ["normal", "multiply", "screen", "overlay", "soft-light", "hard-light", "difference", "color-burn", "lighten", "darken"];
