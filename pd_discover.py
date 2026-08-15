@@ -12,6 +12,14 @@ SETS={
    "botanical-illustration","botanical-drawing","plant-photography","climbing-plants"],
  "celestial":["celestial","astronomy","stars","moon","sun","space","sky",
    "astrology","zodiac"],
+ # monsters: creatures/demonic/supernatural, deduped by uuid. Excludes broad
+ # "mythology"/"myth" (gods & heroes) and false-friend tags (shells, shelley,
+ # dragonflies, seashells).
+ "monsters":["monsters","sea-monsters","demons","demonology","demonic","devils",
+   "devil","grotesques","grotesque","gargoyles","human-animal-hybrid","animal-hybrid",
+   "hybrid-figures","bestiary","creatures","fantastical-creatures","mythological-creatures",
+   "sea-creatures","winged-creatures","beasts","serpents","serpentine","sea-serpents",
+   "dragons","chimera","goblins","ghosts","ghostly","supernatural","witches","witchcraft","hell"],
 }
 
 def get(url):
@@ -32,7 +40,9 @@ def restriction(img):
             flags.append(f"{k}={v}")
     return "; ".join(flags)
 
+want=sys.argv[1:] or list(SETS)
 for setname,tags in SETS.items():
+    if setname not in want: continue
     seen={}
     for tag in tags:
         p1=get(API.format(tag=tag,page=1))
