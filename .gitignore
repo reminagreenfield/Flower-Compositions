@@ -11,3 +11,10 @@ raw/
 scans/
 scans_split/
 _stage_*/
+_stage_upscale_pick.txt
+# Upscaling experiment — model weights + upscaled outputs, rebuildable from scripts
+_models/
+upscaled/
+# Public Domain Image Archive downloads (rebuildable from pd_*_index.csv + pd_fetch.py)
+botanical/
+celestial/
