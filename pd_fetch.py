@@ -1,10 +1,15 @@
 """Download full-res images listed in pd_<set>_index.csv into <set>/ folders.
 Resumable (skips files already present), rate-limited, writes a manifest."""
 import csv, os, re, sys, time, urllib.request
+from urllib.parse import quote
 UA={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 CDN="https://images.pdimagearchive.org"
+OK_EXT={".jpg",".jpeg",".png",".tif",".tiff",".webp",".gif"}
 def slug(s):
     return re.sub(r"[^a-z0-9]+","-",(s or "untitled").lower()).strip("-")[:60] or "untitled"
+def clean_ext(src):                       # src may carry a ?query; keep only a known ext
+    ext=os.path.splitext(src.split("?",1)[0])[1].lower()
+    return ext if ext in OK_EXT else ".jpg"
 def fetch(setname):
     os.makedirs(setname,exist_ok=True)
     rows=list(csv.DictReader(open(f"pd_{setname}_index.csv",encoding="utf-8")))
@@ -12,8 +17,7 @@ def fetch(setname):
     for i,r in enumerate(rows,1):
         if r["restriction"]:   # never auto-grab a flagged image
             man.append({**r,"file":"","status":"skipped-restricted"}); continue
-        ext=os.path.splitext(r["src"])[1].lower() or ".jpg"
-        fn=f"{slug(r['title'])}__{r['uuid'][:8]}{ext}"
+        fn=f"{slug(r['title'])}__{r['uuid'][:8]}{clean_ext(r['src'])}"
         path=os.path.join(setname,fn)
         r2={"file":fn,"uuid":r["uuid"],"title":r["title"],"artist":r["artist"],
             "date":r["date"],"w":r["w"],"h":r["h"],"tags":r["tags"],"status":""}
@@ -22,7 +26,8 @@ def fetch(setname):
             if i%200==0: print(f"  {setname} {i}/{len(rows)}",flush=True)
             continue
         try:
-            with urllib.request.urlopen(urllib.request.Request(CDN+r["src"],headers=UA),timeout=120) as resp:
+            url=CDN+quote(r["src"],safe="/?=&:%")   # encode spaces, keep URL structure
+            with urllib.request.urlopen(urllib.request.Request(url,headers=UA),timeout=120) as resp:
                 data=resp.read()
             open(path,"wb").write(data); ok+=1; r2["status"]="ok"
         except Exception as e:
