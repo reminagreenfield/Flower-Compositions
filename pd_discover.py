@@ -20,6 +20,18 @@ SETS={
    "hybrid-figures","bestiary","creatures","fantastical-creatures","mythological-creatures",
    "sea-creatures","winged-creatures","beasts","serpents","serpentine","sea-serpents",
    "dragons","chimera","goblins","ghosts","ghostly","supernatural","witches","witchcraft","hell"],
+ # animals: real fauna (zoological). Mythical creatures live in the monsters
+ # set instead; broad category tags with animal false-friends are excluded.
+ "animals":["animals","wildlife","zoology","fauna","birds","ornithology","pigeons",
+   "owls","eagles","ducks","parrots","hummingbirds","bird-of-paradise","fish","goldfish",
+   "catfish","pufferfish","balloonfish","flatfish","pescatology","insects","entomology",
+   "butterflies","moths","caterpillars","beetles","bees","spiders","ant-lion","marine",
+   "marine-life","marine-biology","sea-life","sea-creatures","jellyfish","whales","octopuses",
+   "starfish","seahorses","crabs","crustaceans","corals","shells","seashells","shellfish",
+   "dolphins","invertebrates","worms","horses","dogs","dog","cats","lions","tigers","bears",
+   "elephants","monkeys","primates","apes","rabbits","rats","bats","deer","sheep","goats",
+   "pigs","cattle","livestock","wombats","mammoths","snakes","reptiles","lizards","frogs",
+   "amphibians","vertebrates"],
 }
 
 def get(url):
