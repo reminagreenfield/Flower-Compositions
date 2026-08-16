@@ -20,3 +20,13 @@ botanical/
 celestial/
 monsters/
 animals/
+# Cut-out PNGs (rebuildable from extract_cutouts.py)
+botanical_cutouts/
+animals_cutouts/
+_stage_cutouts/
+_smoke/
+# scratch: python cache, contact sheets, old upscale batches
+__pycache__/
+_recon_*.jpg
+_kept_*.jpg
+ai_upscaled_*/
