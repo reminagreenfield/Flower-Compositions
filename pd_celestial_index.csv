@@ -1,0 +1,765 @@
+uuid,title,artist,date,src,w,h,restriction,tags
+006934f1-747c-4be9-9b2a-3ce6912c8cb3,Celestial apparitions over Nuremberg,Hans Glaser,1561,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00001.jpeg,6537,4670,,"celestial,sun"
+fca6f760-bb78-4f03-97ad-ec565ef9a30e,Creation of the Firmament,Paul Nash,1924,/collections/paul-nash-s-genesis/4-Creation-of-the-Firmament.jpg,2894,3681,,"celestial,sky"
+f07c942e-ddd0-45ff-9155-9a3041fbc24c,The Stars Also,Paul Nash,1924,/collections/paul-nash-s-genesis/8-The-Stars-Also.jpg,2953,3739,,"celestial,stars"
+2f3a608f-221f-483d-89ae-54c7327ce2e9,,Raffaele Mainella,1907,/collections/nos-invisibles/BSG_FOLRSUP15RES_0116.jpeg,4307,6255,,celestial
+1bb68af2-b919-4f2c-92da-c6133b178250,"Orbs and rainbows circling the sun in Nuremberg, 1580.",,1580,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00004.jpeg,5031,6367,,"astronomy,celestial,sun"
+27a36287-0057-4e6a-a7a7-d5b0095ef93f,"Northern lights observed over Ausburg on March 6, 1582, interpreted as an omen of disaster.",,1582,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00039.jpeg,6406,5344,,"astronomy,celestial"
+337c5913-1270-4a1e-9162-f0c850594893,"Report of a moon ring (halo) with two secondary moons, above Marburg in 1571.",,1571,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00037.jpeg,4528,6175,,"astronomy,celestial,moon,sun"
+433d0664-11f8-48ec-98cc-93c66b5e6d60,"Report of a halo around the sun on May 12, 1556 over Nuremberg.",,1556,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00014.jpeg,4208,5588,,"astronomy,celestial,sun"
+4258123c-43ec-4f55-a6a1-9a5a3247048d,"A luminous celestial phenomenon observed in Giromagny, France, December 22, 1572.",,1572,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00017.jpeg,5480,6909,,"astronomy,celestial,stars"
+8b864f7a-1ce2-4d4d-8335-544439a1c042,"Depiction of a halo and secondary sun apparition on January 16, 1561 over Rottenburg ob der Tauber.",,1561,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00038.jpeg,4304,6357,,"astronomy,celestial"
+8f7f7100-f631-4370-9933-bd51eece6ea6,"Celestial apparition on January 20, 1582 over Nuremberg.",,1582,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00005.jpeg,5179,6702,,"astronomy,celestial,moon,stars,sun"
+9f9c520a-55e9-4d06-96d5-b36ac2a421c0,"Depiction of a star that was seen in Calabria, with a fire-breathing dragon and the zodiac sign Aquarius.",,1585,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00035.jpeg,5568,7064,,"astronomy,celestial"
+a5193024-2f65-4334-b427-fd150bbc059c,"Report of two celestial phenomena observed near Worms on November 26 and 27, ca. 1540.",,ca. 1540,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00013.jpeg,6071,4016,,"astronomy,celestial,stars"
+b92dba4f-4552-4dcd-ac2f-2946352cb7e8,“The terrible miracle of two earthquakes which happened in Rossanna and Constantinople in 1556”.,,1556,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00011.jpeg,5175,6348,,"astronomy,celestial"
+b6a0f2f3-1506-449c-b727-1b539841103f,Northern lights observed between Saxony and Magdeburg in 1561.,,1561,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00021.jpeg,5909,4920,,"astronomy,celestial,stars"
+e4554e26-8318-49b0-89f4-8d23c6926c58,"Celestial apparition on December 18, 1564 near Schwabmünchen, Germany.",,1564,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00018.jpeg,5016,6312,,"astronomy,celestial"
+f58db960-b084-427c-b489-648aa1aaf2fe,Comet apparition from November 1577 with a view of Nuremberg.,,1577,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00031.jpeg,5504,6755,,"astronomy,celestial,sky"
+4a6cd96e-b84c-47fd-8b14-092df61e17ae,"Celestial phenomenon over Giromagny, 1572",Anonymous,1572,/shop/cp-1-small.jpg,1500,1153,,"astronomy,celestial,sun"
+23f56674-3eb6-4d21-9378-81d79cf7c8ff,"Celestial phenomenon over Marburg, 1571",Anonymous,1571,/shop/cp-5-small.jpg,1500,988,,"astronomy,celestial,sun"
+296bb0f4-4258-40db-b22f-6e51ecbf48c5,"Celestial phenomenon over Nuremberg, 1556",Anonymous,1556,/shop/cp-2-small.jpg,1500,1472,,"astronomy,celestial,sun"
+8f5fcfb2-5786-462d-8405-a04a650ebbd3,"Celestial phenomenon over Nuremberg, 1580",Anonymous,1580,/shop/cp-4-small.jpg,1500,1129,,"astronomy,celestial,sun"
+8e7b6ebd-cec3-4742-806f-4a7f7f35cd69,"Celestial phenomenon over Nuremberg, April, 1561",Anonymous,1561,/shop/cp-9-small.jpg,1500,1077,,"astronomy,celestial,sun"
+a4cc69d0-e44c-4c11-84c9-390bac903b57,"Celestial phenomenon over Nuremberg, March, 1561",Anonymous,1561,/shop/cp-6-small.jpg,1500,1526,,"astronomy,celestial,moon,sun"
+8550fb5b-44c5-4c0d-930b-43612acc5941,"Celestial phenomenon over Prague, 1580",Anonymous,1580,/shop/cp-8-small.jpg,1500,1040,,"astronomy,celestial,sun"
+91a69ca0-7067-4bbf-9bc0-9f4e8756d0e3,"Celestial phenomenon over Salon-de-Provence, 1554",Anonymous,1554,/shop/cp-7-small.jpg,6856,3896,,"astronomy,celestial,moon"
+d195b98d-b7fa-4d1d-8749-e6d7f15e8e89,"Celestial phenomenon over Worms, 1540",Anonymous,1540,/shop/cp-3-small.jpg,1500,985,,"astronomy,celestial,moon,stars"
+880b70cb-301d-42ec-90dd-9bf12d7b47cd,,,ca. 1880,/collections/paper-lantern-catalogue/DP110891-edit.jpeg,3898,4000,,"celestial,moon,stars"
+b9b8ffed-cca2-4b1d-a59a-c032906e26fb,,,ca. 1880,/collections/paper-lantern-catalogue/DP110895.jpg,3647,4000,,"celestial,moon,stars,sun"
+3e2b0793-55ef-453e-bd2f-c30d866023d3,Eclipse Diagram from *Smith's Illustrated Astronomy*,Asa Smith,1849,/shop/nov-2023-prints-00057.jpg,1005,1200,,"celestial,sun"
+cd85eefe-3593-4ce4-b6e9-9b9b75c43f82,"Universe with Earth, Sun, Moon, and Stars",Caspar Luyken,1712,/shop/nov-2023-prints-00036.jpg,1200,938,,"astronomy,celestial,stars,sun"
+58c9be64-d3d2-428b-b808-8f5e3775c13b,,Thomas Smillie,1890–1913,/collections/smillie-smithsonian/smillie-smithsonian-41.jpg,1600,1097,,celestial
+d4277b5b-85e6-4bdc-87d6-57f69cdb870e,A Missionary of the Middle Ages Tells That He Had Found the Point Where the Sky and the Earth Touch,Camille Flammarion,ca. 1888,/collections/flammarion-engraving/flam-engraving-2.jpg,1400,1173,,"celestial,space,stars,sun"
+f8c1dca9-a683-4258-9231-6481490c66ca,Melencolia I,Albrecht Dürer,1514,/essays/melancholy-polyhedra/11-DP820348-edit.jpeg,1092,1400,,celestial
+b153230c-b7e5-4127-bdf8-63910a675f67,Ideal View of Saturn’s Rings and Satellites From the Planet,Agnes Giberne,1898,/collections/story-of-sun-moon-stars/storyofsunmoonst00gibe_0230.jpeg,958,969,,"astronomy,celestial,moon,space,stars,sun"
+c77289fb-3b4b-4512-82bc-f1addf72a86c,The Great Shower of Shooting-Stars,Agnes Giberne,1898,/collections/story-of-sun-moon-stars/storyofsunmoonst00gibe_0098.jpeg,996,723,,"astronomy,celestial,sky,space,stars"
+48aeee21-0d65-48ba-8f3b-1c117aa5a793,Judgement Day,,ca. 1330,/collections/holkham-bible/holkham-bible-41.jpeg,989,1363,,celestial
+cde12e40-1a93-4cde-a690-7828a48a9c18,Jacob's Dream,William Blake,ca. 1805,/shop/nov-21-prints-00004.jpg,931,1200,,celestial
+4a49c866-ff6f-4ef6-a66d-fdba57342118,[The Earth With the Milky Way and Moon],Władysław T. Benda,ca. 1918,/essays/pannekoek/service-pnp-cai-2a11000-2a11600-2a11699v-edit.jpeg,1021,749,,"astronomy,celestial,stars"
+0f48a4a8-6e7b-459d-8be1-cea95a4f0c8f,"*Paradiso*, Canto I: Beatrice explaining scientific theories to Dante.",Giovanni di Paolo di Grazia,ca. 1450,/collections/dante-divine-comedy-in-art/dante-commedia-16.jpeg,1024,491,,celestial
+e601e9f6-b05e-4fb7-acbc-8198c33bf12d,"*Paradiso*, Canto XXI: Ascent to the Seventh Heaven, the Sphere of Saturn.",,ca. 1564,/collections/dante-divine-comedy-in-art/dante-commedia-41.jpg,1876,2283,,celestial
+fb98bd32-d07a-464a-8dac-0ce82f30780e,*Paradiso*: Dante and Beatrice before the Light.,Giovanni di Paolo di Grazia,ca. 1450,/collections/dante-divine-comedy-in-art/dante-commedia-19.jpeg,1023,586,,"celestial,sun"
+1cff2531-5854-4e86-b497-070542ad2ba6,Vesta,,1829,/collections/astronomia/10995138.jpg,1043,1536,,"astrology,astronomy,celestial,space,stars,zodiac"
+3dc27b77-99b3-48bd-b9ad-b376942741d7,Pallas,,1829,/collections/astronomia/10995141.jpg,1035,1520,,"astrology,astronomy,celestial,space,stars,zodiac"
+448d5305-a850-4428-8758-dcd14b1050fb,Herschel,,1829,/collections/astronomia/10995146.jpg,1058,1544,,"astrology,astronomy,celestial,moon,space,stars,zodiac"
+5d6209d7-88b3-48ec-a65e-a7bee4ce1f7e,Jupiter,,1829,/collections/astronomia/10995148.jpg,1058,1544,,"astrology,astronomy,celestial,space,stars,zodiac"
+5e783eff-9427-4730-bbad-e1ca26d9825f,Tellus,,1829,/collections/astronomia/10995145.jpg,1058,1544,,"astrology,astronomy,celestial,moon,space,stars,zodiac"
+535ac1f4-40ca-4257-8bba-90dc772a78e7,Ceres,,1829,/collections/astronomia/10995139.jpg,1043,1536,,"astrology,astronomy,celestial,space,stars,zodiac"
+62dcbb96-caa9-4b4a-b973-c3df7436be3c,Venus,,1829,/collections/astronomia/10995144.jpg,1058,1544,,"astrology,astronomy,celestial,moon,space,stars,zodiac"
+79065111-1067-4228-ac4b-de09d3be157d,Mercury,,1829,/collections/astronomia/10995142.jpg,1035,1520,,"astrology,astronomy,celestial,space,stars,zodiac"
+ad5e05c7-1a26-443f-b119-5652f180c65e,Mars,,1829,/collections/astronomia/10995143.jpg,1058,1544,,"astrology,astronomy,celestial,space,stars,zodiac"
+c8994b9c-9967-40ef-97f0-aa00ab493d17,Juno,,1829,/collections/astronomia/10995140.jpg,1035,1520,,"astrology,astronomy,celestial,space,stars,zodiac"
+d6c9675b-3b08-4e22-9064-153fc61e3c6b,The Sun,,1829,/collections/astronomia/10995149.jpg,1067,1568,,"astrology,astronomy,celestial,space,stars,sun,zodiac"
+d1a08242-d307-4574-80c7-82c3ef7881ad,Saturn,,1829,/collections/astronomia/10995147.jpg,1058,1544,,"astrology,astronomy,celestial,space,stars,zodiac"
+ed364958-9c19-460f-b085-e476ef32246c,Leo and Virgo,,1829,/collections/astronomia/10995150.jpg,1067,1546,,"astrology,astronomy,celestial,space,stars,zodiac"
+1d74f4e6-b011-4154-8f9e-d93a72a697b4,"“The Pleides , a well known Knot of Stars in the Sign Taurus.”",Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0133.jpg,805,1200,,"astronomy,celestial,space,stars"
+17662752-58ac-4a5a-b050-5702de115225,“A representation of a solar System.”,Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0107.jpg,1047,1200,,"astronomy,celestial,space,stars"
+2e460df3-a735-46f6-a9b3-f3f91efd6d0b,"A Section, and Segments of a Creation of a double Construction",Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0157.jpg,831,1200,,"astronomy,celestial,space,stars"
+29f68cd3-d6e3-47ed-9c6a-a07b707f1fdd,"“A Representation of the Convexity, if I may call it so.”",Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0151.jpg,1070,1200,,"astronomy,celestial,space,stars"
+35544451-94f6-41b9-99a8-2a8592a550bd,“The real Magnitude of the Globe of the Earth.”,Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0163.jpg,1152,1200,,"astronomy,celestial,space,stars"
+38018e7d-de41-4166-b1fe-1923d7f4554c,“A true Plan and Combination of the principal Stars that form the Persedes.”,Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0143.jpg,824,1200,,"astronomy,celestial,space,stars"
+3062b844-c766-450c-819a-fe3fac97f868,“[Hemisphere] where the true Tract of this most surprizing Zone of Light is distinguished amongst the principal Stars.”,Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0127.jpg,1190,1200,,"astronomy,celestial,space,stars"
+3eb396f5-6991-4997-a6cd-9a4329f3cf22,“An exact Scheme of the principal known Comets”,Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0121.jpg,830,1200,,"astronomy,celestial,space,stars"
+3c0029f6-566e-49ec-92b3-8dd11e856e3b,“A proportional Drawing of all the primary and secondary Planets together.”,Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0119.jpg,836,1200,,"astronomy,celestial,space,stars"
+34ada425-109d-4d96-a84b-ad07f0b549ba,"“The Body of the Earth and Moon, with their common Center of Gravity.”",Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0117.jpg,849,1200,,"astronomy,celestial,space,stars"
+482a4338-3dfd-4c22-882d-ed00bfd860cc,Plane and profile views of stars moving around a central body,Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0161.jpg,825,1200,,"astronomy,celestial,space,stars"
+413748dd-e48f-407f-8296-03004d810338,"“A perspective View of the visible Creation, including the regions around our Sun, Syrius and Rigel.”",Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0137.jpg,809,1200,,"astronomy,celestial,space,stars"
+4d9b5797-950a-4abc-b976-59cc026a46b8,"“A true Projection of the System of the known Comets, all in just Proportion and Position to the Orbits of Saturn and Jupiter.”",Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0113.jpg,1400,870,,"astronomy,celestial,space,stars"
+5a8248cb-f9ce-45f6-b2cc-25bdea3f82d1,"“A centeral Section of the same [the intire Creation], with the Eye of Providence seated in the Center, as in the virtual Agent of Creation.”",Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0153.jpg,1063,1200,,"astronomy,celestial,space,stars"
+6b9e0e9f-698e-427c-abf3-50df78127772,“A bright Part of this Zone near the Feet of Antinous.”,Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0131.jpg,803,1200,,"astronomy,celestial,space,stars"
+8b054671-ec35-4ebe-99ff-846cf53a62a3,“A Creation of a double Construction.”,Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0155.jpg,808,1200,,"astronomy,celestial,space,stars"
+8dcc88db-e763-4d3f-a24f-5470c87e053c,"Imaginary Section of an “artificial Horizon of a Globe”, with “all the stars scattered promiscuously”.",Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0149.jpg,823,1200,,"astronomy,celestial,space,stars"
+84c10c6b-5813-4edd-8e80-6d60d0201804,"Depiction of hypothesis — “local Motion of the Sun, the Earth in her proper secondary Orbit”.",Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0147.jpg,878,1200,,"astronomy,celestial,moon,space,stars,sun"
+91278900-3f73-42d9-8086-eda7281d8eda,"“Representing a section of the cosmical Theories of Oviedus, Bede, and many others.”",Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0109.jpg,1212,1200,,"astronomy,celestial,space,stars"
+0b04b90e-5d6f-42fb-877d-d47c65360f33,"“You may if you please, call a partial View of Immensity, or without much Impropriety perhaps, a finite View of Infinity”.",Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0165.jpg,791,1200,,"astronomy,celestial,space,stars"
+097f52bd-b492-4e47-b208-24dc93121d0b,"Stars moving “in the Manner of Saturn's Rings, nay, perhaps Ring within Ring, to a third or fourth Order”.",Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0159.jpg,822,1200,,"astronomy,celestial,space,stars"
+0e3ad900-c072-4910-b8a1-fc955b656dc9,"“A true Delineation of the Polar System, with the Trajectories of three of the principal Comets.”",Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0111.jpg,834,1200,,"astronomy,celestial,space,stars"
+a4345b7a-b601-40ab-97ee-b7fb1abf9d27,“A Plan of the principal Stars that form the Pleiades.”,Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0141.jpg,817,1200,,"astronomy,celestial,space,stars"
+c7f7e7dc-76dd-411e-8eab-9e0b4959ef8a,“[Hemisphere] where the true Tract of this most surprizing Zone of Light is distinguished amongst the principal Stars.”,Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0129.jpg,1199,1200,,"astronomy,celestial,space,stars"
+dd66ff93-3c42-4dbd-99f0-f99de2cd804c,"“The Object of that incomprehensible Being, which alone and in himself comprehends and constitutes supreme Perfection”.",Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0167.jpg,819,1200,,"astronomy,celestial,space,stars"
+da7fcea9-9d03-4e83-ab28-448ac3557ed7,"“A view of the Persides, another surprizing Knot of Stars.”",Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0135.jpg,801,1200,,"astronomy,celestial,space,stars"
+dc8818f3-6603-4c18-916a-1bbc75c6b44d,"“The Sun and Moon in the just Proportion of their mean Diameters, with two of the Comets A and B, and the five erratick Planets.”",Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0123.jpg,821,1200,,"astronomy,celestial,moon,space,stars,sun"
+d418ae02-9a11-480a-a9eb-d3033805891e,"“The satellite Systems, proportionable to one another.”",Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0115.jpg,831,1200,,"astronomy,celestial,space,stars"
+e45848ec-b78b-42aa-83b8-264e7ec1af9e,"Depiction of hypothesis — orbits of stars “all moving the same way”.""",Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0145.jpg,831,1200,,"astronomy,celestial,space,stars"
+eaefbf8a-4e4b-4a49-b209-dfb4d10c947d,“Part of a Medal representing the Solar System”,Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0105.jpg,823,1200,,"astronomy,celestial,space,stars"
+f66a6a58-aa1b-4a43-b5d8-76045c816040,“Shewing a decrease in the Obliquity of the Poles.”,Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0139.jpg,1400,966,,"astronomy,celestial,space,stars"
+f81eae49-8529-42da-9e1c-e9af287b9b5e,“Geometrical Scale to all the primary Parts of the visible Creation.”,Thomas Wright,1750,/collections/an-original-theory-or-new-hypothesis-of-the-universe/originaltheoryor00wrig_0125.jpg,1400,766,,"astronomy,celestial,space,stars"
+800abd4a-5700-4d04-b2ed-0fdeb182eabb,Solar Eclipse,Carleton Watkins,1889,/shop/nov-2020-prints-new-00044.jpg,1200,922,,"celestial,sun"
+ac72542d-b8d0-490b-8fb7-7a365b7992a7,Women Bathing Before an Architectural Panorama,Fayzullah,ca. 1765,/shop/nov-2020-prints-new-00045.jpg,853,1200,,celestial
+82e597d0-9220-47c4-a1c8-58e005ef07b9,Explanation of Why Saturn's Ring Changes as It Orbits the Sun,Christiaan Huygens,1659,/essays/the-uncertain-heavens/CristianiHugeni00Huyg_0075-edit-2.jpg,2158,1288,,"astronomy,celestial,moon"
+c79deed5-f30a-4db8-ae3e-d541fc9b24c7,"Orbiting Moons of Earth, Jupiter, and Saturn",Christiaan Huygens,1722,/essays/the-uncertain-heavens/b30537009_0001_0128-edit.jpg,1400,723,,"celestial,moon"
+44916560-e19b-4b4f-8697-9c86c28bd73c,,Elias Ashmole,1652,/collections/theatrum-chemicum/theatrumchemicum00ashm_0236.jpg,941,1200,,celestial
+98d8fdc2-6c76-408e-a961-19587a960e7e,,Elias Ashmole,1652,/collections/theatrum-chemicum/theatrumchemicum00ashm_0239.jpg,1200,959,,celestial
+de3908d2-b2dc-4ce8-8e07-8f1be79db4a2,,Elias Ashmole,1652,/collections/theatrum-chemicum/theatrumchemicum00ashm_0238.jpg,1200,758,,"celestial,moon,sun"
+817aa632-0899-41c4-83d2-eff152244e03,Herr Kristan von Hamle,,early 14th century,/essays/primary-sources/cpg848_0138-edit.jpg,966,1350,,"astronomy,celestial"
+3918bbc5-5d39-483b-abbe-fdba2fff4c0e,Lance,,1587,/collections/the-comet-book/veru.jpg,800,949,,"astronomy,celestial"
+8c95a2c6-88dc-4dc0-95be-7b2e17f7521b,Pertica,,1587,/collections/the-comet-book/pertica.jpg,800,944,,"astronomy,celestial,sky"
+2307dbba-aa69-4e8c-8a2c-3994ef57a4ce,Comet Pertica,Anonymous,1587,/shop/pertica-print-2.jpg,1048,1200,,"celestial,stars"
+18013f9e-6ff1-4d41-acb7-db69cf3dc9cd,Draco and Ursa Minor,Sidney Hall,ca. 1825,/shop/dec2019-12.jpg,832,1200,,"astronomy,celestial,stars"
+df4e43ff-6607-46b1-9cbb-5f1f0d9e4c98,Leo Major and the Leo Minor,Sidney Hall,ca. 1825,/shop/dec2019-9.jpg,834,1200,,"astronomy,celestial"
+18eb9de9-e6ac-4a86-bb6f-1ee7aa3b20f9,Aries and Musca Borealis,Sidney Hall,1824–5,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-10.jpg,1200,842,,"astrology,astronomy,celestial,zodiac"
+55ba915a-9313-462e-8ad2-76f27768c3e4,Libra,Sidney Hall,1824-5,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-22.jpg,1200,833,,"astrology,astronomy,celestial,stars,zodiac"
+532f6732-e105-4eb5-b800-c3becb4e7fad,Gemini,Sidney Hall,1824-5,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-11.jpg,1200,829,,"astrology,astronomy,celestial,zodiac"
+53e3e55c-92b3-4111-973d-08b18cc16125,"The Unicorn, Canis Minor",Sidney Hall,1824-5,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-5.jpg,1200,842,,"astrology,astronomy,celestial,stars,zodiac"
+62ace4f5-2354-4ee5-81d9-e783346cfedc,"Gloria Frederici, Andromeda",Sidney Hall,1824-5,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-23.jpg,827,1200,,"astrology,astronomy,celestial,zodiac"
+703a08d3-0a03-4efd-895a-5a8ddc833ed8,"The Lizard, Swan, Lyre, Fox and Anser",Sidney Hall,1824-5,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-18.jpg,1200,833,,"astrology,astronomy,celestial,zodiac"
+eea333fd-610c-4662-b12a-aeed396c376f,"The Eridanus, River, Whale, Sculptor",Sidney Hall,1824-5,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-19.jpg,1200,829,,"astrology,astronomy,celestial,zodiac"
+741e81f7-3d54-470a-9b33-fdbe26709d61,"Aurora Borealis, Presbyterian Mission at Point Barrow, Alaska",,1908,/collections/aurora-borealis-in-art/sheldonjacksonp00stew_0436.jpg,830,1280,,celestial
+79610023-caf3-4d00-8033-9c382cf7e358,View of the Aurora Borealis at 20h 48 m,,ca. 1894–9,/collections/aurora-borealis-in-art/RP-F-2001-7-1347D-15.jpg,1200,1136,,celestial
+151a669e-5c4f-4717-9b59-d03cebccf14f,Diagram of the Human Mind,Robert Fludd,1617,/shop/oct_19_new_prints_00044.jpg,726,1200,,celestial
+56524ef1-93de-4d58-a099-63c536cb33b7,Subterranean Fires,Athanasius Kircher,1678,/shop/oct_19_new_prints_00041.jpg,1200,970,,celestial
+ea8e9538-ac78-40e7-9baf-c97196c0b28b,"Paradise Lost: Book 3, Line 365",John Martin,1827,/collections/john-martin-s-illustrations-of-paradise-lost-1827/48008591761_7f6315311c_b.jpg,1024,725,,celestial
+f6ac521d-7bae-42a2-8da7-47ba00e0a7b4,"Paradise Lost: Book 4, Line 813",John Martin,1827,/collections/john-martin-s-illustrations-of-paradise-lost-1827/48008678077_c4a9322ede_b.jpg,1024,696,,celestial
+170ad5ea-5a96-4dc5-90c4-a8e0a527fa5c,,August Strindberg,1893–4,/collections/august-strindberg-s-celestographs-1893-4/47687974421_139ff0d70a_o.jpg,1484,1032,,celestial
+2d5e402e-1108-4540-aaec-60e1fa0b007a,,August Strindberg,1893–4,/collections/august-strindberg-s-celestographs-1893-4/40721730283_413c0017c2_o.jpg,1470,1026,,celestial
+374fe880-2440-49eb-946b-74084f62a1d2,,August Strindberg,1893–4,/collections/august-strindberg-s-celestographs-1893-4/47687974311_9c90e6eed3_o.jpg,1520,1080,,celestial
+55c6a484-7d85-4b46-852f-1ff2c4505dde,,August Strindberg,1893–4,/collections/august-strindberg-s-celestographs-1893-4/47687974301_eb8a266668_o.jpg,1512,1076,,celestial
+7ac9c83a-22cf-4995-a43d-4e7e0b84e4db,,August Strindberg,1893–4,/collections/august-strindberg-s-celestographs-1893-4/33808798758_32bc1df623_o.jpg,1500,999,,celestial
+8a6121ab-289b-4a07-9d5d-cb1844243e8e,,August Strindberg,1893–4,/collections/august-strindberg-s-celestographs-1893-4/32743174117_559c9b6e88_o.jpg,1500,1014,,celestial
+925de3b7-93b8-4fc4-a924-62d04bd44733,,August Strindberg,1893–4,/collections/august-strindberg-s-celestographs-1893-4/46772087905_296f66751c_o.jpg,1516,1076,,celestial
+c15cb4d4-c7a6-493b-8912-cf2d9d0e17b5,,August Strindberg,1893–4,/collections/august-strindberg-s-celestographs-1893-4/40721730323_6cb8d1de39_o.jpg,1481,1024,,celestial
+d94297c6-3069-41ae-8340-92a42eca2881,,August Strindberg,1893–4,/collections/august-strindberg-s-celestographs-1893-4/47634649052_1aff4f9a43_o.jpg,1500,916,,celestial
+fd89f859-567f-4e75-afa8-353210eb9299,,August Strindberg,1893–4,/collections/august-strindberg-s-celestographs-1893-4/32744449237_277a45a6c7_o.jpg,1500,1009,,celestial
+6441c8ec-5624-4273-9eab-5bf18b1d0e35,La Peri,Gustave Moreau,1865,/shop/edit-La-Peri.jpg,637,900,,celestial
+2d7bf23f-a1d3-497b-9e17-cb04b6d78926,The Fan of Iris,J. J. Grandville,1844,/shop/edit-unautremondetran00gran_0_0197.jpeg,983,1200,,celestial
+01622602-8c5e-4f45-ab6b-28dd1c0c5257,A Conjugal Eclipse,J. J. Grandville,1844,/shop/edit-unautremondetran00gran_0_0126.jpeg,972,1200,,celestial
+1e97265a-4e38-4643-9da2-dc43954694b0,A Bridge Leads from One World to the Next,J. J. Grandville,1844,/shop/edit-unautremondetran00gran_0_0183.jpg,1200,780,,"astronomy,celestial"
+2ad0877c-b797-4bb7-a082-9a1f2c476b34,Map of the Winds,Jan Janssonius,1650,/shop/edit-1650_Jansson_Wind_Rose_Anemographic_Chart_or_Map_of_the_Winds_-_Geographicus_-_Anemographica-jannson-1650.jpg,1200,959,,celestial
+6bd2e9b2-030d-437f-b579-2b65ff1b1cd6,Dream,Odilon Redon,ca. 1880,/shop/RP-P-1946-172-edit-1.jpg,830,1200,,celestial
+67882798-8c7a-4d44-acb4-5a342c2bd637,"Behemoth and Leviathan, from Illustrations of the Book of Job, 1825-26",William Blake,ca. 1825,/shop/DP816554-1.jpg,947,1200,,celestial
+beed9487-5222-4f10-9542-c93103769816,Behemoth and Leviathan,William Blake,ca. 1805,/shop/ba-obj-3954-0001-pub-print-lg_preview-1.jpeg,720,1024,,celestial
+7eeae0b0-09c7-45b8-b5a6-205233465197,The Creation,William Blake,ca. 1805,/shop/ba-obj-3953-0001-pub-print-lg_preview-1.jpeg,646,1024,,"celestial,stars"
+ed5f81e3-9ca3-4eba-a333-fce38265614d,"America a Prophecy, Plate 1",William Blake,1793,/shop/ba-obj-3850-0001-pub-print-lg_preview-1.jpeg,734,1024,,celestial
+b7852261-ffa6-4ad7-b5c3-2a33a235c07f,"Jerusalem, Plate 100",William Blake,1804 to 1820,/shop/ba-obj-3431-0001-pub-print-lg_preview-1.jpeg,1280,889,,celestial
+5ab8cbc9-3397-4d76-8544-3e584604a2d0,Celestial Chart,Tobias Conrad Lotter,ca. 1772,/shop/ct003612-edit-1.jpeg,1222,1024,,"astronomy,celestial"
+62e54a16-fb88-47c5-93d7-6e321aaa954e,Tycho And Its Surroundings,James Nasymth,1874,/collections/photographs-of-models-of-the-moon-1874/32118189098_3b85c5fff9_b.jpg,770,1024,,"astronomy,celestial,moon"
+9cd5d544-8c86-429c-be66-00be175300bf,Wargentin,James Nasymth,1874,/collections/photographs-of-models-of-the-moon-1874/32118188678_6693ae7e61_b.jpg,762,1024,,"astronomy,celestial,moon"
+04a2d9b0-0528-44f0-961a-b08bda3dd930,"The Troll was quite willing, and before long he fell asleep and began snoring.",Kay Nielsen,1922,/collections/east-of-the-sun-and-west-of-the-moon-illustrated-by-kay-nielsen-1922-edition/45026762004_48a74e7b34_c.jpg,561,799,,celestial
+122870e5-643e-4c5b-9810-a91f195a7bf2,Aratus' Model of the Universe,Andreas Cellarius,1660,/collections/the-celestial-atlas-of-andreas-cellarius-1660/ct003815-edit-1.jpeg,1203,1024,,"astrology,astronomy,celestial,zodiac"
+216fa04b-52f3-4c90-a291-52f1fa7760d8,Ptolemaic View of the Universe,Andreas Cellarius,1660,/collections/the-celestial-atlas-of-andreas-cellarius-1660/44314455264_2ba341170f_o.jpg,1145,985,,"astronomy,celestial"
+544fe7a7-75b4-4d4d-9839-702427f55f62,Northern Celestial Hemisphere,Andreas Cellarius,1660,/collections/the-celestial-atlas-of-andreas-cellarius-1660/43222490920_012e11ef13_o.jpg,1200,1020,,"astrology,astronomy,celestial,zodiac"
+bd110d92-44b4-4c75-9539-98b84218f876,Copernican System of the Universe,Andreas Cellarius,1660,/collections/the-celestial-atlas-of-andreas-cellarius-1660/43222488160_d36f171260_o.jpg,1200,1028,,"astrology,astronomy,celestial,sun,zodiac"
+c1abe68d-2f14-4c45-8dc9-695f14048e96,Selenographic Phases of the Moon,Andreas Cellarius,1660,/collections/the-celestial-atlas-of-andreas-cellarius-1660/30097865217_0c5cc36379_o.jpg,1200,1016,,"astronomy,celestial,moon"
+f1c68175-7df7-4b34-a1cf-e6ad0d873d49,Southern Celestial Hemisphere,Andreas Cellarius,1660,/collections/the-celestial-atlas-of-andreas-cellarius-1660/30097863037_f3e890341b_o.jpg,1200,1028,,"astrology,astronomy,celestial,zodiac"
+f6616218-c254-45b9-8650-c74f28133ece,Top: Diagram of the planetary orbits and zodiac; Bottom: Diagram of the planet cycles.,,late 12th century,/collections/cosmography-manuscript-12th-century/42729291905_04336e6e44_b.jpg,606,1024,,"astrology,astronomy,celestial"
+51f65ccd-6758-4d8a-9a35-20cd396a38b0,A Map of all the EARTH and how after the Flood it Was Divided among the Sons of Noah,Joseph Moxon,1711,/collections/maps-showing-california-as-an-island/41222635375_83204d2a8d_b.jpg,1000,774,,celestial
+c0c9f565-861f-489a-9ca1-d36eea58c9ab,The Holy Altars,George Psalmanazar,1704,/essays/made-in-taiwan-how-a-frenchman-fooled-18th-century-london/41496949802_51b1482813_o.jpg,760,1292,,"celestial,moon,stars,sun"
+68858bc5-5974-4d46-8a03-2551f5fed312,,Camille Flammarion,1894,/collections/omega-the-last-days-of-the-world-1894/DUac7QRXUAEI5m6.jpg,630,918,,"celestial,moon"
+61c0edb9-eec8-4675-ac6d-4402969c0120,,Camille Flammarion,1894,/collections/omega-the-last-days-of-the-world-1894/26022926158_0535f6f40d_b.jpg,700,984,,"celestial,stars"
+0a4362cb-7681-40fb-813c-241e75e1a31e,"""Like a Charge of Shot Upon a Meadow Lark.""",Camille Flammarion,1894,/collections/omega-the-last-days-of-the-world-1894/39863609892_ed285e965d_b.jpg,648,788,,celestial
+5eb7e537-d3ed-4d50-8ba1-40de7d3573dc,Nothing Could Equal the Splendor,Émile-Antoine Bayard,1870,/collections/emile-antoine-bayard-s-illustrations-for-around-the-moon-by-jules-verne-1870/10-1.jpg,539,800,,"celestial,moon,sky,stars"
+66a5964a-e09d-4041-94e0-3ec3642f9e1a,It's the Moon's Fault,Émile-Antoine Bayard,1870,/collections/emile-antoine-bayard-s-illustrations-for-around-the-moon-by-jules-verne-1870/9-1.jpg,546,800,,"astronomy,celestial,moon,stars"
+87656e07-401c-4b50-be0e-793bfaff941d,He Could See It All,Émile-Antoine Bayard,1870,/collections/emile-antoine-bayard-s-illustrations-for-around-the-moon-by-jules-verne-1870/13-1.jpg,536,800,,"celestial,moon,stars"
+bd6339b5-2dfd-4ad8-8620-430e294f75e0,What a Spectacle,Émile-Antoine Bayard,1870,/collections/emile-antoine-bayard-s-illustrations-for-around-the-moon-by-jules-verne-1870/11-1.jpg,540,800,,"celestial,moon,stars"
+b655fd12-196b-407a-9c34-49dc413540d3,This Plain Would Be Nothing But an Immense Ossuary,Émile-Antoine Bayard,1870,/collections/emile-antoine-bayard-s-illustrations-for-around-the-moon-by-jules-verne-1870/8-1.jpg,541,800,,"celestial,moon,stars"
+294ea06b-e8fe-439a-911c-29984cf7f87d,"Title page image from John Dee's <em>The General and Rare Memorials pertayning to the Perfect Arte of Navigation</em> (1577) one of the first texts to express the idea of the ""British Empire"". The illustration was designed by Dee himself and shows Elizabeth at the helm of a ship (top right), in charge of Britain’s imperial destiny.",John Dee,1577,/essays/the-long-forgotten-walk-of-david-ingram/34745177994_0cefd28ced_b.jpg,957,1024,,celestial
+c58ec59e-beeb-4b2c-afb4-c85762beac9b,,Théodore Marcile,1609,/collections/the-city-of-truth-or-ethics-1609/32608889646_19473634e7_o.jpg,741,1280,,celestial
+3754eb04-fb80-4389-8952-64d413a6c8db,Star Cluster in Hercules,Étienne Léopold Trouvelot,1882,/collections/the-trouvelot-astronomical-drawings-1882/30834315613_7dd7cf25c7_b.jpg,952,773,,"astronomy,celestial,stars"
+4903d204-6442-427e-a7aa-08a36a95ad31,Part of the Milky Way,Étienne Léopold Trouvelot,1882,/collections/the-trouvelot-astronomical-drawings-1882/31644526715_cfbfbef103_c.jpg,586,800,,"astronomy,celestial,stars"
+8893e6ab-b388-4c23-9824-5a242670afb3,Partial Eclipse of the Moon,Étienne Léopold Trouvelot,1882,/collections/the-trouvelot-astronomical-drawings-1882/31528817091_b91190527d_c.jpg,586,799,,"astronomy,celestial,moon"
+9df7008f-34eb-4c6d-98cb-3a65f51db2f5,The GREAT NEBULA in ORION,Étienne Léopold Trouvelot,1882,/collections/the-trouvelot-astronomical-drawings-1882/30834316763_835938f75e_b.jpg,972,787,,"astronomy,celestial"
+cdcdb749-a0ba-4fbc-a552-99e5eaac789b,The Planet Saturn,Étienne Léopold Trouvelot,1882,/collections/the-trouvelot-astronomical-drawings-1882/31528821821_fecea78c4c_b.jpg,950,786,,"astronomy,celestial"
+e932689c-2a0b-4252-b708-3416144cb7ab,Mare Humorum,Étienne Léopold Trouvelot,1882,/collections/the-trouvelot-astronomical-drawings-1882/30834323293_a096810dd6_b.jpg,969,793,,"astronomy,celestial,moon"
+e08f7f90-a250-4b7d-9afe-f3b8a754fb38,Total Eclipse of the Sun,Étienne Léopold Trouvelot,1882,/collections/the-trouvelot-astronomical-drawings-1882/30834308763_9392083746_o.png,985,803,,"astronomy,celestial,moon,sun"
+faed5931-c014-49c3-9337-6147d5a6f0a2,The November Meteors,Étienne Léopold Trouvelot,1882,/collections/the-trouvelot-astronomical-drawings-1882/31528823311_b74bb3dbd9_c.jpg,591,800,,"astronomy,celestial"
+3608ac54-4339-4583-99e2-3447dd1ae8c2,A Juggler of Worlds,J. J. Grandville,1844,/essays/every-society-invents-the-failed-utopia-it-deserves/30287184342_7fa0d03a03_z.jpg,502,640,,celestial
+4cb1a87e-c119-4338-83fe-24e577957787,Virgin Sophia,,ca. 1735,/collections/the-surreal-art-of-alchemical-diagrams/28106545743_17d18d60c4_c.jpg,489,799,,"astronomy,celestial"
+9facd30d-ebce-42d7-ac66-e8968d889c0d,Alchemical image,,15th century,/collections/the-surreal-art-of-alchemical-diagrams/28644500371_14a73c9b92_c.jpg,552,800,,celestial
+ac050e5c-0599-4229-b038-7540fd201d83,Alchemical stage,,ca. 18th century,/collections/the-surreal-art-of-alchemical-diagrams/28644483981_4406f4a99d_c.jpg,604,800,,celestial
+13e6b633-9551-48a1-8dc8-87f8139fdf97,"Celestial apparition over Nuremberg on April 14, 1561.",,1561,/collections/celestial-phenomenon-over-nuremberg-april-14th-1561/Himmelserscheinung_C3BCber_NC3BCrnberg_vom_14._April_1561.jpg,800,900,,"celestial,sun"
+7b3a2d5d-627f-4796-aac6-30f2c5902919,,Anne Wagner,1795-1834,/collections/the-friendship-book-of-anne-wagner-1795-1834/annewagner-banner.jpg,1731,434,,celestial
+4b179e1c-c243-4971-8229-fc517532d68e,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21999928041_4941a5f8d4_o.jpg,1200,1200,,"celestial,moon,space"
+4b1c5e37-7e8d-477b-8f11-3375aad864c3,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21803077350_84205e6cf0_o.jpg,1200,1200,,"celestial,moon"
+241e0077-97a5-409c-a046-c521874f7607,The Parable of the Wise and Foolish Virgins,William Blake,1825,/essays/william-blake-and-paul-mellon-the-life-of-the-mind/15392687931_b6d1476f4c_o.jpg,1000,1193,,celestial
+36563aa4-484c-44a9-be0f-09ee2fbbd4b1,Great Comet of 1744,,1861,/collections/flowers-of-the-sky/15342513575_20afd4f3bc_c.jpg,800,645,,"astronomy,celestial,sky,space,stars"
+5d373755-deb0-41f6-b4b7-65f7fda700fe,Principal Comets,,1875,/collections/flowers-of-the-sky/15155656319_04052c67d3_o.jpg,800,521,,"astronomy,celestial,space"
+69bed839-6929-43aa-a168-b774731204be,Shooting Stars,,1875,/collections/flowers-of-the-sky/15319384766_e8499389b1_o.jpg,600,970,,"astronomy,celestial,space"
+8ad8e3f0-81b1-4a3e-8905-ce2187f03325,"Illustration from a 1587 treatise on comets and meteors, created anonymously in Flanders (now northern France) and known as the *Kometenbuch*.",,1587,/collections/the-comet-book/scutella.jpg,800,954,,"astronomy,celestial,space"
+971649a3-50ec-4bb8-84b9-ebb0c94582ae,Aerolite observed on the 11th June 1867,,1875,/collections/flowers-of-the-sky/15342417665_961ac7371f_o.jpg,800,519,,"astronomy,celestial,sky,space,stars"
+98f3bc4e-2371-4730-9c9e-11239fd15876,Comets,Anonymous,1835,/shop/oct_19_new_prints_00030.jpg,1522,1200,,"astronomy,celestial,space"
+045fa8cf-fc6c-4748-9402-8e89ad0a6f75,"Illustration from a 1587 treatise on comets and meteors, created anonymously in Flanders (now northern France) and known as the *Kometenbuch*.",,1587,/collections/the-comet-book/explosion.jpg,800,902,,"astronomy,celestial,space"
+a70866cc-0fbe-420b-b0a6-91b2382c5db5,Principal Comets,,1875,/collections/flowers-of-the-sky/15342114852_851c3e432d_o.jpg,800,521,,"astronomy,celestial,space"
+b026f77e-9e6e-4f90-a50c-f21520941473,The Figure of a Fearful Comet,,1579,/collections/flowers-of-the-sky/15156143767_01977e48a1_o.jpg,500,703,,"astronomy,celestial,space"
+fd2c162d-e626-4776-963c-cded74df5532,"The sun, moon, stars, and earth transposed",,18th century,/collections/the-world-turned-upside-down-18th-century/8598115842_902e74426e_o.jpg,780,540,,"celestial,moon,stars,sun"
+364ab41d-3c59-4007-8fb0-3c54a6744196,,Daniel de La Feuille,1699,/collections/emblems-ancient-and-modern-1699/devisesetembleme00lafeu_0025.jpg,2021,2727,,celestial
+566f7780-27bb-40b8-9222-ffef39bb622c,,Daniel de La Feuille,1699,/collections/emblems-ancient-and-modern-1699/devisesetembleme00lafeu_0013.jpg,2012,2710,,celestial
+55d7653b-8b09-4aee-a6dd-1cd6ff868561,,Daniel de La Feuille,1699,/collections/emblems-ancient-and-modern-1699/devisesetembleme00lafeu_0011.jpg,2007,2610,,"celestial,sun"
+777db0ac-95f5-4981-a571-2d1faf917671,,,1882,/collections/woodcuts-from-18th-century-chapbooks/8067342561_0fea4e4992_o.jpg,513,369,,"astronomy,celestial,stars"
+819868ff-bc73-45f1-8073-94660abbd1e6,Diagram Illustrating the True Key to Ancient Cosmology and Mythical Geography,,1885,/essays/the-last-great-explorer-william-f-warren-and-the-search-for-eden/paradisefound00warruoft_0010-edit2.jpeg,2352,3236,,celestial
+220488cb-53c0-4f90-a08b-8c6f65809af4,Southern Hemisphere,John Flamsteed,1795,/collections/the-celestial-atlas-of-flamsteed-1795/7500098004_1b44c6247c_b.jpg,850,680,,"astrology,astronomy,celestial"
+258bfcc6-7c3f-4468-94b7-d0137b101f69,Cancer,John Flamsteed,1795,/collections/the-celestial-atlas-of-flamsteed-1795/7500097156_58ddb16062_o.jpg,850,680,,"astrology,astronomy,celestial,stars,zodiac"
+27c93b0a-38aa-4587-b22c-7280ef21daad,"The Lyre, The Swan, The Lizard, The Fox",John Flamsteed,1795,/collections/the-celestial-atlas-of-flamsteed-1795/7500096884_bd86e4bb66_o.jpg,850,681,,"astrology,astronomy,celestial,stars,zodiac"
+8c906732-f3f9-47e8-96ad-20e95b58c197,"Hercules, The Crown",John Flamsteed,1795,/collections/the-celestial-atlas-of-flamsteed-1795/7500095842_c0a5eb5242_o.jpg,850,702,,"astrology,astronomy,celestial"
+8f6a7467-1706-4acc-a3c3-3de967fdd56e,The Ophiuchus and the Serpent,John Flamsteed,1795,/collections/the-celestial-atlas-of-flamsteed-1795/7500096114_8785e3fe56_o.jpg,850,672,,"astrology,astronomy,celestial"
+9836ffa1-cfb2-4988-8919-69e2337e7bf5,The Great Bear,John Flamsteed,1795,/collections/the-celestial-atlas-of-flamsteed-1795/7500096372_2a73a19f2e_o.jpg,850,671,,"astrology,astronomy,celestial,stars"
+ed42c74e-ea28-4a06-bd7b-9fbc323cc6ac,Pisces,John Flamsteed,1795,/collections/the-celestial-atlas-of-flamsteed-1795/7500097738_cfefe9de17_o.jpg,850,680,,"astrology,astronomy,celestial,stars,zodiac"
+e8a01962-6b13-4bc9-9be3-5d55729bc39f,The Lion,John Flamsteed,1795,/collections/the-celestial-atlas-of-flamsteed-1795/7500097464_d668932043_o.jpg,850,680,,"astrology,astronomy,celestial,stars"
+f64285d6-fb0c-4031-9870-2ec37ad86755,Virgo,John Flamsteed,1795,/collections/the-celestial-atlas-of-flamsteed-1795/7500095750_0b0fe74ba4_o.jpg,850,702,,"astrology,astronomy,celestial,zodiac"
+1731615c-13e2-49b6-9b69-13ca3348681e,Transit of Venus,Naval Observatory and Transit of Venus Commission,1882,/collections/transit-of-venus-1882/7341217014_5c051ec930_o.jpg,500,500,,"astronomy,celestial,space,sun"
+2e2b10c3-cbe4-49d7-9141-bcf403291af3,Transit of Venus,Naval Observatory and Transit of Venus Commission,1882,/collections/transit-of-venus-1882/7341214394_0ddcbee340_o.jpg,500,500,,"astronomy,celestial,space,sun"
+3e507f0e-627d-4276-a93c-c093f436613a,Transit of Venus,Naval Observatory and Transit of Venus Commission,1882,/collections/transit-of-venus-1882/7341216916_1df317074f_o.jpg,500,500,,"astronomy,celestial,moon,space,sun"
+447881cc-c636-4f20-b7b5-225f327fec84,Transit of Venus,Naval Observatory and Transit of Venus Commission,1882,/collections/transit-of-venus-1882/7341213740_cf965c57b6_o.jpg,500,500,,"astronomy,celestial,space,sun"
+88190423-24ee-44d6-8d48-4cb355d57ece,Transit of Venus,Naval Observatory and Transit of Venus Commission,1882,/collections/transit-of-venus-1882/7156013599_ee90fe01e2_o.jpg,500,500,,"astronomy,celestial,moon,space,sun"
+b0be0b77-9d38-4dc4-bc18-f602f92b1f9e,Transit of Venus,Naval Observatory and Transit of Venus Commission,1882,/collections/transit-of-venus-1882/7341217126_ee02100551_o.jpg,500,500,,"astronomy,celestial,space,stars,sun"
+5b13169a-cb99-45e3-944e-9db447cdb82d,Names of the Winds Representing the Six Languages,Jan Jansson,1650,/collections/maps-from-geographicus/750px-1650_Jansson_Wind_Rose2C_Anemographic_Chart2C_or_Map_of_the_Winds_-_Geographicus_-_Anemographica-jannson-1650.jpg,750,599,,celestial
+a148815f-9c64-41a3-b4ab-93a4d81132c9,"Illustration from the first volume of Robert Fludd's <i>Utriusque Cosmi <span class=""special__no-break"">. . .</span> Historia</i>, 1617.",Robert Fludd,1617,/essays/robert-fludd-and-his-images-of-the-divine/utriusquecosmima01flud_0066-edit2.jpeg,1935,1932,,"astronomy,celestial"
+c0c1f51e-dc21-4115-9ca4-e32cd9cfdb0f,The Wholeness of Nature Reflected in the Mirror of Art,Robert Fludd,1617,/essays/robert-fludd-and-his-images-of-the-divine/utriusque_cosmi_maioris_fvm4tyd_0_e1qus37_download_full-edit.jpeg,8061,8206,,celestial
+1c49d925-e1ad-453d-89db-502574744686,"Prodigious apparitions in the sky, three suns",,1559,/collections/histoires-prodigieuses/histoires-prodigieuses-00015.jpg,2761,3019,,"astrology,astronomy,sky,stars,sun"
+1f1de55e-5108-4643-a8c5-5f4fce4f02c1,Comet with impression and shape of a bent arm holding a sword in its hand,,1559,/collections/histoires-prodigieuses/histoires-prodigieuses-00016.jpg,2668,2628,,"astrology,astronomy,sky"
+7b675a2c-abeb-42ce-b98f-3772e7b47a1b,Leonid Meteor Shower over Niagara Falls,Anonymous,1892,/shop/newprints-nov24-00003.jpg,1069,1500,,astronomy
+109c6866-89bd-402f-8979-54e75ed8c6ad,"Northern Lights and a secondary solar phenomenon, seen over Vienna, 1557.",,1557,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00034.jpeg,6404,5208,,astronomy
+14f2d55d-d158-401b-8f5f-a378cf7bd1ee,"The comet that appeared over Augsburg in November, 1577.",,1577,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00010.jpeg,5155,6404,,astronomy
+13f7e825-e9af-47d2-b4e8-d6881c931c6e,"Orbs and rainbows circling the sun in Nuremberg, 1580 (detail)",,,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00004-crop2.jpeg,1500,1128,,"astronomy,sun"
+33734eaa-ddca-44a7-abc6-42ab11a71a25,"Northern lights phenomenon over Eggolsheim near Forchheim on December 28, 1560.",,1560,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00029.jpeg,4392,6372,,astronomy
+365867a3-f260-4a19-92b9-2b6deab1c5ea,Celestial apparition from 1586 over the North Bohemian town of Tachau.,,1586,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00008.jpeg,4563,6500,,astronomy
+492afd7d-b45e-4d36-8aad-a7d98df99347,"“Terrifying” celestial phenomena that were seen between Mansfeld and Eisleben on February 27, 1561.",,1561,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00020.jpeg,4216,4990,,astronomy
+46f7218e-c1c9-4ea6-ab6f-739703f1afc1,"“A terrifying vision and miraculous sign” on March 1, 1564 between Mechelen and Brussels.",,1564,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00007.jpeg,4961,6046,,astronomy
+5c2fc544-4d17-4f5b-930f-d9fdbe34a74f,"Miraculous sign seen in the sky near the village of Old Knin near Prague on August 16, 1580.",,1580,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00025.jpeg,5240,6341,,astronomy
+638a4f0f-d600-4a84-a2b3-39221a6d542b,"Report of the apparition on March 2, 1561 in Nuremberg (detail)",,1561,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00028-crop.jpeg,1500,1514,,"astronomy,moon,sun"
+70e9f25a-4f50-4a2e-a7ea-233edbb39743,Depiction of a celestial apparition with rain of blood and a heraldic eagle missing part of its lower body.,,1550,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00016.jpeg,4832,6475,,astronomy
+73b24bec-9d24-473b-a55e-8a36e626f3b6,"Northern lights phenomenon on the night of July 24, 1554 over Waldeck Castle near Kemnath.",,1554,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00026.jpeg,4272,5907,,astronomy
+73243591-f4e8-4e6b-8f86-29a2d0996b3f,"Report on an ominous apparition in the sky of Lonnerstadt near Erlangen, 1558.",,1558,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00012.jpeg,5960,3932,,astronomy
+7e2ff84d-56ff-4915-8892-446605b7094f,"Report of a northern lights phenomenon observed over Nuremberg on December 28, 1560.",,1560,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00023.jpeg,6207,4318,,astronomy
+7697e9a2-fbcd-4f0f-a444-3953aaab9c58,Halo apparition in April 1583 over Nuremberg and the surrounding area.,,1583,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00032.jpeg,5208,6766,,astronomy
+096369e1-6f48-4487-9ca7-6a186883a57e,"Sky apparition over Altdorf with a red and a yellow sun, 1578.",,1578,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00009.jpeg,5356,7133,,astronomy
+0b39ab64-1205-4c84-abbc-7c0d0405e175,Report on the blood-red colored water in the ditch around the town of Beilstein (Württemberg) in August 1583.,,1583,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00033.jpeg,4776,5616,,astronomy
+a4fe0def-d098-4c81-955f-51ed255d04d3,"Aurora borealis, seen at Augsburg on September 10, 1580.",,1580,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00024.jpeg,5111,6740,,"astronomy,sky"
+b3bc53c4-226b-43b0-822d-5de7f931d816,"Celestial phenomena observed in the Mansfeld region of Germany on February 27, 1561.",,1561,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00006.jpeg,3626,5301,,astronomy
+ce1d1875-0bee-469d-bef1-5db0e93c3777,"Halo or secondary sun apparition over the Elbe on March 21, 1551.",,1551,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00022.jpeg,3552,6152,,astronomy
+cfd5f345-42aa-4bfa-b91a-f41e32da7303,"Report of the apparition on March 2, 1561 in Nuremberg.",,1561,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00028.jpeg,4319,6043,,"astronomy,moon,sun"
+cd7b2a64-d193-45bc-979b-6196300e2866,"Celestial apparition over Nuremberg on April 14, 1561 (detail)",,1561,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00001.jpeg,6537,4670,,"astronomy,sun"
+df11bfcf-c1b8-4881-a3ca-39f70826945f,"A report of a nocturnal celestial apparition, 1554.",,1554,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00019.jpeg,3840,5515,,astronomy
+e9509eba-10e7-4030-b167-bbd53795bcc3,"Northern lights phenomenon that moved toward Plassenburg in Vogtland on December 28, 1560.",,1560,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00030.jpeg,5959,4180,,astronomy
+e3369808-d30c-436c-aebc-135b3a80886f,"Report of northern lights over Nuremberg on January 17, 1572.",,1572,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00036.jpeg,5448,6262,,"astronomy,sky"
+f8e8b5b3-e434-4849-929d-8c9f33c79b3b,"Celestial phenomenon seen over Leipzig on February 19, 1564.",,1564,/collections/celestial-phenomena-16th-century-germany/celestial-phenomena-00015.jpeg,4218,5775,,astronomy
+271286e9-ca2e-4738-adfe-3de8f2348e7f,Frontispiece from *Smith's Illustrated Astronomy*,Asa Smith,1849,/shop/nov-2023-prints-00055.jpg,1005,1200,,"astronomy,stars"
+e9e4ffa6-319a-4f82-b269-2cdfe4434f35,"Sun, Earth and Moon",Vincent Laurensz. van der Vinne (II),1714,/shop/nov-2023-prints-00037.jpg,1200,971,,"astronomy,moon"
+fa3bf009-8700-48b1-8867-bc6c0a8151c0,“Solar System” Quilt,Ellen Harding Baker,1876–ca. 1883,/collections/solar-system-quilt/baker-solar-quilt.jpg,1400,1160,,"astronomy,stars,sun"
+27c71151-4b42-4010-b55b-9a48cb97fddf,The System of Jupiter,Agnes Giberne,1898,/collections/story-of-sun-moon-stars/storyofsunmoonst00gibe_0216.jpeg,981,1014,,"astronomy,space,stars"
+2a6a4b1c-3cd6-4cb7-8a45-79d36793061a,The Earth as Seen From the Moon,Agnes Giberne,1898,/collections/story-of-sun-moon-stars/storyofsunmoonst00gibe_0079.jpeg,1014,1662,,"astronomy,moon,space,stars"
+2468b413-3094-4aeb-b38b-131076355bf9,The Solar System,Agnes Giberne,1898,/collections/story-of-sun-moon-stars/storyofsunmoonst00gibe_0021.jpeg,946,1224,,"astronomy,moon,space,stars,sun"
+44ebbbd9-279e-4b8e-a2ef-822f341f8082,Lunar Eruption — Feeble Action,Agnes Giberne,1898,/collections/story-of-sun-moon-stars/storyofsunmoonst00gibe_0181.jpeg,972,708,,"astronomy,moon,space"
+6ac8b80d-735d-41c4-846c-12c6bcc9ba91,Orbits of Nine Comets Captured by Jupiter,Agnes Giberne,1898,/collections/story-of-sun-moon-stars/storyofsunmoonst00gibe_0221.jpeg,939,1104,,"astronomy,space,stars"
+726e884b-ad00-44e5-8787-a2a0ffa23ef8,Phases of Mercury Before Inferior Conjunction — Evening Star,Agnes Giberne,1898,/collections/story-of-sun-moon-stars/storyofsunmoonst00gibe_0058.jpeg,969,480,,"astronomy,moon,space,stars"
+0347f0a1-a134-484f-b919-d29bae3c2683,Stars Whose Distances Are Best Known,Agnes Giberne,1898,/collections/story-of-sun-moon-stars/storyofsunmoonst00gibe_0289.jpeg,969,1002,,"astronomy,space,stars"
+096ec642-4723-4e20-b27d-b30179a60215,Passage of the Comet of 1843 Close to the Sun,Agnes Giberne,1898,/collections/story-of-sun-moon-stars/storyofsunmoonst00gibe_0087.jpeg,1008,1059,,"astronomy,space,stars,sun"
+a62e07cf-b88e-48be-bd44-a2d2ae6ce87b,The Moon — An Expired Planet,Agnes Giberne,1898,/collections/story-of-sun-moon-stars/storyofsunmoonst00gibe_0167.jpeg,1101,1206,,"astronomy,moon,space"
+a0a792ee-6fb3-4e40-aa8f-52e300a32984,Meteor Emerging From Behind a Cloud,Agnes Giberne,1898,/collections/story-of-sun-moon-stars/storyofsunmoonst00gibe_0092.jpeg,975,762,,"astronomy,space,stars"
+bdbcdc5e-ae5f-4a0a-b7f4-7d0116cc8c50,Great Comet of 1744,Agnes Giberne,1898,/collections/story-of-sun-moon-stars/storyofsunmoonst00gibe_0262.jpeg,747,1185,,"astronomy,moon,space,stars,sun"
+ce09e72e-ba5c-4eb7-9143-c744f8b2b12c,Lunar Eruption — Brisk Action,Agnes Giberne,1898,/collections/story-of-sun-moon-stars/storyofsunmoonst00gibe_0180.jpeg,975,705,,"astronomy,moon,space"
+c181af03-c243-403a-86c7-72ee318164df,A Solar Eruption,Agnes Giberne,1898,/collections/story-of-sun-moon-stars/storyofsunmoonst00gibe_0146.jpeg,753,612,,"astronomy,space,stars,sun"
+d9961afd-6960-4678-be3e-15e02b6e00ff,A Typical Sun-Spot,Agnes Giberne,1898,/collections/story-of-sun-moon-stars/storyofsunmoonst00gibe_0143.jpeg,876,1035,,"astronomy,space,stars,sun"
+ef2c7602-f787-4072-9365-6b5b048f33c3,Comparative Size of the Planetary Worlds,Agnes Giberne,1898,/collections/story-of-sun-moon-stars/storyofsunmoonst00gibe_0138.jpeg,1053,1224,,"astronomy,space"
+f0e6669e-7acc-4d52-be41-b37093e7b52f,Sun-Flames,Agnes Giberne,1898,/collections/story-of-sun-moon-stars/storyofsunmoonst00gibe_0151.jpeg,603,804,,"astronomy,space,stars,sun"
+cf70d316-0552-41d3-8143-9cd0e0cba356,Cover of Anton Pannekoek's <i>Marxism and Darwinism</i>,,1912,/essays/pannekoek/marxismdarwinism00pannuoft_0005-edit.jpeg,884,1342,,"astronomy,stars"
+1f6784da-1a62-4d96-85f0-2fa28e3a1802,"Fastigium Aryn, October 1894",Percival Lowell,1895,/collections/martian-canal-maps/marsbypercivallo00lowe_0193.jpg,1960,2080,,astronomy
+24fec2d8-9d53-4116-83a5-d8acd2c37c12,Drawings After Opposition,A. E. Douglas,1895,/collections/martian-canal-maps/marsbypercivallo00lowe_0231.jpg,2196,3540,,astronomy
+21600765-bc55-4600-917e-1abba2fb48e3,Mars: Longitude 270° on the Meridian,Percival Lowell,1895,/collections/martian-canal-maps/marsbypercivallo00lowe_0147.jpg,1968,2120,,astronomy
+20af46b7-56a9-47e1-9fa7-25ec96bdb0dc,Mars: Longitude 210° on the Meridian,Percival Lowell,1895,/collections/martian-canal-maps/marsbypercivallo00lowe_0143.jpg,1948,2072,,astronomy
+51d3ceb5-14c2-4cec-8eb9-953184c1ce75,Mars: Longitude 150° on the Meridian,Percival Lowell,1895,/collections/martian-canal-maps/marsbypercivallo00lowe_0137.jpg,1988,2100,,astronomy
+5dd61741-08eb-483a-bcd2-19b3f6d282f4,Hemisphere Showing the Oasis Called Ascraeus Lucus,Percival Lowell,1908,/collections/martian-canal-maps/marsasabodeoflif00lowe_0192.jpg,2092,2204,,astronomy
+6416ea0a-4d52-4bc8-86a7-3517d0d94a9b,Lacus Phoenicis,Percival Lowell,1895,/collections/martian-canal-maps/marsbypercivallo00lowe_0219.jpg,2008,2120,,astronomy
+7d85c30d-8eda-4926-bda2-af085e38e154,Hesperia: Showing Seasonal Change During 1894,Percival Lowell,1895,/collections/martian-canal-maps/marsbypercivallo00lowe_0167.jpg,3480,1432,,astronomy
+7c3e193f-4502-4aec-9947-c8ae832cf800,North Polar Cap,Percival Lowell,1906,/collections/martian-canal-maps/marsanditscanals00loweiala_0083.jpg,1773,1812,,astronomy
+9953f771-4379-4b59-8b2c-08b7309ad172,"Sinus Titanum (Gulf of the Titans), November, 1894.",Percival Lowell,1895,/collections/martian-canal-maps/marsbypercivallo00lowe_0012.jpg,2124,2130,,astronomy
+01ebf6b5-1649-4790-a7fa-be3b2a35d27b,Mars: Longitude 60° on the Meridian,Percival Lowell,1895,/collections/martian-canal-maps/marsbypercivallo00lowe_0128.jpg,2000,2092,,astronomy
+b703c579-29e5-4453-9a1f-16d62bcdb73b,Phison and Euphrates,Percival Lowell,1895,/collections/martian-canal-maps/marsbypercivallo00lowe_0259j.jpg,1939,2142,,astronomy
+b2a0e4cd-00a4-4456-bf07-62b51c0240bd,Mars: Longitude 120° on the Meridian,Percival Lowell,1895,/collections/martian-canal-maps/marsbypercivallo00lowe_0133.jpg,1992,2104,,astronomy
+bd2bf9da-a5ff-493e-9c83-ba851e5ee49f,Mars — 1905,Percival Lowell,1908,/collections/martian-canal-maps/marsasabodeoflif00lowe_0103.jpg,3148,1794,,astronomy
+cfe55087-da48-418e-90e1-f40fb63350ff,Sea of the Sirens and Atlantis at the Opposition of 1894,Percival Lowell,1895,/collections/martian-canal-maps/marsbypercivallo00lowe_0175.jpg,1628,3360,,astronomy
+c5077bc6-9563-4e31-b58c-873dc00fb93a,Mars — 1905,Percival Lowell,1906,/collections/martian-canal-maps/marsanditscanals00loweiala_0442.jpg,3972,2400,,astronomy
+2f93ec93-9e11-45d4-bfb8-ad492b32cdb3,Miles,,1587,/collections/the-comet-book/comet-pooing.jpg,800,953,,astronomy
+4f37404d-3dde-4892-8cc1-c2514545b203,Aurora,,1587,/collections/the-comet-book/auvora.jpg,800,941,,"astronomy,sky"
+0d198de4-42ab-40f0-b47f-1ef3cfe0f495,Silver,,1587,/collections/the-comet-book/argentum.jpg,800,924,,"astronomy,sun"
+0dc2c096-7dfc-433a-bde4-cfaf39e16ed3,Geben or Tenaculum,,1587,/collections/the-comet-book/tenaculum.jpg,800,948,,"astronomy,sun"
+d150a76f-65d5-4e46-be98-e07c6774312c,Couzantes Stars,,1587,/collections/the-comet-book/stars.jpg,800,942,,"astronomy,moon,sky"
+fc59c721-772e-44af-b917-6ca55ef0e1b9,,,1587,/collections/the-comet-book/comet-sunset.jpg,800,931,,astronomy
+2d1e72bf-98aa-4bae-b796-23f9ebbf6308,Capricorn,Sidney Hall,1824-5,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-14.jpg,1200,830,,"astrology,astronomy,stars,zodiac"
+39b9f22c-0b74-4189-9a48-a6c7c44d2cbc,Lynx and Telescopium Herschilii,Sidney Hall,1824-5,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-17.jpg,1200,828,,"astrology,astronomy,stars,zodiac"
+7f14efaf-5f9b-4f6d-b24a-75d75f6aeef6,Pisces,Sidney Hall,1824-5,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-16.jpg,1200,835,,"astrology,astronomy,stars,zodiac"
+77430720-29b5-44f1-a4e1-0829c20cd4f6,Scorpio,Sidney Hall,1824-5,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-3.jpg,829,1200,,"astrology,astronomy,stars,zodiac"
+82b6bfaf-1b20-484a-b06a-2e6839a879cf,Leo Major and Leo Minor,Sidney Hall,1824-5,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-9.jpg,834,1200,,"astrology,astronomy,stars,zodiac"
+00d62eab-57f3-4d96-b267-97851659e282,Hercules and Corona Borealis,Sidney Hall,1824-5,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-21.jpg,1200,838,,"astrology,astronomy,stars,zodiac"
+a2816eee-7809-4727-b1b8-03cbb31fa699,"The Great Dog, Hare, Dove, Noachi, and Sculptor",Sidney Hall,1824-25,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-7.jpg,1200,828,,"astrology,astronomy,zodiac"
+c4165213-c4b9-4daf-9920-fc8b1c1f75ea,The Charioteer,Sidney Hall,1824-5,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-24.jpg,831,1200,,"astrology,astronomy,stars,zodiac"
+c733cdf3-94f5-400e-b9f9-957ea12f783c,Taurus,Sidney Hall,1824-5,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-15.jpg,1200,839,,"astrology,astronomy,stars,zodiac"
+c7828e53-0d8a-48b2-9113-8f9c7fcd9efb,"The Owl, Crow, Cup, Sextant, Hydra, Cat",Sidney Hall,1824-5,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-13.jpg,1200,832,,"astrology,astronomy,zodiac"
+c9710064-33aa-460e-81e5-ec342bd4fb96,Dragon and Ursa Minor,Sidney Hall,1824-5,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-12.jpg,832,1200,,"astrology,astronomy,zodiac"
+d6bd62de-e101-4af1-bc29-bf2608a7acee,Perseus and the head of Medusa,Sidney Hall,1824-5,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-8.jpg,1200,831,,"astrology,astronomy,stars,zodiac"
+d45f3cc8-5c77-4c70-b88a-3497f2e4da72,Sagittarius and Corona Australis,Sidney Hall,1824-5,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-4.jpg,1200,836,,"astrology,astronomy,zodiac"
+feec098e-6166-4a9d-862c-c73ad6970131,VIrgo,Sidney Hall,1824-5,/collections/uranias-mirror-or-a-view-of-the-heavens/dec2019-6.jpg,1200,830,,"astrology,astronomy,stars,zodiac"
+7ec72e45-cd71-4a14-9560-5096b6aa3fdb,"Illustration from *Under Nordlysets Straaler. Skildringer fra Lappernes Land*, 1885",,1885,/collections/aurora-borealis-in-art/11176339384_c350c50eb0_o.jpg,1406,1212,,astronomy
+8b04c8c1-814e-4849-835c-e2f9a9533597,"Celestial Phenomena, 1729",,1729–35,/collections/aurora-borealis-in-art/BI-B-FM-090-223.jpeg,1200,741,,astronomy
+aeb8ce47-5ec6-4c12-bd9b-e363f7a7bc89,The Corona,Anonymous,1871,/shop/oct_19_new_prints_00032.jpg,1200,841,,"astronomy,moon,sun"
+ccfada5a-ecce-4192-86f6-c0acea9ad40c,Optics,A.D. Macquin,1820,/shop/oct_19_new_prints_00028.jpg,918,1200,,"astronomy,stars"
+e2fa80fe-ae32-40a3-a523-525edd84bc0b,Total Eclipse of July 7 1842,Anonymous,1842,/shop/oct_19_new_prints_00031.jpg,1026,1200,,"astronomy,moon,sun"
+f2ebcee6-4cdc-4031-a5c7-c45491b53d6b,Prophecies of apocalypse,,ca. 1827–61,/collections/various-apocalyptic-scenes-from-the-prophetic-messenger-ca-1827-61/s3_V0024000_V0024820.jpg,1200,872,,"astrology,astronomy"
+5dc62cd3-32c1-4c9e-9d25-c2c8aa839349,The Constellations,Elijah Hinsdale Burritt,1856,/shop/edit-1856_Burritt_-_Huntington_Map_of_the_Constellations_or_Stars_in_June_May_and_April_-_Geographicus_-_AprMayJun2-burritt-1856-1.jpg,1128,1200,,astronomy
+029925bb-9341-4705-afef-3fbe81186bbe,Mare Humorum,Étienne Léopold Trouvelot,1882,/shop/6iTFS8xhS4-3OQx2vKiYlAv-edit-1.jpeg,1268,1024,,astronomy
+c3bcf36f-f418-4fc4-859c-32a3c68b4672,The Solar System,Adam and John Black,ca. 1885,/shop/ct003791-edit-1.jpeg,1280,794,,astronomy
+af02e6d1-9bdf-4442-be0e-18705945f767,The Planetary and Solar System,Johann Baptist Homann,1716,/shop/ct003611-edit-1.jpeg,1190,1024,,astronomy
+f21fe685-84df-48a1-b8e3-c5745339f1e0,Cover for <em>Ragnarok: The Age of Fire and Gravel</em>,,1883,/collections/the-art-of-book-covers-1820-1914/46348541944_3e86c5503c_o.jpg,414,680,,"astronomy,sun"
+2df87716-48c8-412d-82c2-5cca61bc035f,Plato,James Nasymth,1874,/collections/photographs-of-models-of-the-moon-1874/32118189748_70de5e7193_b.jpg,1024,1016,,"astronomy,moon"
+411f0b52-c505-4679-9715-48e9f75aff4c,Terrestrial and Lunar Volcanic Areas Compared,James Nasymth,1874,/collections/photographs-of-models-of-the-moon-1874/45077382005_54e9ddf11c_b.jpg,1024,853,,"astronomy,moon"
+4ffe85bd-1ad0-40f4-b033-f6a266822562,"Arzachel, Ptolemy, and the Railway",James Nasymth,1874,/collections/photographs-of-models-of-the-moon-1874/44173135210_b8638da45e_b.jpg,736,1024,,"astronomy,moon"
+5c6525e4-ff4f-42de-8e55-6221698f00a0,Back of Hand & Shrivelled Apple,James Nasymth,1874,/collections/photographs-of-models-of-the-moon-1874/45077382435_2d8835a14a_b.jpg,1024,754,,"astronomy,moon"
+67b64989-c6fb-49b7-8c93-b2b9b6a9b5c1,Triesnecker,James Nasymth,1874,/collections/photographs-of-models-of-the-moon-1874/44173135440_2ae031366c_b.jpg,755,1024,,"astronomy,moon"
+7e1dcb6e-01d5-474b-8364-992cdcfe92e8,Group of Lunar Mountains,James Nasymth,1874,/collections/photographs-of-models-of-the-moon-1874/45077507675_a81916fa37_b.jpg,1024,847,,"astronomy,moon"
+79c8dff7-4b42-4012-b8c4-eb24273264c9,Glass Globe Cracked by Internal Pressure,James Nasymth,1874,/collections/photographs-of-models-of-the-moon-1874/44173133670_1a4ff8e11d_b.jpg,790,1024,,"astronomy,moon"
+943446c3-87f7-470a-bf27-1f26cd24c8b2,Copernicus,James Nasymth,1874,/collections/photographs-of-models-of-the-moon-1874/45077381555_bbd92df6f3_b.jpg,707,1023,,"astronomy,moon"
+9291f636-ada2-4cc0-a7ae-f8e8f83f1b72,Aristotle & Eudoxus,James Nasymth,1874,/collections/photographs-of-models-of-the-moon-1874/32118191218_8ae937f535_b.jpg,764,1024,,"astronomy,moon"
+05cf11f7-4693-43aa-a5c1-7aa063de1e08,Normal Lunar Crater,James Nasymth,1874,/collections/photographs-of-models-of-the-moon-1874/32118188068_f1e8cf20cc_o.jpg,1200,887,,"astronomy,moon"
+eb557628-12a4-4752-a547-a8d240340089,"Aspect of an Eclipse of the Sun by the Earth, as It Would Appear as Seen From the Moon",James Nasymth,1874,/collections/photographs-of-models-of-the-moon-1874/45077382895_af6af4615d_b.jpg,1023,788,,"astronomy,moon"
+12a81272-1f85-416d-bf0c-081467683c32,Above: Diagram of the celestial climate zones; Below: Diagram of the terrestrial climate zones.,,late 12th century,/collections/cosmography-manuscript-12th-century/42729290725_3f1778b0ab_b.jpg,609,1024,,"astrology,astronomy"
+2a0990a3-1ffd-4c2a-8f64-928f90e68c96,Above: The harmony of the spheres; Below: The planetary orbits.,,late 12th century,/collections/cosmography-manuscript-12th-century/42729291175_3aa4911a67_b.jpg,602,1024,,"astrology,astronomy"
+58c8656f-b328-4f49-8c25-e123d8b6a303,Above: Diagram of the terrestrial climate zones with the Riphaean mountains; Below: Diagram of the circuit of the moon in the zodiac.,,late 12th century,/collections/cosmography-manuscript-12th-century/43585952282_6b05fc0149_b.jpg,578,1024,,"astrology,astronomy"
+ab211401-99bc-4bb9-8035-4a92766e1cef,Diagram of the Zodiac,,late 12th century,/collections/cosmography-manuscript-12th-century/43585954812_2f921ebc89_o.jpg,851,856,,"astrology,astronomy,zodiac"
+baf5148b-7a0c-4a98-bfa6-be91c9c3f4fd,Diagram of the phases of the moon,,late 12th century,/collections/cosmography-manuscript-12th-century/42729291395_4a7074a9ca_b.jpg,879,888,,"astrology,astronomy"
+b614b9d2-b24c-403d-81a2-e64a8a8899b1,Diagram of the solstices and equinoxes,,late 12th century,/collections/cosmography-manuscript-12th-century/43585953922_af31178e33_b.jpg,631,1023,,"astrology,astronomy"
+c8d6bd49-e0b5-4883-80d1-e10af13b3ae1,Above: Diagram of a cube; Below: Diagram of the microcosmic-macrocosmic harmony.,,late 12th century,/collections/cosmography-manuscript-12th-century/42729290225_5285554568_b.jpg,613,1024,,"astrology,astronomy"
+d82841b3-d8f6-4589-b4d6-166e174d022f,Diagram of planetary courses in the zodiacal signs,,late 12th century,/collections/cosmography-manuscript-12th-century/43585952752_80452924a2_b.jpg,911,1024,,"astrology,astronomy"
+5f096ca2-98e7-4cfa-9554-8a8551262f6a,Around the Projectile,Émile-Antoine Bayard,1870,/collections/emile-antoine-bayard-s-illustrations-for-around-the-moon-by-jules-verne-1870/16-1.jpg,545,800,,"astronomy,moon,space,stars"
+1bc1f5ee-f266-4c59-866a-4a8bebee4e56,,,ca. 820,/collections/aratea-making-pictures-with-words-in-the-9th-century/33057101340_9206ffbbbb_b.jpg,831,1024,,"astrology,astronomy,stars,zodiac"
+20e83c7d-555a-42d8-bf4a-3cd9aaea40cd,,,ca. 820,/collections/aratea-making-pictures-with-words-in-the-9th-century/32597287414_95b97616dc_c.jpg,686,800,,"astrology,astronomy,stars,zodiac"
+2df9ad10-0f9a-4d52-b960-4319ddeaf695,,,ca. 820,/collections/aratea-making-pictures-with-words-in-the-9th-century/33057422510_7a86f2b98f_c.jpg,667,800,,"astrology,astronomy,stars,zodiac"
+2bc5df08-cbb5-4288-a2f5-0a9793606daf,,,ca. 820,/collections/aratea-making-pictures-with-words-in-the-9th-century/33284736382_072577526f_b.jpg,817,1024,,"astrology,astronomy,stars,zodiac"
+4cb294d3-2ed9-417c-ae6d-507ad2b17978,,,ca. 820,/collections/aratea-making-pictures-with-words-in-the-9th-century/32597286224_c551db6e1a_c.jpg,685,800,,"astrology,astronomy,stars,zodiac"
+53b838b5-41c9-440b-b062-4da5cc1bbd9f,,,ca. 820,/collections/aratea-making-pictures-with-words-in-the-9th-century/33284735882_88699fea33_c.jpg,800,752,,"astrology,astronomy,stars,zodiac"
+67cdca0f-4dd8-4c27-a883-3d8515ccec42,,,ca. 820,/collections/aratea-making-pictures-with-words-in-the-9th-century/aratrea-banner.jpg,922,358,,"astrology,astronomy,stars,zodiac"
+807cdbfb-774a-4d4e-b5da-f6a98795130b,,,ca. 820,/collections/aratea-making-pictures-with-words-in-the-9th-century/32597286874_9a8ae94e84_b.jpg,764,1024,,"astrology,astronomy,stars,zodiac"
+8d6529ab-657f-4290-9aee-d94c46940468,,,ca. 820,/collections/aratea-making-pictures-with-words-in-the-9th-century/33057100260_765eafe64a_c.jpg,681,800,,"astrology,astronomy,stars,zodiac"
+00d2f96b-460d-4274-8e12-dbc90dcf1182,,,ca. 820,/collections/aratea-making-pictures-with-words-in-the-9th-century/32597289794_fcea84ba30_c.jpg,709,800,,"astrology,astronomy,stars,zodiac"
+0dd34fee-3fbc-4146-92ab-19296941964f,,,ca. 820,/collections/aratea-making-pictures-with-words-in-the-9th-century/32597288994_e16ae42913_b.jpg,886,1024,,"astrology,astronomy,stars,zodiac"
+b496e0bc-3bb5-4da3-98b4-fc647009d641,,,ca. 820,/collections/aratea-making-pictures-with-words-in-the-9th-century/33440201285_f163630d66_c.jpg,800,798,,"astrology,astronomy,stars,zodiac"
+ca853848-a7c7-4da4-9952-8b56b9bafb52,,,ca. 820,/collections/aratea-making-pictures-with-words-in-the-9th-century/33057098970_bf613eb0b5_c.jpg,648,800,,"astrology,astronomy,stars,zodiac"
+d738b552-f277-4708-be97-49c6b0ae5a9a,,,ca. 820,/collections/aratea-making-pictures-with-words-in-the-9th-century/32597287174_cd07d1f319_c.jpg,800,783,,"astrology,astronomy,stars,zodiac"
+da8f9e4c-b889-4978-850c-8a41cb26518d,,,ca. 820,/collections/aratea-making-pictures-with-words-in-the-9th-century/33057103530_972cac9a15_c.jpg,647,799,,"astrology,astronomy,stars,zodiac"
+e1278180-a82f-49b4-a81c-5552af853762,,,ca. 820,/collections/aratea-making-pictures-with-words-in-the-9th-century/33057102670_a82feacc6d_c.jpg,762,799,,"astrology,astronomy,stars,zodiac"
+f79df3c6-9a31-4ad1-abe5-522a87426b65,,,ca. 820,/collections/aratea-making-pictures-with-words-in-the-9th-century/32597288384_b3b5db9f2a_b.jpg,879,1024,,"astrology,astronomy,stars,zodiac"
+19a7ecbf-38d6-45e3-b610-72e7f46bb045,Group of Sun Spots and Veiled Spots,Étienne Léopold Trouvelot,1882,/collections/the-trouvelot-astronomical-drawings-1882/31528830681_e09c700a12_b.jpg,975,794,,"astronomy,sun"
+1265e8c2-c941-4523-8145-9a435584070f,Aurora Borealis,Étienne Léopold Trouvelot,1882,/collections/the-trouvelot-astronomical-drawings-1882/30834319103_7bd5fa7b18_o.png,972,788,,"astronomy,stars"
+24f8932b-6a98-4c48-b6e0-582eda84aa92,The Planet Jupiter,Étienne Léopold Trouvelot,1882,/collections/the-trouvelot-astronomical-drawings-1882/30802987684_b58b43bee5_o.png,944,769,,astronomy
+3cbd006a-1f34-4b17-b781-887fe16ad420,The Zodiacal Light,Étienne Léopold Trouvelot,1882,/collections/the-trouvelot-astronomical-drawings-1882/31528824221_9af60ea3ba_c.jpg,586,800,,"astronomy,sky,stars"
+5513e804-7e76-40ea-bfd6-f3f198897439,Solar Protuberances,Étienne Léopold Trouvelot,1882,/collections/the-trouvelot-astronomical-drawings-1882/31498246562_9ec1a39581_c.jpg,597,800,,"astronomy,sun"
+aefb5005-9564-4cb2-ace2-a28c79470525,The Planet Mars,Étienne Léopold Trouvelot,1882,/collections/the-trouvelot-astronomical-drawings-1882/30834320743_1b773fe3a4_b.jpg,962,777,,"astronomy,space"
+d69f353c-59c6-4f49-990d-8c96547a72c5,The Great Comet of 1881,Étienne Léopold Trouvelot,1882,/collections/the-trouvelot-astronomical-drawings-1882/31498233502_190d20e6b7_c.jpg,591,800,,"astronomy,sky"
+616dfec6-7df9-45d0-b780-d10f63508d12,Rainbow Obstacle,,1911,/collections/rainbows-in-art/30701705660_1d40940f97_b.jpg,657,1023,,astronomy
+c76a83e1-a375-4c3e-92f9-0a991cbcfbca,“One Hair Nor Particle of Dust…”,William Blake,1804–20,/collections/rainbows-in-art/25367359429_28385a1045_b.jpg,770,1024,,astronomy
+4d6e001b-daf0-48b7-91e9-a06bf92bee07,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21368437844_705cab4032_o.jpg,1200,1200,,"astronomy,moon"
+1ee31d66-be1e-43d0-80f3-67c803ea06c2,Beatrice explaining to Dante that the universe is a hierarchy of being,,1444–1450,/collections/14th-century-illuminations-for-dante-s-divine-comedy/17504476553_65188bb184_b.jpg,1024,518,,"astrology,astronomy"
+3e93de58-460d-4756-983d-1e463ebaff19,Naga,,19th century,/essays/a-mongolian-manual-of-astrology-and-divination/15809578423_b6ea91259c_c.jpg,800,242,,"astrology,astronomy"
+48a9205c-dc15-4464-9a08-aebd6a49cec4,Travels and Lions,,19th century,/essays/a-mongolian-manual-of-astrology-and-divination/16403642326_be10abafc7_c.jpg,799,242,,"astrology,astronomy"
+54fb55ea-a507-495f-9637-ec0ec6a2d9f4,Lotus,,19th century,/essays/a-mongolian-manual-of-astrology-and-divination/15807216994_e0d5ec51a0_c.jpg,799,243,,"astrology,astronomy"
+64bbbbfb-5082-4738-98fb-c7196c7ff215,Departing on a Trip 2,,19th century,/essays/a-mongolian-manual-of-astrology-and-divination/15809593293_cac63fdfc0_c.jpg,800,238,,"astrology,astronomy"
+722a9921-694e-4d38-92fe-4a5740168e75,The Cover,,19th century,/essays/a-mongolian-manual-of-astrology-and-divination/16403747166_b295d72a6c_c.jpg,800,264,,"astrology,astronomy"
+92d5b70d-8a2f-4c4f-ac73-b46252f2bed2,Solving Disputes,,19th century,/essays/a-mongolian-manual-of-astrology-and-divination/16427966631_34583a87d1_c.jpg,799,243,,"astrology,astronomy"
+9540c8b2-6535-4074-abf5-eec759ff217c,Basics of Mongolian Astrology,,19th century,/essays/a-mongolian-manual-of-astrology-and-divination/15807125014_e7e4bc2500_c.jpg,800,654,,"astrology,astronomy,zodiac"
+db32be47-f555-4e00-a3bc-fd433270f01a,Eclipses and Zodiac,,19th century,/essays/a-mongolian-manual-of-astrology-and-divination/15809576663_707abe5870_c.jpg,800,242,,"astrology,astronomy"
+435cf100-0b3b-4c3e-b003-b792a57e90f4,"Astronomy: a meteor shower in the night sky. Mezzotint, after 1783",,1783,/collections/flowers-of-the-sky/15342670715_9490851a68_o.jpg,900,695,,"astronomy,space"
+435ca1be-350f-4d51-abe9-d005104affb1,Illustration from a 1587 treatise on comets and meteors,,1587,/collections/the-comet-book/wheel.jpg,800,944,,"astronomy,space"
+579809c5-321e-4d3d-b8a5-64fc199dddc9,"Telescopic View of Halley's Comet, 1835",,1861,/collections/flowers-of-the-sky/15155814860_bd69ee2d49_c.jpg,800,649,,"astronomy,space,stars"
+59884fa0-6907-4d78-a434-a3633ca73108,"Telescopic View of Donati's Comet, Oct. 15, 1858",,1861,/collections/flowers-of-the-sky/15342208522_7dcfd4d0a8_o.jpg,600,857,,"astronomy,space"
+7c05c188-2a3e-4ac9-8b17-e89251f478f0,Dr. Herschel's View of the Organisation of the Heavenly Bodies,Anonymous,1813,/shop/oct_19_new_prints_00029.jpg,960,1200,,"astronomy,space"
+07fb7802-53d3-451a-8efb-a7b7ada33821,Portents of Death and Destruction,,ca. 1910,/collections/flowers-of-the-sky/s3_V0049000_V0049572-edit.jpg,1400,474,,"astronomy,space"
+ad3a2ff9-f46e-48b8-8c13-4fdc8d4d0e64,Comets of the Year 1664 and 1665 Observed by John Hevelio,,1668,/collections/flowers-of-the-sky/235448-edit-small.jpg,1000,1514,,"astronomy,space"
+e997e821-d73f-4cab-859a-0fbd41ab7804,Comet of 1811,,1879,/collections/flowers-of-the-sky/15156146627_13cc04f16d_c.jpg,442,800,,"astronomy,space,stars"
+ec86edd7-7219-413b-995b-4ce65ab0c041,"Illustration from a 1587 treatise on comets and meteors, created anonymously in Flanders (now northern France) and known as the *Kometenbuch*.",,1587,/collections/the-comet-book/rosa.jpg,800,954,,"astronomy,space,sun"
+811942a1-e1a8-412e-b360-01b3926ddf81,The Milky Way,,1883,/collections/popular-scientific-recreations/popular-scientific-recreations-00018.jpeg,2294,1679,,"astronomy,space,stars"
+046d82c3-14e4-45a1-ac3b-72d64f437ee6,"Paraselenae, Or Mock Moons",,1883,/collections/popular-scientific-recreations/popular-scientific-recreations-00020.jpeg,1700,1806,,astronomy
+31ee9d71-365c-4a93-921b-9a0a26788fe7,Hare,,1482,/collections/the-hyginus-star-atlas-1482/7948976782_98d736a600_o.jpg,450,699,,"astrology,astronomy"
+38b4c8f1-da98-4591-b247-38500ce3dcf6,Lyre,,1482,/collections/the-hyginus-star-atlas-1482/7948980290_9b92330204_o.jpg,450,628,,"astrology,astronomy"
+5e14a1b7-a918-470f-a0b0-b6233ad886c4,Horse,,1482,/collections/the-hyginus-star-atlas-1482/7948979546_c1cfc14680_o.jpg,450,659,,"astrology,astronomy,zodiac"
+738a5040-dcdf-413d-bd9a-8c1336553986,Hercules,,1482,/collections/the-hyginus-star-atlas-1482/7948976214_f3c5fa9c9d_o.jpg,450,655,,"astrology,astronomy"
+8ed6435e-eb75-48de-8fde-07a88e334111,Bull,,1482,/collections/the-hyginus-star-atlas-1482/7948979068_eb79a81ae4_o.jpg,450,659,,"astrology,astronomy,zodiac"
+9f1b03fa-b0cc-4cbf-bbf1-9bffeadb3ef7,Sagittarius,,1482,/collections/the-hyginus-star-atlas-1482/7948977542_1ab26fdeb1_o.jpg,450,685,,"astrology,astronomy,zodiac"
+a6520a80-0a1b-41f2-9256-8d05dce9462c,Capricorn,,1482,/collections/the-hyginus-star-atlas-1482/7948977126_ae9b1cf1b3_o.jpg,450,674,,"astrology,astronomy,zodiac"
+af80ae05-4987-4a51-b36f-b9edc4b2fb7c,Scorpio,,1482,/collections/the-hyginus-star-atlas-1482/7948978746_c6733114f0_o.jpg,450,623,,"astrology,astronomy,zodiac"
+ad5437e9-2bdd-4acc-8ab7-604b1278697b,Perseus,,1482,/collections/the-hyginus-star-atlas-1482/7948980664_1e222c11db_o.jpg,450,641,,"astrology,astronomy"
+a56fd591-0e33-4ac2-963c-db80695cc92f,Cassiopea / Andromeda,,1482,/collections/the-hyginus-star-atlas-1482/7948991886_52098e62f0_c.jpg,800,556,,"astrology,astronomy"
+c13c01ab-8cd7-4316-8e50-c25927ee3d26,Dragon / Ursa Major / Ursa Minor,,1482,/collections/the-hyginus-star-atlas-1482/7948977880_f845d80a03_o.jpg,450,651,,"astrology,astronomy"
+d68c0552-89ba-4986-8896-7bd25ddf55f7,Gemini,,1482,/collections/the-hyginus-star-atlas-1482/7948989894_229ce90a3b_o.jpg,450,706,,"astrology,astronomy"
+de84a670-4a19-4df1-9155-2b898044d1fa,Orion,,1482,/collections/the-hyginus-star-atlas-1482/7948979898_b929005a77_o.jpg,450,602,,"astrology,astronomy,stars"
+db6d9858-58a5-41db-877e-3da7866c8ca5,Virgo,,1482,/collections/the-hyginus-star-atlas-1482/7948978334_88c0265a1e_o.jpg,450,696,,"astrology,astronomy,zodiac"
+f19b11f3-7b33-488a-8325-2fbe9c2f7cfb,Centaur Phyllirides,,1482,/collections/the-hyginus-star-atlas-1482/7948976610_d683aa8d67_o.jpg,450,687,,"astrology,astronomy"
+16f2b9fd-81fe-45c1-93d1-ae53b630b64a,,,ca. 17th century,/collections/arabic-machine-manuscript/arabic-machines-00002.jpg,2340,3232,,astronomy
+31d9bf91-fcf0-40f1-820e-8003d3d95789,"Andromeda, Perseus, The Triangle",John Flamsteed,1795,/collections/the-celestial-atlas-of-flamsteed-1795/7500095472_3d07f8eef9_o.jpg,850,703,,"astrology,astronomy,stars"
+36c5b098-e3bf-4f22-9be9-5d10f9dc3044,"The Lynx, The Little Lion",John Flamsteed,1795,/collections/the-celestial-atlas-of-flamsteed-1795/7500096608_eb84ed09ca_o.jpg,850,694,,"astrology,astronomy,stars,zodiac"
+1e2d5608-0836-47cf-9bf8-f6f58bd3f472,Transit of Venus,Naval Observatory and Transit of Venus Commission,1882,/collections/transit-of-venus-1882/7156013103_9936564929_o.jpg,500,500,,"astronomy,space,sun"
+3c4d0617-8925-4c8e-936c-aec8e02dc652,Transit of Venus,Naval Observatory and Transit of Venus Commission,1882,/collections/transit-of-venus-1882/7156012383_0f740fbabc_o.jpg,500,500,,"astronomy,space,sun"
+316b7e7d-ee97-4ffb-a983-0a1e5e974061,Transit of Venus,Naval Observatory and Transit of Venus Commission,1882,/collections/transit-of-venus-1882/7156013417_5b8b5f547a_o.jpg,500,500,,"astronomy,space,sun"
+a62d011e-5714-477c-9cdc-7edca06652fc,Transit of Venus,Naval Observatory and Transit of Venus Commission,1882,/collections/transit-of-venus-1882/7341213884_43918f28c4_o.jpg,500,500,,"astronomy,space,sun"
+dcf37ec6-d028-41ac-812b-f2acce47e559,,Naval Observatory and Transit of Venus Commission,1882,/collections/transit-of-venus-1882/7156054311_1a6b31880d_o.jpg,529,683,,"astronomy,space,sun"
+fc411551-f042-408f-9cbc-c545fbf31590,The Constellations (December November October),W. G. Evan,1856,/collections/maps-from-geographicus/542px-1856_Burritt_-_Huntington_Map_of_the_Constellations_or_Stars_in_October2C_November_and_December_-_Geographicus_-_DecNovOct-burritt-1856.jpg,542,600,,astronomy
+62eba208-09ce-47d7-8528-2bf58933175f,Prodigious warnings concerning the city of Jerusalem,,1559,/collections/histoires-prodigieuses/histoires-prodigieuses-00002.jpg,2634,2938,,stars
+b9326a0a-9979-46c6-b407-83187e2a7027,The New Star,Aubrey Beardsley,1897,/collections/aubrey-beardsley/beardsley-illustration-00046.jpg,1786,2407,,stars
+e41836da-eab0-47d0-802c-65fbedda00bb,Falling stars as observed from the balloon.,Albert Tissandier; Eugène Cicéri,1871,/collections/travels-in-the-air/travelsinair00flam_0331-edit.jpg,2682,1961,,"sky,stars"
+d7c2c1d4-6b75-4428-bb4f-2a9c2716e5a3,Zima (Winter),Michalina Janoszanka,ca. 1920s,/collections/michalina-janoszanka/Michalina_Janoszanka_-_Zima-edit.jpg,3263,3012,,stars
+4ebc617d-8e4b-4bd7-ba09-0bedd380bd3a,,Wallace Smith,1922,/essays/relaxations-for-the-impotent/09-fantaziusmallare00hechrich_0053-edit.jpg,2176,3554,,stars
+427c21be-5365-433d-aaa4-59cc3581b54f,,Raffaele Mainella,1907,/collections/nos-invisibles/BSG_FOLRSUP15RES_0156.jpeg,3537,6336,,stars
+80c14c90-20f7-4d2f-8405-22c50332963a,,Raffaele Mainella,,/collections/nos-invisibles/BSG_FOLRSUP15RES_0017.jpeg,4440,6344,,stars
+f5820348-a4e9-4c15-a8be-11ae9195de3f,,,ca. 1880,/collections/paper-lantern-catalogue/DP110892.jpg,3787,4000,,"moon,stars"
+930686d7-5fbe-4573-8a0b-e1b68165932e,"“Religious fervor is mirrored on the face of a Black Muslim woman, one of some 10,000...”",John H. White,1973–4,/collections/documerica/documerica-52.jpg,1500,1011,,stars
+08c01435-ed6f-4a49-91b5-307dca57b95b,"Publisher’s binding for Frances Trego Montgomery’s <i>On a Lark to the Planets</i> (1904), the sequel to <i>The Wonderful Electric Elephant</i>.",,1904,/essays/jumbos-ghost/07-lark-to-other-planets.jpeg,548,680,,"moon,stars"
+f581cffb-3555-45fa-888e-232c14f30bb4,The Raven,Gustave Doré,1884,/shop/nov-21-prints-00009.jpeg,822,1200,,stars
+bda9b10e-4cc1-456f-9669-811a2d164238,Walking Couple by Moonlight,Gesina ter Borch,1654,/shop/nov-21-prints-00003.jpg,1200,1200,,"moon,stars"
+5f4b2ee5-cc45-4607-b1a7-7fc4e5ac1a75,"*Inferno*, Canto XXXIV: Dante and Virgil emerge from Hell and see the stars.",,ca. 1370,/collections/dante-divine-comedy-in-art/dante-commedia-7.jpg,1273,1307,,stars
+79e73cd3-ff73-4f34-ae7c-d6a68b185fcb,"*Paradiso*, Canto XXVII: The Sphere of Fixed Stars.",,ca. 1564,/collections/dante-divine-comedy-in-art/dante-commedia-40.jpg,1942,2356,,stars
+ccc82acf-0b2e-4687-8d93-44f49bb35f15,"*Paradiso*, Canto V: First Heaven, Sphere of the Moon.",Petrus de Plasiis,ca. 1491,/collections/dante-divine-comedy-in-art/dante-commedia-34.jpg,1886,1894,,"moon,stars"
+bdcc27b5-81a6-449d-ae1a-28a3aa2d3756,Air,William Blake,1793,/collections/william-blakes-the-gates-of-paradise/blake-gates-of-paradise-7.jpg,2512,2874,,stars
+1849add6-19f5-487b-aaec-68f8a4d67d63,Frustules of Diatoms,Julius Wiesner,1870,/shop/nov-2020-prints-new-00043.jpg,1059,1200,,stars
+86bb1386-98ba-445c-b216-2f05f8f4a79c,The Melancholic Temperament,Jacob de Gheyn (II) (after),ca. 1596,/shop/nov-2020-prints-new-00002.jpg,743,1000,,"moon,stars"
+12d44633-c0a0-4020-85d2-107e702e6134,,William Elliot Griffis,1922,/collections/korean-fairy-tales/koreanfairytales00grif_0185.jpg,614,1000,,stars
+9776a3df-223e-4fd9-a425-ea083386d01d,"Frank Swinnerton Contemplating, From the Tight Little Isle, The Two Classes of Prigs Developed by Prohibition; Those Who Accept and Those Who Rebel",Ralph Barton,1922,/collections/nonsenseorship/nonsenseorship00brourich_0132.jpg,650,1010,,stars
+f59026ec-34cb-4fbb-b8c3-269bf328497b,"Atomic Signs sign, Route 550, Farmington, New Mexico.",John Margolies,1980,/collections/john-margolies-photographs-of-roadside-america/48635803693_666690a8af_c.jpg,555,800,,stars
+e3f4a917-6de6-40f2-816d-ab0e3c35e9bb,The Path to the Moon,W. T. Horton,1898,/shop/edit-bookofimages-3-1.jpg,635,768,,"moon,stars"
+9429b03e-32a4-43eb-95ae-0ee3a93a386f,"The Hall of Stars, a Design for The Magic Flute","Karl Friedrich Thiele, after Karl Friedrich Schinkel",ca. 1848,/shop/edit-DT214829-1.jpg,1200,830,,"sky,stars"
+8fd472f4-a986-4f9f-835b-bd54cba762cc,Fireworks at the Ryogoku Bridge,Utagawa Hiroshige,1858,/shop/AK-MAK-1612-edit-1.jpg,830,1200,,"sky,stars"
+e04ff46e-8cfb-40a8-b71b-0bd4eb94a44a,Cover for <em>A Book of Images</em>,W. T. Horton,1898,/collections/the-art-of-book-covers-1820-1914/46348543064_67b0c25bfd_o.jpg,482,680,,"moon,stars"
+54e86ac5-7fd8-408b-b3b4-d340c342349d,"""No sooner had he whistled than he heard a whizzing and a whirring from all quarters, and such a large flock of birds swept down that they blackened all the field in which they settled.""",Kay Nielsen,1922,/collections/east-of-the-sun-and-west-of-the-moon-illustrated-by-kay-nielsen-1922-edition/31880051608_33afd6208a_c.jpg,557,800,,"sky,stars"
+95f92e3a-b059-4e33-9ccd-e9500797a19c,"“She could not help putting the door a little ajar just to peep in, when — Pop! out flew the Moon.”",Kay Nielsen,1922,/collections/east-of-the-sun-and-west-of-the-moon-illustrated-by-kay-nielsen-1922-edition/43934098690_bd76923ea6_c.jpg,568,800,,"moon,stars"
+eab4c6f3-58d2-4e42-9390-db3ba4a89b17,A Promenade Through the Sky,J. J. Grandville,1847,/essays/grandville-visions-and-dreams/44013006465_cef1147af4_b.jpg,683,1023,,"sky,stars"
+bb0c74e4-6693-49f6-b177-de885d4f453c,"“Thou hast slain the monster”, cried Ariadne, clasping her hands",Nathaniel Hawthorne,1921,/collections/nathaniel-hawthorne-s-tanglewood-tales-illustrated-by-virginia-frances-sterrett-1921/40026867745_3c45227f49_b.jpg,620,815,,stars
+cb6f17bb-160d-4b3b-bf63-76636b46d8fb,“What is it?” asked Jason,Nathaniel Hawthorne,1921,/collections/nathaniel-hawthorne-s-tanglewood-tales-illustrated-by-virginia-frances-sterrett-1921/40026863245_4f750fa39f_b.jpg,620,826,,stars
+8e8b9290-4a53-47eb-9aaa-e729eb2fc141,“Strangers to the Universal Panic.”,Camille Flammarion,1894,/collections/omega-the-last-days-of-the-world-1894/39185650864_22bde4b8d4_b.jpg,700,709,,stars
+25c9bc38-d7f4-4d53-a3da-c1a322e8d6b1,It Was the Corpse,Émile-Antoine Bayard,1870,/collections/emile-antoine-bayard-s-illustrations-for-around-the-moon-by-jules-verne-1870/2-2.jpg,545,800,,"moon,stars"
+53dc10ae-827d-4ea7-86c0-281b744e7eee,Can You Imagine,Émile-Antoine Bayard,1870,/collections/emile-antoine-bayard-s-illustrations-for-around-the-moon-by-jules-verne-1870/14-1.jpg,539,800,,"moon,stars"
+b9ca6ada-401b-4367-a7bc-847b3c3831b2,An Hour,Émile-Antoine Bayard,1870,/collections/emile-antoine-bayard-s-illustrations-for-around-the-moon-by-jules-verne-1870/17-1.jpg,541,800,,"moon,stars"
+bae0000b-1ded-4ff8-ab9d-7583a0d590aa,I Would Have Taken on the Attributes of a Chimera,Émile-Antoine Bayard,1870,/collections/emile-antoine-bayard-s-illustrations-for-around-the-moon-by-jules-verne-1870/3-1.jpg,538,800,,"moon,stars"
+d31db837-4f17-4955-b66a-e408d1a80dfa,A Lunar Colic,Émile-Antoine Bayard,1870,/collections/emile-antoine-bayard-s-illustrations-for-around-the-moon-by-jules-verne-1870/15-1.jpg,540,800,,"moon,stars"
+bbaa9c12-f2ec-4587-8c1f-67f1769905ba,,,1847,/collections/illustrations-from-the-lights-of-canopus-1847/10.jpg,1085,746,,"moon,stars"
+b8bda4de-5dd0-4a3d-95e8-eeb7c0859567,,,1847,/collections/illustrations-from-the-lights-of-canopus-1847/23.jpg,630,465,,stars
+ae47597f-bc44-4c7f-9d7c-f429968b8234,"The Heart of Man Who After His Conversion Has Fallen Again Into Former Sins, And Is Now Entirely In the Power of Satan",Johannes Gossner,1851,/collections/the-heart-of-man-either-a-temple-of-god-or-a-habitation-of-satan-represented-in-ten-emblematical-figures-1851/36023044971_d00ff7ae68_b.jpg,682,1024,,stars
+266a2686-8ffc-4b01-9e49-a3c96e9e59f7,"Formation photograph of the American flag; sailors, near Great Lakes.",Arthur Mole; John Thomas,ca. 1918,/collections/the-living-photographs-of-mole-and-thomas/31316291093_71b20cc3c9_o.jpg,513,640,,stars
+f872910c-54d5-436b-8397-77498347ebbb,"The Human U.S. Shield; 30,000 officers and men, Camp Custer, Battle Creek, Mich., ca. 1918.",Arthur Mole; John Thomas,ca. 1918,/collections/the-living-photographs-of-mole-and-thomas/32126278925_3804726b3d_o.jpg,521,640,,stars
+1cbcc606-c91c-43cb-9fc0-30291ed21582,Geometric star,,ca. 17th century,/collections/the-surreal-art-of-alchemical-diagrams/28617938142_9175ab9bcf_z.jpg,578,640,,stars
+adc5e153-1e0a-4ad3-9bd3-ad79b8e76255,Parable,,1708,/collections/the-surreal-art-of-alchemical-diagrams/28644496121_86c3f25fde_z.jpg,559,640,,stars
+45482554-a87e-40e0-aec4-c3be0bf3c918,The Path to the Moon,W. T. Horton,1898,/essays/the-strange-case-of-mr-william-t-horton/25616230656_f70cf26e7e_o.jpg,1199,1479,,stars
+63d9a44e-3b67-4902-9517-52347ab77279,"""But the mother came with such a rush that he had to hurl himself into the lake to escape her fury.""",Arthur Heming,1925,/essays/tribal-life-in-old-lyme-canadas-colorblind-chronicler-and-his-connecticut-exile/21057642016_886c408e16_b.jpg,885,960,,stars
+efcd7f25-ac70-4fa2-a912-b902a9384bf7,,,ca. 1775,/collections/compendium-of-demonology-and-magic-ca-1775/19264889995_38d2fbacb2_o.jpg,620,790,,stars
+9ca33d94-01ef-428f-ab9f-cef00ade434e,"Dante and Virgil with Pope Adrian V, Hugh Capet, and Statius, in Purgatory",,1444–1450,/collections/14th-century-illuminations-for-dante-s-divine-comedy/18126098721_4c0ef72409_b.jpg,1024,544,,stars
+aea2d82e-d06d-4825-84af-1227b906fe9a,Dante and Virgil observing the fate of the Lustful,,1444–1450,/collections/14th-century-illuminations-for-dante-s-divine-comedy/17937135548_dcfb0df0db_b.jpg,1024,599,,stars
+efeafc64-adc1-4256-9509-89e7e82bfb0a,Beatrice watching as Dante kneels before Adam,,1444–1450,/collections/14th-century-illuminations-for-dante-s-divine-comedy/17937144058_7f946759de_b.jpg,1024,492,,"stars,zodiac"
+a03470a0-94c1-4ad0-a7b4-40778126fce6,Therefore God Becomes...,William Blake,1788,/essays/william-blake-and-paul-mellon-the-life-of-the-mind/15209274348_9125d12afb_b.jpg,819,1024,,stars
+1d1a6ae6-e1e6-42e7-8c44-d1495b0fe912,,Master of San Miniato,15th century,/collections/the-prophecy-of-the-popes-15th-century/14457686032_bb22182d5c_o.jpg,600,789,,stars
+5ebcf286-659e-41aa-8207-69029f76f3cc,“God’s Providence”,,1705,/essays/in-the-image-of-god-john-comenius-and-the-first-children-s-picture-book/14196927193_3baca842a1_c.jpg,799,576,,stars
+6d64a916-d3fe-4a3c-b595-8f3d8bc21a93,John L. Sullivan,,1898,/essays/john-l-sullivan-fights-america/14038402954_a3c62780fd_b.jpg,692,1024,,stars
+c2f19a26-8ea9-4bd2-b20a-90f64320d436,Mantichora,Edward Topsell,1658,/collections/the-history-of-four-footed-beasts-and-serpents-1658/8615277353_141cf1b455_o.jpg,598,354,,stars
+1190c929-9703-4026-981b-157b778aac14,Alfred Tennyson,Frederick Watty,1873,/collections/cartoon-portraits-of-leading-19th-century-figures-1873/7802390012_d0b1106e8e_o.jpg,518,731,,stars
+9e4f004b-48ff-4159-bdcd-9b9d7d423e75,Jolly Hallowe'en,,ca. 1910,/collections/halloween-postcards/halloween-card-61.jpg,760,488,,"moon,stars"
+c928f9ab-d9d3-4102-a1c4-54623981961b,Halloween Night,,ca. 1913,/collections/halloween-postcards/halloween-card-42.jpg,1920,1219,,stars
+af5782b0-81b5-47c3-b714-e68efab9a5a9,Diagram of the Macrocosm,Robert Fludd,1617,/shop/oct_19_new_prints_00045.jpg,1200,1229,,stars
+32a2e69d-572b-40c3-863a-bf580f9f1cf9,Front cover,Virginia Frances Sterrett,1920,/collections/old-french-fairytales-illustrated-by-virginia-frances-sterrett-1920/40921207611_c53625e796_b.jpg,620,904,,stars
+8117fce7-b4a0-4202-b3ca-10a34e9a522b,Rosalie saw before her eyes a tree of marvellous beauty,Virginia Frances Sterrett,1920,/collections/old-french-fairytales-illustrated-by-virginia-frances-sterrett-1920/27049795958_1e8eca1fe7_b.jpg,620,824,,stars
+f330d9e3-7bc7-4808-b3f8-7b30b73f7650,Violette consented willingly to pass the night in the forest,Virginia Frances Sterrett,1920,/collections/old-french-fairytales-illustrated-by-virginia-frances-sterrett-1920/40212592544_40b4df660c_b.jpg,620,816,,stars
+409f4bd2-f020-46d1-a755-01c3f79bc6c4,Path of the balloon over London (at night). 2nd October 1865.,"Vincent Brooks, Day & Son",1871,/collections/travels-in-the-air/travelsinair00flam_0139-edit.jpg,2980,1978,,"moon,sky"
+eac61c88-c165-4a3f-a04e-8af891855020,After a time the moon shone with increased brightness.,Sargent,1871,/collections/travels-in-the-air/travelsinair00flam_0155-edit.jpg,1110,1149,,"moon,sky"
+eb693f2c-1da6-4bcb-9c65-338ccee5f0c0,A moonlight effect as seen from the balloon by M. Flammarion.,Sargent; Eugène Cicéri,1871,/collections/travels-in-the-air/travelsinair00flam_0227-edit.jpg,2457,1602,,"moon,sky"
+7961df7c-fc9a-4114-862a-df448369abb0,"Lunar halo observed by M. Flammarion. (Night of 14–15 July, 1867.)",Sargent; Eugène Cicéri,1871,/collections/travels-in-the-air/travelsinair00flam_0271-edit.jpg,2598,1825,,"moon,sky"
+27879ca1-3482-4354-8e81-5b451903cac5,The Moon shines forth with peculiar brilliancy.,,1871,/collections/travels-in-the-air/travelsinair00flam_0277-edit.jpg,2610,1837,,"moon,sky"
+d9634348-31f6-41a2-87f2-e9b934f56476,Sun and Moon,,1600,/collections/christening-of-lady-elisabeth-of-hesse/iiif-service_gdc_gdcwdl_wd_l__08_91_1_wdl_08911_bsb00001352_00071-full-pct_100-0-default-detail.jpg,4076,2712,,"moon,sun"
+7e48bb8d-79c5-445f-a6c0-d06b07a4357d,The Sun and the Moon,Paul Nash,1924,/collections/paul-nash-s-genesis/7-The-Sun-and-the-Moon.jpg,2894,3681,,"moon,sun"
+47a22285-84a7-4756-8d60-41dc93ef334e,Eclipses and Phases of the Moon,,1878,/collections/principles-of-light-and-color/principlesoflig00babb_0222.jpg,1252,2372,,moon
+dc3f9ecf-54a3-4e10-a891-0760d6414e8d,Monument of Skulls,Paul Krafft,1907,/collections/capital-and-labor/capitallabor00harr_0326.jpeg,2202,3354,,moon
+c67da513-9e14-4729-ad3f-48a30fb0b9ab,"“The Feint with the Moon”, a fable from Hitopadesa.",Tom Seidmann-Freud,1924,/collections/rabbit-tales/dbbs_derivate_00000176-7.jpg,1774,1420,,moon
+77d5b0e5-3f83-4a4e-b491-65ea7ff74ecd,"Will Dixon, “Malinda; Come Down to Me”",,1905,/collections/gotham-attucks/gotham-attucks-15.jpg,1585,2035,,moon
+ff6048bd-bd6c-4236-9dd8-dabaaa81211f,"Alex Rogers and James Vaughan, “When the Moon Shines”",,1904,/collections/gotham-attucks/gotham-attucks-16.jpg,1585,2016,,moon
+1b4a087f-6e69-4083-8a25-afc789f459d9,,,ca. 1880,/collections/paper-lantern-catalogue/DP110894_2.jpg,3500,3839,,"moon,sun"
+d19b7050-404a-491d-b551-07e5ae66c7e9,Phases of the Moon from *Smith's Illustrated Astronomy*,Asa Smith,1849,/shop/nov-2023-prints-00056.jpg,1005,1200,,moon
+6b3862b4-a89a-4a6a-9cc4-291c67441900,Avarice,James Ensor,ca. 1904,/collections/ensor-sins/ensor-sins-avarice-edit.jpg,1500,1029,,moon
+b19abe8c-1837-42c1-9c50-870dc2a8a54e,I Want! I Want!,William Blake,1793,/collections/william-blakes-the-gates-of-paradise/blake-gates-of-paradise-12.jpg,1728,2471,,moon
+1de63329-8e80-495d-9589-0d66c3d4afb9,A Pumpkin used as a Fishing-boat.,Filippo Morghen,1776,/collections/filippo-morghen-fantastical-visions-of-lunar-life/ag-obj-175967-001-pub-large-edit.jpg,1903,1419,,moon
+2ced97c7-4cfd-47c7-85a3-aa03d14124dc,A Boat that has for sails the wings of a huge Bird.,Filippo Morghen,1776,/collections/filippo-morghen-fantastical-visions-of-lunar-life/ag-obj-175969-001-pub-large-edit.jpg,1900,1407,,moon
+5b147ab6-6a07-4595-8acd-01f0120cfa67,"A house on water, and a new way to summon Geese by the Beat of a Drum.",Filippo Morghen,1776,/collections/filippo-morghen-fantastical-visions-of-lunar-life/ag-obj-175970-001-pub-large-edit.jpg,1884,1403,,moon
+7b74c8b5-f6d3-48b4-b12d-c9cbef50c1f7,Title plate from Suite of the most notable things seen by Cavaliere Wild Scull and Signore de la Hire on their famous voyage from the Earth to the Moon…,Filippo Morghen,1776,/collections/filippo-morghen-fantastical-visions-of-lunar-life/ag-obj-170861-001-pub-large-edit.jpg,1848,1385,,moon
+833f13c1-9e65-4577-aa25-77bf7291199f,The Manner of transporting wares on Barges drawn by a Bellows.,Filippo Morghen,1776,/collections/filippo-morghen-fantastical-visions-of-lunar-life/ag-obj-175966-001-pub-large-edit.jpg,1888,1401,,moon
+c81e576a-9cba-43b1-90cf-836d27e06730,Pumpkins used as dwellings to be secure against wild beasts.,Filippo Morghen,1776,/collections/filippo-morghen-fantastical-visions-of-lunar-life/ag-obj-175968-001-pub-large-edit.jpg,1889,1409,,moon
+cc7ec694-7ad0-4426-80a1-5ce7b5381d1c,A new device to cleave wild beasts from Head to Tail.,Filippo Morghen,1776,/collections/filippo-morghen-fantastical-visions-of-lunar-life/ag-obj-175963-001-pub-large-edit.jpg,1919,1418,,moon
+e1745bcb-4f13-4992-b764-b77278c304b7,A Savage mounted on a winged Serpent battling with a wild beast resembling a Porcupine.,Filippo Morghen,1776,/collections/filippo-morghen-fantastical-visions-of-lunar-life/ag-obj-175962-001-pub-large-edit.jpg,1893,1407,,moon
+f454ebc9-7849-4dae-a8f3-451723807b00,The Manner of sailing by the power of Bellows practiced on that Planet.,Filippo Morghen,1776,/collections/filippo-morghen-fantastical-visions-of-lunar-life/ag-obj-175965-001-pub-large-edit.jpg,1886,1404,,moon
+fdd4be5e-993f-47e5-8e05-100cbbdb574c,The Carriages used on the Moon and which move by sails.,Filippo Morghen,1776,/collections/filippo-morghen-fantastical-visions-of-lunar-life/ag-obj-175964-001-pub-large-edit.jpg,1898,1404,,moon
+a53a0f4b-6ceb-43db-a288-1377afc58367,Full Moon with White Rabbit,Ohara Koson,ca. 1920,/shop/nov-2020-prints-new-00014.jpg,551,1000,,moon
+c4fb6903-0ac3-4667-9934-453a4abe3778,Saturn as It Appeared to Various Previous Observers,Christiaan Huygens,1659,/essays/the-uncertain-heavens/CristianiHugeni00HuygA_0052-edit.jpg,2704,2604,,moon
+6c86037b-730c-4521-b7e1-6912b5a5d4d8,Another ancient bent trumpet,Filippo Buonanni,1722,/collections/filippo-buonanni-harmonic-cabinet/harmonic-cabinet-00002.jpg,835,1200,,moon
+2107aaa8-efc7-4838-b96c-8839b3a35b28,"Tsuba with bugs, flowers, and moon design.",Georg Oeder,1916,/collections/photographs-of-japanese-sword-guards-1916//48782590547_1db6329a4b_o.jpg,600,634,,moon
+24945a15-b064-4d97-9326-d34997f34b53,The Wave,W. T. Horton,1898,/shop/edit-bookofimages-1-1.jpg,600,768,,moon
+88d9b925-08c0-44fa-a2fc-f86651595860,Mystical Shore,Edvard Munch,1897,/shop/edit-DP275010-1.jpg,1024,706,,moon
+e6e21c60-926b-48ed-b5db-9f96e8f1d798,Hideyoshi and the Moon at Shizugatake,Tsukioka Yoshitoshi,1888,/shop/edit-RP-P-1989-218-1.jpg,819,1200,,moon
+f00837f1-c10d-4862-a733-8b0edfafbdb5,Fukami Jikyu In Moonlight,Tsukioka Yoshitoshi,1887,/shop/edit-RP-P-1983-391-1.jpg,839,1200,,moon
+61d5c4e7-ba47-42cb-85b8-597ad57d0ac7,Moon and Smoke,Tsukioka Yoshitoshi,1886,/shop/edit-RP-P-1983-390-1.jpg,824,1200,,"moon,sun"
+f12b543c-f895-4b06-912b-b7e541843244,Four Diagrams of Lunar Eclipses,Johannes Buno,ca. 1711,/shop/ct003804-edit-1.jpeg,731,1024,,moon
+ecbc1e8b-28b5-4ffc-9e0c-1efaa7b82217,Cover for <em>From the Earth to the Moon</em>,,1873,/collections/the-art-of-book-covers-1820-1914/47020121602_46511f733a_o.jpg,457,680,,"moon,space"
+2eca2af2-abd0-4f2c-9ebc-ed185143c557,Women bathing before an architectural panorama,Fayzullah,ca. 1765,/collections/highlights-from-the-cleveland-museum-of-art-s-release-of-more-than-30k-images-of-public-domain-works/46887554342_e18c964398_c.jpg,581,800,,moon
+f15a7f88-0c84-4086-824b-8bb2a2536b9a,Cuckoo and Pine,Utagawa Hiroshige,1840,/collections/utagawa-hiroshige-last-great-master-of-ukiyo-e/41672249971_dd152560c3_b.jpg,1000,782,,moon
+5c30e44a-c2b9-4e95-8cb0-c9c6872a525c,The Unfortunate One Had Disappeared,Émile-Antoine Bayard,1870,/collections/emile-antoine-bayard-s-illustrations-for-around-the-moon-by-jules-verne-1870/19-1.jpg,542,800,,moon
+bfc49fc9-8ab9-4399-9de5-e2bc150f0b34,I Would Give Twenty Pistoles,Émile-Antoine Bayard,1870,/collections/emile-antoine-bayard-s-illustrations-for-around-the-moon-by-jules-verne-1870/1-1.jpg,541,800,,moon
+b35f2360-ef7a-406d-8bea-ecac0938f1fa,It Seems to Me That I See Them,Émile-Antoine Bayard,1870,/collections/emile-antoine-bayard-s-illustrations-for-around-the-moon-by-jules-verne-1870/18-1.jpg,537,800,,moon
+d74ceac3-8715-4e56-9ec5-0c681b115ed7,The Instrument Mounted,Émile-Antoine Bayard,1870,/collections/emile-antoine-bayard-s-illustrations-for-around-the-moon-by-jules-verne-1870/6-1.jpg,545,800,,moon
+df23f3c7-6182-43c1-8079-1c7cf4f1ea22,Then Began a Round,Émile-Antoine Bayard,1870,/collections/emile-antoine-bayard-s-illustrations-for-around-the-moon-by-jules-verne-1870/4-1.jpg,542,800,,moon
+ea0086d3-832c-4648-ae41-2bf48e9f13be,The Sun...,Émile-Antoine Bayard,1870,/collections/emile-antoine-bayard-s-illustrations-for-around-the-moon-by-jules-verne-1870/12-1.jpg,538,800,,moon
+e6a7f095-796c-48c2-99da-fa96cdb66c6d,I Would Be Nothing But a Pygmy,Émile-Antoine Bayard,1870,/collections/emile-antoine-bayard-s-illustrations-for-around-the-moon-by-jules-verne-1870/5-1.jpg,551,800,,moon
+fbd04285-ec18-4036-8550-f1ad5bccd744,The Descent Began at 1:25,Émile-Antoine Bayard,1870,/collections/emile-antoine-bayard-s-illustrations-for-around-the-moon-by-jules-verne-1870/20-1.jpg,544,800,,moon
+fe8419d6-7c53-477c-b932-9aa863e8e3b6,So This Is How,Émile-Antoine Bayard,1870,/collections/emile-antoine-bayard-s-illustrations-for-around-the-moon-by-jules-verne-1870/7-1.jpg,546,800,,moon
+5506f4ba-918a-44a7-a212-7a18bd11112d,Section of the Ripley Scroll,,ca. 1600,/collections/the-surreal-art-of-alchemical-diagrams/28722133885_050a963742_c.jpg,530,800,,"moon,sun"
+8a62186b-308f-41dd-83f1-c97fbaeab773,And there was darkness,,ca. 1725,/collections/the-surreal-art-of-alchemical-diagrams/28689340366_3037bb65a5_c.jpg,631,800,,"moon,sun"
+123c6b61-22b1-4c23-89ac-5d93e2ac3ca3,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21963933086_87f208be4a_o.jpg,1200,1177,,moon
+2e35ccc2-bb25-4370-a9c7-0a84fd69d486,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21963930856_66e9be4b16_o.jpg,1200,1200,,"moon,space"
+23fcdc99-597c-4518-981e-df57ba0795ed,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21977917882_ffae88748b_o.jpg,1200,1176,,"moon,space"
+265a013f-21d0-4e23-bd31-78282b5d2667,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/22001023791_959a972d90_o.jpg,1200,1200,,moon
+2e80cf77-d40d-4d92-84e9-bd0976ad4cd7,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21370063733_e74d362642_o.jpg,1200,1200,,moon
+36b15443-46f6-476a-a742-24c576a07f77,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21963933826_7842ec7b9b_o.jpg,1200,1177,,moon
+3c2ce664-375f-44be-877d-266295dffbf9,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21803352728_82f2f8e370_o.jpg,1200,1200,,moon
+491f2849-02ea-4004-aab6-150bddd9dcaa,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21965027936_901a2e5099_o.jpg,1200,1200,,moon
+65dedbd5-d050-4926-9e3a-523262a059e5,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21999928961_27aab54d4b_o.jpg,1200,1177,,"moon,space"
+7aa77e17-703d-4775-908c-b0c5789fbc17,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21963937216_1df9b19a14_h.jpg,1600,662,,"moon,space"
+8b1dd0b0-741d-4fa2-ba40-5fe6c6f9aded,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21803352548_f8e442010f_o.jpg,1200,1200,,moon
+089bb03a-c487-4368-888b-c4709667b1d8,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21368969343_df437b1701_o.jpg,1200,1177,,moon
+0fb8a457-5d97-4717-b5f5-103b62875b2a,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21367720004_d5dbf7a540_h.jpg,1600,1431,,moon
+a08eb879-891e-45e4-8a65-9c4273486308,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21367349374_4c754188df_o.jpg,1200,1177,,moon
+b09c5710-9aa1-491b-bcb7-56ca1417bc28,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21803214809_a5bd1c2aff_o.jpg,1200,1200,,moon
+bb523e4b-17cd-4caa-8714-7135c6cd5a16,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21963933966_860ca7714f_o.jpg,1200,1177,,moon
+b7e2889e-a50f-4011-982d-36b2d6f93077,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/22001023611_c67ef1cd31_o.jpg,1200,1200,,"moon,space"
+d174dbb4-a4b8-4177-b61f-9d1153069495,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21801990430_b2e558b7c3_o.jpg,1200,1177,,moon
+deb40526-9e7e-4a8f-9060-7380ad2fff20,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21990113945_0cd06c1157_o.jpg,1200,1200,,moon
+e31cd155-415d-4a38-9a5a-210372dc4f47,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21990110385_2881bc5d0c_o.jpg,1200,1200,,"moon,space"
+ed841a91-ee87-4488-9bb2-d5e862018dc9,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21367347714_e45ed98073_o.jpg,1200,1177,,moon
+f744c5c0-260a-4092-8b2a-6f30e2b77ed8,Photo from Apollo 11 mission,NASA,1969,/collections/hi-res-images-from-the-apollo-missions/21803217089_57fc0b9de2_o.jpg,1182,699,,moon
+b0389fd5-9933-4145-aa4c-850bd567be35,"Beatrice explaining some scientific theories to Dante, including the appearance of the moon",,1444–1450,/collections/14th-century-illuminations-for-dante-s-divine-comedy/17938817119_4662308ec8_b.jpg,1024,491,,moon
+f4b9e31b-4a57-4d2d-a279-b99fad203e0f,A Child Dreams of the Passing of Time,Boetius Adamsz Bolswert,1624,/collections/the-art-of-dreams/17210136982_302ea2683b_b.jpg,631,1024,,"moon,sun"
+2a0c92f8-5efb-46ef-8deb-7d19ddf9d3bb,Caricature depicting a scene from Hamlet,,19th century,/collections/highlights-from-folger-shakespeare-library-s-release-of-almost-80000-images/14720690490_0797bc68e8_c.jpg,550,800,,moon
+21ebb501-363e-4c4e-b4c6-165e1ec0f097,"“The Old, White-Faced Moon Saw This”",Daniel Carter Beard,1889,/essays/moonblight-and-six-feet-of-romance-dan-carter-beards-foray-into-fiction/14393609091_a1d54f348b_b.jpg,837,1024,,moon
+3be0ca51-1f1c-49e6-9c62-025016d8334b,Moon Crater,,Late 1850s,/collections/a-selection-from-the-getty-s-open-content-program/9510946356_4bb9e23091_o.jpg,750,748,,moon
+37b9f38e-dd16-4c8c-b973-0e18f782627a,The People of the Moon and the People of the Sun at war,,1647,/essays/lucians-trips-to-the-moon/9132402947_23a820a0ef_o.jpg,540,415,,moon
+8d6bd6bd-7528-4136-a601-99448cd19af8,Lucian,,1781,/essays/lucians-trips-to-the-moon/9134702836_a3d9f3ed9a_o.jpg,540,572,,moon
+d509f085-2e72-4425-8e01-e32dbbdba88c,Narihira and Nijō no Tsubone at the Fuji River,Tsukioka Yoshitoshi,1882,/collections/sketches-by-yoshitoshi-1882/8577909216_89b2de3385_c.jpg,800,605,,moon
+235bc0b1-7c2e-4aa3-b693-14a319708339,On Hallowe'en,,ca. 1910,/collections/halloween-postcards/4055670403_2d06b92e95_o.jpg,760,492,,moon
+305ee578-56b3-4001-abb0-924384566606,Hallowe'en,,ca. 1908,/collections/halloween-postcards/halloween-card-59.jpg,1920,1212,,moon
+443ddff8-d73d-4a12-a5d6-971d413c8818,Happy Hallowe'en: Is This Your Pussy,,ca. 1909,/collections/halloween-postcards/halloween-card-41.jpg,1231,1920,,moon
+9487e498-3be4-477e-bfd5-97c02d67c9b2,,,ca. 1913,/collections/halloween-postcards/halloween-card-72.jpg,1688,1118,,moon
+ba941f10-477e-419d-b0e9-2f59147de2de,Hail Hallowe'en,,ca. 1920,/collections/halloween-postcards/halloween-card-38.jpg,1920,1215,,moon
+f3180d90-d9eb-4af4-9f1e-4ecde4e2e699,Hallowe'en Morning,,ca. 1912,/collections/halloween-postcards/halloween-card-24.jpg,2366,1500,,moon
+13aad52b-7c39-474b-b803-ed9c1b932dd0,,,1894–1920,/collections/field-columbian-museum-1894-1920/3348870671_a16539af37_z.jpg?zz=1,512,640,,moon
+b461fa0d-162e-4d6e-8d95-345d64ed3977,,,1894–1920,/collections/field-columbian-museum-1894-1920/3349699278_32a33b9b17_z.jpg?zz=1,502,639,,moon
+290eef32-a82b-4749-be12-b37278541484,"The Sun rose, flooding with light the whole extent of cloudland beyond.",Charles Laplante,1871,/collections/travels-in-the-air/travelsinair00flam_0159-edit.jpg,2541,1800,,"sky,sun"
+9bb70f9b-0f74-40e4-bed5-73a53123222e,"The orb of day has just appeared, and its golden disk rises among the purple clouds.",,1871,/collections/travels-in-the-air/travelsinair00flam_0281-edit.jpg,2430,1602,,"sky,sun"
+08c9598f-715d-4b30-bd2d-bf2d0c0a3616,Bamboo and Rising Sun,Kunimaru Utagawa,1829,/shop/newprints-nov24-00007.jpg,1329,1500,,sun
+5f250349-9e8c-4ac0-8295-d71a9e9b655f,"The Sun, Earth and the Ethereal pathway of the Solar Ethers",,1878,/collections/principles-of-light-and-color/principlesoflig00babb_0199.jpg,2371,3641,,sun
+fe3f417c-c131-4832-930b-46acdc8b3c66,Comparative sizes of the Sun and Planets after Guillemin,,1878,/collections/principles-of-light-and-color/principlesoflig00babb_0209.jpg,2200,3059,,sun
+1c676160-6694-44ee-b25a-4347e1b8f56e,"“The Fearmaker [Furchtmaker]”, a Bilen fairy tale.",Tom Seidmann-Freud,1924,/collections/rabbit-tales/dbbs_derivate_00000176-5.jpg,1774,1420,,sun
+65c039f6-e3ef-4622-a274-b1126c79e212,"“The Hare and the Well”, a Creole fairy tale from Louisiana.",Tom Seidmann-Freud,1924,/collections/rabbit-tales/dbbs_derivate_00000176-4.jpg,1774,1420,,sun
+c1515506-35f2-4685-8a40-73a0e1c2f48b,,,ca. 1880,/collections/paper-lantern-catalogue/DP110890.jpg,3845,4000,,sun
+f5cda391-83ed-4c01-ae3e-cf3e7d3469ea,,,ca. 1880,/collections/paper-lantern-catalogue/DP110893.jpg,3812,4000,,sun
+a947d91e-0e84-4850-ad36-cd31bd3db2b8,Brackets or Crotchets [ ] Brace } Ellipsis __ Parallels | | Obelisk † Double Dagger ‡ Asterisk *,Mr. Stops,1824,/collections/punctuation-personified/punctuation-personified-32.jpg,2356,2104,,sun
+2935923d-e583-49b4-b66c-a55f3e76c3ba,“The last and mightiest battle is for me!”,Jay Van Everen,1922,/collections/mighty-mikko/mikko-5.jpg,980,1400,,sun
+8cae31b5-164b-4abc-a918-3e02bfe2f14c,“Olli and the Troll's horse”,Jay Van Everen,1922,/collections/mighty-mikko/mikko-9.jpg,989,1400,,sun
+b14aec52-70c2-49f6-a330-a7bc390983be,“Ilona came floating up through the waves”,Jay Van Everen,1922,/collections/mighty-mikko/mikko-1.jpg,936,1400,,sun
+633e0d01-b562-4062-8000-a713a27eeacc,Wild Mock Cucumber (Echinocystis Lobata),,1843,/essays/darwins-diagrams-of-plant-movement/03-floraofstateofn01torr_0567-edit.jpeg,1177,1539,,sun
+d737afae-a17a-4aea-baf8-f5fc7c324fba,The circumnutation of a young carnation leaf (_Dianthus caryophyllus_) across a three-day period in June,Charles Darwin,1896,/essays/darwins-diagrams-of-plant-movement/01-powerofmovementi00darw_0247-edit-2.jpeg,861,659,,sun
+b9e50de9-3f9f-4eb3-aa6f-1eb6045d3e03,,Elias Ashmole,1652,/collections/theatrum-chemicum/theatrumchemicum00ashm_0036.jpg,907,1200,,sun
+ad06a70d-4ec1-4ac0-b982-bed87ee53620,,W. W. Denslow,1900,/collections/w-w-denslow-illustrations-wonderful-wizard-of-oz-1900/0075v.jpg,927,1200,,sun
+18622b6f-6503-4ece-bd2b-d95deaf4f4e4,Front cover of a Divination Book.,D. A. Rovinskii,1881,/collections/d-a-rovinskiis-collection-of-russian-lubki-18th-19th-century/oct_19_new_prints_00094-603x1024.jpg,603,1024,,sun
+772ac18d-ca48-4177-8a24-73f421e8c6e9,Sun Rising over the City,Anonymous,ca. 16th century,/shop/oct_19_new_prints_00037.jpg,755,1200,,sun
+0e8f9cfa-dfc4-4aab-a3e3-5f2d6396fa55,And there was darkness,Anonymous,ca. 1725,/shop/oct_19_new_prints_00017.jpg,947,1200,,sun
+e7339280-925b-4f1c-93d2-78bd5066bb14,"Dark Sun, from Splendor Solis",Anonymous,ca. 16th century,/shop/oct_19_new_prints_00036.jpg,777,1200,,sun
+3a38c118-54db-472b-8969-902db8474667,Solar Protuberances,Étienne Léopold Trouvelot,1882,/shop/2dI1uQ-JTcGJkNCp5ODKqAz-1-edit-1.jpeg,752,1024,,sun
+445ce92a-a0e8-4d6a-b560-1cdbb3f8ce88,Wombat Sketch,Edward Burne-Jones,1904,/essays/o-uommibatto-how-the-pre-raphaelites-became-obsessed-with-the-wombat/46679785221_d4e9613991_c.jpg,800,410,,sun
+2c81b64f-a7f2-4316-9e8a-77c0f58450e0,"""And flitted away as far as they could from the Castle that lay East of the Sun and West of the Moon.""",Kay Nielsen,1922,/collections/east-of-the-sun-and-west-of-the-moon-illustrated-by-kay-nielsen-1922-edition/31880038298_2ace8d00eb_c.jpg,567,800,,sun
+8ec1c2e7-92f2-4ec0-bf33-8e2ec7c7f62e,Chinese (Detail),Albert Racinet,1869–73,/collections/albert-racinet-s-l-ornement-polychrome-1869-73/43216769341_fa071b31f9_c.jpg,800,797,,sun
+b0c1f005-aeeb-4d89-8343-f015151be6b8,Truth,,ca. 18th century,/collections/scrapbook-of-hand-coloured-juvenile-woodcut-emblems/41404151140_0366484fea_b.jpg,750,624,,sun
+f2ea1049-bb1b-49c6-9a8f-7a908bc3fdc8,The Bishop,Hans Holbein,1523–5,/collections/hans-holbeins-dance-of-death-1523-5/40606048085_9b7eb9083c_o.jpg,550,733,,sun
+844369ca-1fb1-4b79-8c3f-1fc1513be1c5,Black Sun,,1582,/collections/the-surreal-art-of-alchemical-diagrams/28722135905_493c3cba87_c.jpg,530,800,,sun
+7ccf4184-90b6-4981-96be-920362646723,Hello my brother Albert in Mexico,Guillaume Apollinaire,1918,/collections/apollinaire-s-calligrammes-1918/calligrammespo00apol_0040.jpg,1197,1441,,sun
+dde0403c-947a-4c25-8686-1b9aa511d1ab,,,ca. 1775,/collections/compendium-of-demonology-and-magic-ca-1775/19078792349_8f612a1baa_o.jpg,620,801,,sun
+d3b5e485-0849-4b8b-b140-75093ab37eeb,Dante and Beatrice before the Light,,1444–1450,/collections/14th-century-illuminations-for-dante-s-divine-comedy/18125047315_742d9a08bb_b.jpg,1023,586,,sun
+e00e90f3-1289-40df-8852-93c7253fa4ae,,,,/collections/the-british-library-s-mechanical-curator-million/11448690614_36fefe832e_o.jpg,258,240,,sun
+3042a3c0-b657-47ba-b82f-2d4b39eac164,,,ca. 1700,/collections/the-vessels-of-hermes-an-alchemical-album-ca-1700/8384161400_de181e72c1_o.jpg,700,1094,,sun
+88b05144-2b4d-4620-9a4e-e0e4c099524b,,,1902,/collections/shin-bijutsukai/shin-bijutsukai-0296.jpeg,1533,2177,,sun
+8ceeada4-23e6-422c-b8fc-a9c66c291210,The Ethereal Atmosphere of Space,,1878,/collections/principles-of-light-and-color/principlesoflig00babb_0196.jpg,1891,1886,,space
+c6e19abb-a817-4cdd-8b28-09c73d9cecda,A Solar Cyclone,,1878,/collections/principles-of-light-and-color/principlesoflig00babb_0432.jpg,1116,1056,,space
+17062b70-d4c7-4fa9-bac8-79059e526155,Asakusa Hongan Temple in Edo,Katsushika Hokusai,ca. 1831–34,/collections/art-of-kite-flying/kite-flying-00041.jpg,8984,6190,,sky
+3b8bc539-7b95-455a-8edf-1f80a40a8089,Krishna and Radha flying kites,,19th century,/collections/art-of-kite-flying/kite-flying-00023.jpg,2288,2887,,sky
+9870ca52-ce85-465b-a77e-915fda637fe6,A couple flying kites,,19th century,/collections/art-of-kite-flying/kite-flying-00024.jpg,2286,3157,,sky
+77203ab9-c8b7-4fdc-83e2-d6b147172317,A kite-flying festival,,19th century,/collections/art-of-kite-flying/kite-flying-00026.jpg,3000,2447,,sky
+6bb58cd5-6ee6-4b43-9a83-e8198a9ac3ce,Kites flying over old Edo during a festival in early spring,Ogata Gekkō,early 20th century,/collections/art-of-kite-flying/kite-flying-00025.jpg,3508,2412,,sky
+b34d4012-812c-49c8-a670-05722e57e359,Photograph of kite spectators,,1904,/collections/alexander-graham-bell-s-tetrahedral-kites-1903-9/35286565806_92f8450fe6_c.jpg,615,799,,sky
+60eecd64-45ba-49b6-a284-664bd63ddff8,5 Perkins Kites Holding up a Man at the Harvard Aviation Field,,1910,/collections/art-of-kite-flying/kite-flying-00060.jpg,4100,5232,,sky
+28fd474b-86df-4ebd-8900-dcb457060373,,Harold A. Taylor,early 20th century,/collections/harold-taylor-flowers/cacdoha_000306_access.jpg,6300,5100,,sky
+e9c24a86-8cba-402b-9a92-60f6f2217fc0,Frontispiece,Henri Rivière,1888–1902,/collections/36-views-of-the-eiffel-tower/01-image_riviere_henri_frontispice_le_g.22392-1_2023157.jpg,2952,2451,,sky
+25bea5b3-9aaa-4e5b-9a24-ecb42924c0c0,From the Île des Cygnes,Henri Rivière,1888–1902,/collections/36-views-of-the-eiffel-tower/24-image_riviere_henri_de_lile_des_cy_g.22392-24_2023173.jpg,2856,2384,,sky
+e12ea4c5-ee4d-4d96-8d67-63317c6df244,The Barges,Henri Rivière,1888–1902,/collections/36-views-of-the-eiffel-tower/35-image_riviere_henri_les_peniches_l_g.22392-35_2023144.jpg,2892,2412,,sky
+ed7e3884-8a68-45fb-8013-14dd0b78d24d,The Painter on the Tower,Henri Rivière,1888–1902,/collections/36-views-of-the-eiffel-tower/36-image_riviere_henri_le_peintre_de_l_g.22392-36_2023182.jpg,2396,2872,,sky
+24617191-0a64-4b29-bde0-53e37c9229a0,Mirage and luminous aureola.,Albert Tissandier; Eugène Cicéri,1871,/collections/travels-in-the-air/travelsinair00flam_0012-edit.jpg,2512,1684,,sky
+ba15c441-7830-4c29-92d7-8b43900b8cca,Green falls into the sea.,Adrien Marie,1871,/collections/travels-in-the-air/travelsinair00flam_0067-edit.jpg,2420,1640,,sky
+6f8682a6-4cd9-4a25-a59c-d0066da9653c,A sunset as seen from the balloon.,Albert Tissandier; Eugène Cicéri,1871,/collections/travels-in-the-air/travelsinair00flam_0077-edit.jpg,2487,1671,,sky
+5fe11b04-5ac1-4efd-807c-3bbb43035c6d,Path of the balloon in its ascent from Wolverhampton to Langham.,"Vincent Brooks, Day & Son",1871,/collections/travels-in-the-air/travelsinair00flam_0088-edit.jpg,2775,1917,,sky
+10303f7f-7b37-45a6-b227-d017aab55c7d,Path of the balloon in its ascent from Wolverhampton to Cold Weston near Ludlow.,"Vincent Brooks, Day & Son",1871,/collections/travels-in-the-air/travelsinair00flam_0099-edit.jpg,1872,3027,,sky
+1fa58491-8311-4814-a64e-83dd381db9d7,Beneath a beautiful mass of cumulus clouds.,Sargent; Eugène Cicéri,1871,/collections/travels-in-the-air/travelsinair00flam_0101-edit.jpg,2439,1632,,sky
+bf073eeb-d1ac-49d4-af4c-02a94e932316,Mr. Glaisher insensible at the height of seven miles.,Émile-Antoine Bayard; Charles Laplante,1871,/collections/travels-in-the-air/travelsinair00flam_0105-edit.jpg,1764,2637,,sky
+9f5e7bf4-401b-4f2a-ac43-af6c4c037b5b,"Between two clouds, four miles high.",Albert Tissandier,1871,/collections/travels-in-the-air/travelsinair00flam_0116-edit.jpg,1626,1050,,sky
+9055adff-b555-4c88-bd5d-0994d1f197ff,Rain fell pattering on the balloon.,Sargent; Eugène Cicéri,1871,/collections/travels-in-the-air/travelsinair00flam_0123-edit.jpg,2433,1635,,sky
+a232ea04-de62-4796-81d4-c8e3bb69f4db,The descent.,Adrien Marie,1871,/collections/travels-in-the-air/travelsinair00flam_0130-edit.jpg,1641,1077,,sky
+cbb35684-ed51-4d3f-aa3a-f00d02119fba,Temperature of the air at different heights observed in the ascent and descent. 6th April 1864.,"Vincent Brooks, Day & Son",1871,/collections/travels-in-the-air/travelsinair00flam_0147-edit.jpg,1742,3034,,sky
+953ce511-df2f-49bf-817a-b7731adfcf0f,A thunder-storm above Fontainebleau as seen from the balloon.,Albert Tissandier; Eugène Cicéri,1871,/collections/travels-in-the-air/travelsinair00flam_0191-edit.jpg,2487,1656,,sky
+5bd3dc7b-5525-435e-8195-74265bf982f1,The Seine and the Marne as seen from the car in M. Flammarion’s second ascent.,Charles Laplante,1871,/collections/travels-in-the-air/travelsinair00flam_0201-edit.jpg,2604,1818,,sky
+3540d1d7-7588-4286-91dc-39f504b08ff8,Absolute silence reigns supreme in all its sad majesty.,,1871,/collections/travels-in-the-air/travelsinair00flam_0213-edit.jpg,2436,1581,,sky
+132ed683-afde-4476-ba82-bc6c9b24e134,A descent among a herd of cattle.,Hildibrand,1871,/collections/travels-in-the-air/travelsinair00flam_0235-edit.jpg,1098,1167,,sky
+058df9fb-d108-47b1-a073-2941bb59e150,"The Sun appears like an immense beacon-light, placed upon layers of snow.",Sargent,1871,/collections/travels-in-the-air/travelsinair00flam_0239-edit.jpg,2586,1789,,sky
+f94e27a6-0ac3-4db9-ab9d-84a59f1cd806,These fires seen from a distance were like lighthouses.,Jean Gauchard,1871,/collections/travels-in-the-air/travelsinair00flam_0247-edit.jpg,2584,1822,,sky
+213c6051-87b2-4311-9f78-6b0bfc051746,The satellite balloons.,,1871,/collections/travels-in-the-air/travelsinair00flam_0284-edit.jpg,1170,1161,,sky
+0dd9546f-95c5-4467-aedc-10b79f49d251,The optical phenomenon observed by M. Flammarion.,,1871,/collections/travels-in-the-air/travelsinair00flam_0297-edit.jpg,1167,1164,,sky
+11062120-10cc-4ee2-a307-d511b4081195,"The newcomers fall, pell-mell. one over the other.",Sargent; Eugène Cicéri,1871,/collections/travels-in-the-air/travelsinair00flam_0311-edit.jpg,2640,1853,,sky
+bf2d1430-594c-47c1-8142-f1ec2768564c,"‘It's the giant smoking his pipe,’ said someone.",Sargent; Eugène Cicéri,1871,/collections/travels-in-the-air/travelsinair00flam_0317-edit.jpg,2648,1835,,sky
+d1392879-00f6-4fad-9f65-485e6478473b,The fixity of the snow-like peaks of vapour was really very striking.,Jean Gauchard,1871,/collections/travels-in-the-air/travelsinair00flam_0343-edit.jpg,2631,1842,,sky
+4f02eb28-0f9c-408a-82a2-222bb0f04dbf,"Shadow and luminous effect, as seen from the balloon.",Albert Tissandier; Eugène Cicéri,1871,/collections/travels-in-the-air/travelsinair00flam_0348-edit.jpg,2688,1935,,sky
+4104b77f-c63c-41f6-a369-568cdbb9ff79,Effect produced by a vault of clouds.,Sargent; Eugène Cicéri,1871,/collections/travels-in-the-air/travelsinair00flam_0357-edit.jpg,2589,1833,,sky
+fdbbbc77-1a5b-4107-9332-e2f35f1c051c,Descent of the Neptune at Cape Gris-Nez.,Armand Kohl,1871,/collections/travels-in-the-air/travelsinair00flam_0379-edit.jpg,2586,1809,,sky
+67d3859e-2555-42d7-b18d-a155cfa2dafe,Circular effect of the clouds.,Charles Laplante,1871,/collections/travels-in-the-air/travelsinair00flam_0389-edit.jpg,2553,1837,,sky
+cca7e469-34f8-4b17-b453-2cc8727f4eb6,The balloon has burst!,Charles Laplante,1871,/collections/travels-in-the-air/travelsinair00flam_0395-edit.jpg,1744,2620,,sky
+663393c3-cf09-4cb1-9fe0-9f9aff7bc325,"After sunset, as seen from the balloon.",Albert Tissandier; Eugène Cicéri,1871,/collections/travels-in-the-air/travelsinair00flam_0417-edit.jpg,2620,1913,,sky
+b7f0b19c-1845-4bc9-89a0-3899b55afdcc,The branches of the trees bent beneath the car.,Charles Laplante,1871,/collections/travels-in-the-air/travelsinair00flam_0423-edit.jpg,2528,1800,,sky
+5ae2258e-e06d-4431-9e27-392df413a13e,"Sunset above the Thames, as seen from the ‘captive’ balloon.",Albert Tissandier; Armand Kohl,1871,/collections/travels-in-the-air/travelsinair00flam_0453-edit.jpg,2643,1878,,sky
+03649d15-bb11-44e8-9b22-2f85795b8b3d,The Blazing Sky was Literally Raining Fire Over Sea and Land,Fred T. Jane,1897,/essays/same-as-it-ever-was/04-olgaromanoff00grif_0410-edit.jpeg,2606,1985,,sky
+f47fc41d-64b5-422b-88cd-0a90fa9c1908,Sifting wheat,,ca. 1910,/collections/photographs-of-palestinian-life/palestine-00099.jpg,5791,4266,,sky
+768f8085-7c36-4932-b020-43fcebf3f57a,River Landscape,Maria Catharina Prestel; Jan van Huysum,1783,/collections/maria-catharina-prestel/maria-catharina-prestel-00010.jpg,2552,2140,,sky
+0990b7cb-80a3-4e00-85d0-b365b71f05de,Villa Medici,Edith Wharton,1904,/collections/edith-wharton-italian-villas/italianvillast00whar_0156-edit.jpeg,2875,4269,,sky
+d7e4eaca-cf3b-45f2-af11-b0aa7b86f673,Villa Gori,Edith Wharton,1904,/collections/edith-wharton-italian-villas/italianvillast00whar_0113-edit.jpeg,2838,4059,,sky
+e8f04253-26df-4c12-bac1-506c40c91163,,Edith Wharton,1904,/collections/edith-wharton-italian-villas/italianvillast00whar_0121-edit.jpeg,2850,4065,,sky
+62b5a7c4-124e-4fe8-b1d6-009f8d08e8dd,Two Boatmen in a Marsh near a Cluster of Tree,Henri-Constant-Joseph Dutilleux,1857,/essays/cliche-verre-and-friendship-in-19th-century-france/02-1997.179_print-edit.jpg,3400,2445,,sky
+79617204-4896-433f-b760-897dd40b1fc7,"Futami-ga-ura Rocks at Ise, Land of Dawn",Utagawa Kunisada,ca. 1835,/shop/nov-2023-prints-00010.jpg,1200,823,,sky
+ba6558f1-83e3-4892-8f12-859a13a48e0b,,Thomas Smillie,1890–1913,/collections/smillie-smithsonian/smillie-smithsonian-12.jpg,2048,1591,,sky
+d04f88a9-2c39-4a61-8922-ae0fac89d057,Spoonbills camouflage at sunrise and sunset.,Gerald H. Thayer,1909,/collections/concealing-coloration/concealing-coloration-8.jpg,978,1500,,sky
+57416dda-2e9e-4307-af7b-ee88f570693f,“Black balloon salesman on south side Chicago’s 47th street many of the city's Black...”,John H. White,1973–4,/collections/documerica/documerica-32.jpg,1500,1012,,sky
+f173e491-1fc5-4e24-a12b-0fa3e482710c,Department of Electricity,,1893,"/essays/colonizing-the-cosmos/02-1280px-Electrical_building,_World_s_Columbian_Exposition,_Chicago,_1892.jpeg",1280,795,,sky
+934414b0-bceb-43b1-9a5b-c4ff1be3fb2b,"Little mountains raised in 1760 by the eruption of Mount Vesuvius, inland and offshore",Peter Fabris,1776–9,/collections/campi-phlegraei/campi-phlegraei-13.jpg,1400,747,,sky
+02b55b36-a4d6-4ba0-ba55-370a2f7324d5,Mount Vesuvius from the sea shore above Resina,Peter Fabris,1776–9,/collections/campi-phlegraei/campi-phlegraei-15-rev1.jpg,1400,755,,sky
+f90acd11-d2a2-43ab-982e-1b0d9bbb4592,The crater of Monte Guaro or Barbaro,Peter Fabris,1776–9,/collections/campi-phlegraei/campi-phlegraei-32-rev1.jpg,1400,743,,sky
+3b350013-9414-42a6-9879-1157c56ce88a,"Cotham Marble — “The fanciful figure to themselves in this something like a boat and men in one part, and hedge-rows in another, with trees in full foliage.”",James Sowerby,1802–17,/collections/sowerby-mineralogy/sowerby-mineral-56.jpeg,966,866,,sky
+51704cbe-5efb-4878-a838-98c268d9e06a,"Untitled photograph by Carl Mydans, 1935, possibly depicting a farm in Prince George's County, Maryland. One of the so-called ""killed negatives"" that were hole punched by FSA staff to indicate that they should not be printed.",Carl Mydans,1935,/essays/the-kept-and-the-killed/8a00040v-edit.jpeg,1024,747,,sky
+d1e014ab-39fe-4851-858a-acc647e003b7,"Transients Clearing Land. Prince George's County, Maryland (Negative and Positive View)",Carl Mydans,1935,/essays/the-kept-and-the-killed/service-pnp-fsa-8a00000-8a00500-8a00531v-neg-pos.jpeg,1315,850,,sky
+441e9a65-44e6-4a40-98e0-a6c2f08c06d5,"“Miss Merriam at Sherman's Point, 1900.”",Theresa Babb,1900,/collections/babb-photographs/Babb-40.jpg,1460,1400,,sky
+b4f5aa30-1ddf-4336-ac32-be8541aad164,"Picnic at Sherman's Point, 1900. Theresa is 2nd from the left holding a bottle.",Theresa Babb,1900,/collections/babb-photographs/Babb-41.jpg,1407,1400,,sky
+a564f091-b6ae-438b-a01f-0a4fda7cf81e,Fragments of the Great Colossi at the Memnonium,Louis Haghe; David Roberts,1847,/essays/the-dust-that-measures-all-our-time/2012.149_print-edit-2.jpg,3400,2334,,sky
+218103c8-7fe9-498b-a387-ec0c163c5213,White Horse,Joris Hoefnagel,late 17th century,/shop/nov-2020-prints-new-00026.jpg,1200,947,,sky
+7b320a0f-9ec0-4a3e-bcc2-8518332d59cf,Piazza San Marco,Canaletto,ca. 1725,/essays/primary-sources/Giovanni_Antonio_Canal%2C_il_Canaletto_-_Piazza_San_Marco_-_WGA03883-edit.jpg,1500,918,,sky
+1880c211-4301-4ac4-bd75-99925530da47,"Aurora as Seen at Bossokop in Finmark, 1839",Auguste Bravais,1887,/collections/aurora-borealis-in-art/11223737995_217c67c1d7_o.jpg,2544,1686,,sky
+16fd9d59-f4ec-4c21-8527-dd62dd53f318,Double Aurora Borealis,,1896,/collections/aurora-borealis-in-art/11238421573_03afbb5fab_o.jpg,1662,1047,,sky
+9c35618a-bc3c-42fd-af0e-91cf2d740d7a,The Aurora Borealis as Seen to the South-East of Edinburgh on October 25 1870 at 6PM,Piazzi Smyth,1887,/collections/aurora-borealis-in-art/11224083756_6ceb5315b2_o.jpg,2504,1752,,sky
+43e040b7-e79a-4475-a6a3-dc2b205f92b9,"Wall Drug final billboard, Wall, South Dakota.",John Margolies,1987,/collections/john-margolies-photographs-of-roadside-america/48635803623_65f6338470_b.jpg,1024,688,,sky
+4217c504-2898-457e-87ea-67d0e21b4f10,"Peach water tower, Frontage Road, Gaffney, South Carolina.",John Margolies,1988,/collections/john-margolies-photographs-of-roadside-america/48636305492_8273523524_c.jpg,557,800,,sky
+429bad5d-12ba-40ec-8faa-afdc341d025f,"Club Cafe sign near Santa Rosa, New Mexico.",John Margolies,1987,/collections/john-margolies-photographs-of-roadside-america/48636957658_43304b490b_b.jpg,1024,707,,sky
+5d863023-4a78-41a8-88aa-14fabddf5d4d,"Terrace Drive-In Theater, Terrace Way, Bakersfield, California.",John Margolies,1987,/collections/john-margolies-photographs-of-roadside-america/48636305822_b95ac29bf7_b.jpg,1024,688,,sky
+630b4786-3047-454c-b4bd-dcc21e10fe58,"Roadside flamingo statue, Frog City, Route 41, Florida.",John Margolies,1980,/collections/john-margolies-photographs-of-roadside-america/48636306697_52799563e3_b.jpg,1024,713,,sky
+78fe6986-baa5-40e7-9fc3-9e321c81eb1a,"The Nat Ballroom, 6th & McMaster's, Amarillo, Texas.",John Margolies,1977,/collections/john-margolies-photographs-of-roadside-america/48636305672_afb4a0b076_o.jpg,1024,691,,sky
+7e28a49e-8776-4d30-bf3c-d40cf27fddf0,"Rooster statue at Shirt World, Pigeon Forge, Tennessee.",John Margolies,1984,/collections/john-margolies-photographs-of-roadside-america/48636306192_d0ffda27a4_c.jpg,555,799,,sky
+90758f5e-d347-4e47-b503-9245be247a5a,"Serra Motel sign, Old Route 101, Gilroy, California.",John Margolies,1991,/collections/john-margolies-photographs-of-roadside-america/48642250112_86c26566e9_b.jpg,1024,704,,sky
+9e0b1501-739d-4a20-825a-7d0de01b82b9,"World's largest buffalo (46' long, 26' high, 60 tons), Jamestown, North Dakota.",John Margolies,1990,/collections/john-margolies-photographs-of-roadside-america/48635803373_7bee35b4f6_b.jpg,1024,702,,sky
+ae1dc55a-d88f-4cc8-89b3-6e4621c97ec4,"Wigwam Village #6, Route 66, Holbrook, Arizona.",John Margolies,1979,/collections/john-margolies-photographs-of-roadside-america/48635803963_0c5b80496a_b.jpg,1024,700,,sky
+b7f59732-bcfc-4a39-b19c-bacabb29c7d0,"The Whale Car Wash, Oklahoma City, Oklahoma.",John Margolies,1979,/collections/john-margolies-photographs-of-roadside-america/48635804233_067501c976_b.jpg,1024,691,,sky
+f0f6968d-f38b-45af-a8b3-1947569f81f9,Midnight at Midsummer Over the Antarctic Mainland,Frederick Albert Cook,1900,/collections/through-the-first-antarctic-night-1900/48103576626_1e8474d5de_b.jpg,1024,678,,sky
+78d13003-aaf6-4e3d-a2c8-3625ecf17064,Stalheimskleiva near Voss,Unknown,ca. 1890-1915,/shop/Stalheimskleiva-near-Voss-1.jpg,1200,809,,sky
+18b81c0a-6fa4-4e11-8f1c-45aaeb170181,"Jerusalem, Plate 28",William Blake,1804 to 1820,/shop/ba-obj-3436-0001-pub-print-lg_preview-1.jpeg,1280,889,,sky
+b087b3c1-2275-4c43-a5dd-4eecdbc68073,Los Angeles,Britton and Rey,ca. 1888,/shop/pm000261-edit-1.jpeg,1280,691,,sky
+1914cd77-8659-45e3-840e-0ab473768d69,The Burning of the Houses of Lords and Commons,Joseph Mallord William Turner,1835,/collections/highlights-from-the-cleveland-museum-of-art-s-release-of-more-than-30k-images-of-public-domain-works/46215128724_7679eb3b85_o.jpg,1122,833,,sky
+fbf59c30-3f9e-436f-9457-f59fa349f353,Orpheus,Odilon Redon,ca. 1903–10,/collections/highlights-from-the-cleveland-museum-of-art-s-release-of-more-than-30k-images-of-public-domain-works/46940006781_52b5196e56_c.jpg,656,800,,sky
+110d047a-c1bf-4a90-8bb2-a8a3489fe381,Blooming Irises in Horikiri,Utagawa Hiroshige,1857,/collections/utagawa-hiroshige-last-great-master-of-ukiyo-e/26805207727_2a777cc8f3_b.jpg,600,887,,sky
+06aba117-a3f0-4556-a166-26281d8d9216,The Ruins of Paris,Camille Flammarion,1894,/collections/omega-the-last-days-of-the-world-1894/26022923368_e3092f76c0_b.jpg,700,1014,,sky
+adc717d4-b7c2-4ec0-bfe5-5ea918cbdaa4,,,1847,/collections/illustrations-from-the-lights-of-canopus-1847/12.jpg,634,604,,sky
+f6952992-8e1d-4da4-a28a-58de249d6db6,,,1847,/collections/illustrations-from-the-lights-of-canopus-1847/17.jpg,616,481,,sky
+955bb219-ee65-4d98-9d6b-0a9a5bc6fdef,,Alexander Graham Bell,1903–9,/collections/alexander-graham-bell-s-tetrahedral-kites-1903-9/35286566126_58c248faab_b.jpg,1024,816,,sky
+71df77d8-18b9-4971-b32e-f0de6b8dabb2,Sod House for Photographing Golden Plover,Richard Kearton,1909,/essays/stuffed-ox-dummy-tree-artificial-rock-deception-in-the-work-of-richard-and-cherry-kearton/34331259890_e7e2e56e4a_b.jpg,895,578,,sky
+f270c529-c285-432a-95b0-fcabe9e90131,Artificial Rock,Richard Kearton,1909,/essays/stuffed-ox-dummy-tree-artificial-rock-deception-in-the-work-of-richard-and-cherry-kearton/33904055873_6f81a7186a_c.jpg,800,616,,sky
+499ec5ef-0624-4f16-a6ca-ce1d32223645,Daphnoides,Gherardo Cibo,,/collections/watercolours-from-a-16th-century-de-materia-medica/20879592191_21bf24a844_o.jpg,600,814,,sky
+518877aa-6a1a-4d98-a8f0-8c3308858d5b,Viola odorata,Gherardo Cibo,,/collections/watercolours-from-a-16th-century-de-materia-medica/20879585661_a8388f1d13_o.jpg,600,865,,sky
+c55d8cfa-f4ad-4808-b583-62d1ccd339a3,Euphrasia officinalis,Gherardo Cibo,,/collections/watercolours-from-a-16th-century-de-materia-medica/20251369423_6b9939bd9a_o.jpg,600,847,,sky
+ce28ed90-a5ca-4d48-89bd-6514ad95352b,Postmen of the Wilderness,Arthur Heming,1921,/essays/tribal-life-in-old-lyme-canadas-colorblind-chronicler-and-his-connecticut-exile/20897035259_73d12d6fb3_b.jpg,761,1024,,sky
+9c582522-4106-4117-9aa7-ec1fd77f4556,Bombproof Dugout at Gen. Nogi’s Headquarters,T.W. Ingersoll,1905,/collections/colorised-stereographs-of-the-russo-japanese-war-1905/11237601953_ab3d407a8e_b.jpg,1024,519,,sky
+cc0aa1f9-a4e9-4e44-9c47-093ded3ea937,A Japanese Cavalry Hostler,T.W. Ingersoll,1905,/collections/colorised-stereographs-of-the-russo-japanese-war-1905/11237604523_d2226fce15_b.jpg,1024,515,,sky
+2ea0b531-7b87-4979-80cd-23bc7776ebb9,,Hugo Simberg,ca. 1908,/collections/the-photographs-of-hugo-simberg/16852142002_a103bc513f_b.jpg,1024,670,,sky
+e0651bbe-500d-4705-8044-dfc39d897a78,“Last Judgement”,,1705,/essays/in-the-image-of-god-john-comenius-and-the-first-children-s-picture-book/14174151932_7b519685d8_c.jpg,800,586,,sky
+3c574a0f-eff5-4987-bd98-1bc071a38c1a,The Jordan,Boulos Meo,1890s,/collections/flowers-and-pictures-of-the-holy-land/10171712374_5aa23957f8_o.jpg,800,593,,sky
+7105ae30-9f2a-4d01-a95c-66e117d631b0,A View Through Three of the Northwestern Arches of the Third Storey of the Colosseum in Rome,C.W. Eckersberg,1815,/essays/visual-nation-making-and-forgetting/9493024199_cab87fc725_c.jpg,799,518,,sky
+1c4f7210-301a-4310-a817-7d374160302e,Among The Tree Tops Calaveras Grove,Carleton Watkins,1880-90,/collections/a-selection-from-the-getty-s-open-content-program/9510946120_e10ced04d6_c.jpg,800,543,,sky
+21e954f6-4c10-44ad-8d7b-eb875d85fdb8,"[Panorama from St. Hanshaugen, Christiania, Norway]",,ca. 1890,/collections/landscape-and-marine-views-of-norway/3175011010_a30fc6564b_z.jpg?zz=1,640,471,,sky
+479b6a88-54de-4c7b-b0ff-ddfd2aed9e55,"[Drifting ice, Spitzbergen, Norway]",,ca. 1890,/collections/landscape-and-marine-views-of-norway/3175037178_02deca125f_z.jpg?zz=1,640,474,,sky
+923f61fc-5257-4c81-b396-e2dbeb25c2c9,"[Advent Bay, Spitzbergen, Norway]",,ca. 1890,/collections/landscape-and-marine-views-of-norway/3174199717_4b591e4b0e_z.jpg?zz=1,640,472,,sky
+1343f48c-c9ca-432b-8bc2-a72d60906f2a,14th Century Drawing of an Astrological Man,,14th century,/collections/zodiac-man/zodiac-man-14.jpg,812,1200,,"astrology,zodiac"
+1d312d2a-e635-43ee-b903-57c2fdccfcd9,A Zodiac Man from Athanasius Kircher's *Mundus Subterraneus*,Athanasius Kircher,1678,/collections/zodiac-man/zodiac-man-16.jpg,762,1200,,"astrology,zodiac"
+3d48ad43-3d95-4927-bda7-7775a6d71082,Naked Man Surrounded by the Twelve Symbols of the Zodiac,,1795,/collections/zodiac-man/zodiac-man-12.jpg,1025,1200,,"astrology,zodiac"
+31c52e66-244b-4a41-911c-d5fa577a76e1,Zodiac Man,Heymandus de Veteri Busco,1488,/collections/zodiac-man/zodiac-man-4.jpg,853,1200,,"astrology,zodiac"
+510acb76-7fbe-47bc-9130-0491f20e4186,Zodiac Man,,ca. 1417,/collections/zodiac-man/zodiac-man-11.jpg,1400,1306,,"astrology,zodiac"
+70e0d9c4-f09b-4a28-814d-55d88636f041,Habit d'Astrologie,Gérard Valk,17th century,/collections/zodiac-man/zodiac-man-8.jpg,795,1200,,"astrology,zodiac"
+75493237-7dfa-48cb-968e-42624719c2b9,Zodiac Man,,19th century,/collections/zodiac-man/zodiac-man-17.jpg,800,1200,,"astrology,zodiac"
+7f24550e-6fde-46a2-a50e-cd34640fa5c5,Bloodletting and the Influence of Zodiac and Planets,,ca. 1420,/collections/zodiac-man/zodiac-man-5.jpg,954,1200,,"astrology,zodiac"
+0c849947-5f1d-4815-b255-ecc5f3304834,"A Mesoamerican version of the zodiac man, reproduced in Edward King's nine-volume *Antiquities of Mexico* (1831-1848)",Agostino Aglio,1831–48,/collections/zodiac-man/zodiac-man-3.jpg,1192,1236,,"astrology,zodiac"
+c2195677-f576-4a7f-ad88-0d0afc406aa6,Zodiac Man,,1517,/collections/zodiac-man/zodiac-man-9.jpg,866,1200,,"astrology,zodiac"
+d7ff2f6d-221a-4fe9-beef-e2c8d721d992,Zodiac Man,,1581,/collections/zodiac-man/zodiac-man-7.jpg,1400,1045,,"astrology,zodiac"
+d7260676-977d-46d2-b96b-5f4f04598a02,View of the Celestial Influx on the Body of Woman . . .,Dodd Delin,ca. 1800,/collections/zodiac-man/zodiac-man-6.jpg,905,1200,,"astrology,zodiac"
+f5a3e0ba-8b82-43d3-961d-a169bc385ff0,"The Anatomy of Man's Body, as Govern'd by the Twelve Constellations",,ca. 1750,/collections/zodiac-man/zodiac-man-10.jpg,643,1200,,"astrology,zodiac"
+0d627dc8-69ec-486e-9ee2-1b0afb89c396,,Elias Ashmole,1652,/collections/theatrum-chemicum/theatrumchemicum00ashm_0115.jpg,931,1200,,"astrology,zodiac"
+17880d0e-f1a8-481e-9564-012c50154449,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00031.jpeg,572,737,,astrology
+16f0639c-7de1-48f6-9409-7b9399870cf7,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00025.jpeg,562,732,,astrology
+19e99eea-9662-4367-bc44-aea12a9a417f,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00017.jpeg,578,731,,astrology
+123e1817-b7e6-4982-a607-6f06417bb4e2,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00005.jpeg,903,558,,"astrology,zodiac"
+2eb472b0-cc79-46e5-96d7-4287db704d13,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00036.jpeg,575,731,,astrology
+34dd38b9-2ada-41b0-86e4-c92943092510,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00022.jpeg,576,728,,astrology
+341b82cb-2c38-4561-94ac-8611ecac6b30,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00012.jpeg,900,563,,"astrology,zodiac"
+3fb59d47-c95e-4151-bf7c-9311b5501e50,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00009.jpeg,903,567,,"astrology,zodiac"
+3f6d4b90-e033-46e6-80a7-1e5036f8b4bf,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00006.jpeg,901,566,,"astrology,zodiac"
+46c3d41f-f8e1-441f-8395-c9db353afb8d,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00038.jpeg,577,740,,astrology
+427dbecd-44eb-46da-81d1-dd44ac166592,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00029.jpeg,568,726,,astrology
+594b40fb-839b-4e1b-9d60-98223d9f5792,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00018.jpeg,576,724,,astrology
+5c8ec4bb-0738-48bb-aefe-ba0e83329dd0,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00015.jpeg,574,729,,astrology
+6d789f56-ccc9-4b3c-95f0-3e945e78275f,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00021.jpeg,578,729,,astrology
+62ae4687-4ef4-4466-a50d-585a3c105f54,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00034.jpeg,579,735,,astrology
+65c5127e-8659-4085-bc47-eb3d308f9bc7,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00023.jpeg,576,730,,astrology
+61972a81-f627-4633-a3ff-f7ac36296db5,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00001.jpeg,904,556,,"astrology,zodiac"
+79c9b86c-7cff-4652-9757-629830dc48ea,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00037.jpeg,570,739,,astrology
+7b6e0f88-85dc-46d9-a369-a639249f23a6,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00026.jpeg,575,739,,astrology
+7f128272-12c0-4c27-aa6c-2208f68bf35f,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00007.jpeg,904,566,,"astrology,zodiac"
+89e35f55-663a-41d6-ab7d-698cee664c55,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00010.jpeg,904,564,,"astrology,zodiac"
+8d23af4c-8f8a-4727-af7a-3663bb0eab42,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00004.jpeg,901,555,,"astrology,zodiac"
+9453400f-8803-40ea-b2fc-120483ee395b,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00013.jpeg,576,732,,astrology
+0bf383a1-7698-449a-849a-bc5dce332077,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00028.jpeg,576,735,,"astrology,zodiac"
+0dd211be-5956-45a9-ae22-a44b18fc0aef,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00024.jpeg,573,726,,astrology
+07515016-67eb-4144-8142-092ef6c9c20a,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00014.jpeg,576,730,,astrology
+b22166e7-687f-4860-97b1-38bae4206a39,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00011.jpeg,903,563,,"astrology,zodiac"
+b0a2bd22-e3b7-4652-a85b-d0684954f0ab,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00002.jpeg,903,559,,"astrology,zodiac"
+c3b309d8-7557-4c53-bffb-f6e93b86a5c8,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00019.jpeg,571,727,,astrology
+c875b3dd-d8c1-4d09-a037-6406ade01dcc,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00008.jpeg,901,565,,"astrology,zodiac"
+dff38d28-8ff7-47b3-8e04-765d8783937e,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00035.jpeg,574,738,,astrology
+d37bc3fd-1e33-47ab-b5ab-592bf3da3551,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00030.jpeg,581,739,,astrology
+e2b2e37a-c592-476c-a885-4b9a1c43e052,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00027.jpeg,562,733,,astrology
+e3f01737-592b-421a-ac2f-4a89539af2b4,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00016.jpeg,576,730,,astrology
+f2a0e747-680d-4b94-b531-f492cbf57ee9,,,1921,/collections/persian-demons-from-a-book-of-magic-and-astrology-1921/persian_astrology_00032.jpeg,578,739,,astrology
+156161d6-1e31-4a45-b584-56cba032e05b,Prophecies of apocalypse,,ca. 1827–61,/collections/various-apocalyptic-scenes-from-the-prophetic-messenger-ca-1827-61/s3_V0024000_V0024794.jpg,1200,881,,astrology
+3c6eec11-9ae0-4d80-b672-ec7069b665af,Prophecies of apocalypse,,ca. 1827–61,/collections/various-apocalyptic-scenes-from-the-prophetic-messenger-ca-1827-61/s3_V0024000_V0024785.jpg,1200,865,,astrology
+3c3ed78a-bc83-4c05-91f1-d1cbeacb4260,Prophecies of apocalypse,,ca. 1827–61,/collections/various-apocalyptic-scenes-from-the-prophetic-messenger-ca-1827-61/s3_V0024000_V0024797.jpg,1200,878,,astrology
+4770b5bb-0f28-4e3a-bcac-45ad19ce3084,Prophecies of apocalypse,,ca. 1827–61,/collections/various-apocalyptic-scenes-from-the-prophetic-messenger-ca-1827-61/s3_V0024000_V0024787.jpg,1200,901,,astrology
+5e155b18-f706-448b-9c76-020d5043e20b,Prophecies of apocalypse,,ca. 1827–61,/collections/various-apocalyptic-scenes-from-the-prophetic-messenger-ca-1827-61/s3_V0024000_V0024788.jpg,1200,867,,astrology
+63ec5c51-dc72-431a-bf04-693e70f40a5d,Prophecies of apocalypse,,ca. 1827–61,/collections/various-apocalyptic-scenes-from-the-prophetic-messenger-ca-1827-61/s3_V0024000_V0024789.jpg,1200,915,,astrology
+63261fca-78ba-4b7e-b2f0-ab4505c4d35e,Prophecies of apocalypse,,ca. 1827–61,/collections/various-apocalyptic-scenes-from-the-prophetic-messenger-ca-1827-61/s3_V0024000_V0024791.jpg,1200,926,,astrology
+07e8c861-9168-4ece-b128-399a81bc45a2,Prophecies of apocalypse,,ca. 1827–61,/collections/various-apocalyptic-scenes-from-the-prophetic-messenger-ca-1827-61/s3_V0024000_V0024792.jpg,1200,922,,astrology
+b5fa5338-6fdf-4910-9f32-4afca9372a85,Prophecies of apocalypse,,ca. 1827–61,/collections/various-apocalyptic-scenes-from-the-prophetic-messenger-ca-1827-61/s3_V0024000_V0024807.jpg,1200,875,,astrology
+b2e4f2a4-7763-4241-97d1-9e304494719b,Prophecies of apocalypse,,ca. 1827–61,/collections/various-apocalyptic-scenes-from-the-prophetic-messenger-ca-1827-61/s3_V0024000_V0024808.jpg,1200,972,,astrology
+eec11d54-6950-41af-92e5-03e0502f65eb,Prophecies of apocalypse,,ca. 1827–61,/collections/various-apocalyptic-scenes-from-the-prophetic-messenger-ca-1827-61/s3_V0024000_V0024813.jpg,1200,881,,astrology
+34d12074-8ccf-4590-898b-98e35533522f,Twelve Houses,Dr Alesha Sivartha,1898,/collections/diagrams-from-dr-alesha-sivartha-s-book-of-life-1898/38384710952_4e700c8432_o.jpg,660,958,,"astrology,zodiac"
+4d528612-6156-4935-aadd-2ba3e5cb2165,Solar Man,Dr Alesha Sivartha,1898,/collections/diagrams-from-dr-alesha-sivartha-s-book-of-life-1898/24545069758_18a5b9a812_o.jpg,660,864,,"astrology,zodiac"
+1b3718c0-6402-4644-b483-8b3e979a6c1f,Zodiac Man,Veteri Busco,1488,/essays/the-many-lives-of-the-medieval-wound-man/31333801542_366450849c_b.jpg,737,1024,,"astrology,zodiac"
+145b8b92-e9f2-4386-9f17-5e6ea217939e,,Cyprianus,,/collections/the-key-of-hell-an-18th-century-manual-on-black-magic/19523661354_1b1de1696d_c.jpg,524,800,,astrology
+5fae0e3e-46ec-4ddd-91d0-180cd5bc9d6c,,Cyprianus,,/collections/the-key-of-hell-an-18th-century-manual-on-black-magic/20138252892_0dec595567_b.jpg,989,733,,astrology
+ce373801-4b76-4127-b6b1-d14f054ff28d,,Cyprianus,,/collections/the-key-of-hell-an-18th-century-manual-on-black-magic/20151874971_3be72c5b85_c.jpg,562,799,,astrology
+19912870-d658-42f3-bfb0-4a0e2a00112a,,,1907,/collections/medical-imagery-of-the-15th-century/8555190852_8c3e9c50d3_o.jpg,388,549,,"astrology,zodiac"
+23060f0d-144b-4afa-b2f9-c93c0c07c0a7,,,1907,/collections/medical-imagery-of-the-15th-century/8554081231_57653147cc_o.jpg,400,629,,"astrology,zodiac"
+3d51b089-530c-458d-814a-d253fa7e4b5c,,,1907,/collections/medical-imagery-of-the-15th-century/8555191310_2246e75ece_o.jpg,389,651,,"astrology,zodiac"
+6d3d5d80-2919-4620-8503-14aa1fdaaefb,,,1907,/collections/medical-imagery-of-the-15th-century/8555352160_9c12690253_o.jpg,363,615,,"astrology,zodiac"
+65d7d2d3-6068-450b-839b-cfdd3839a79c,,,1907,/collections/medical-imagery-of-the-15th-century/8554082461_9659695ac4_o.jpg,471,739,,"astrology,zodiac"
+6586d185-fdae-4946-9e9a-dd6b53451452,,,1907,/collections/medical-imagery-of-the-15th-century/8554082907_e62672708e_o.jpg,450,642,,"astrology,zodiac"
+71c6089a-f214-467a-800e-b49ce67b5c18,,,1907,/collections/medical-imagery-of-the-15th-century/8555352092_139481c9b2_o.jpg,402,606,,"astrology,zodiac"
+84b8c66a-27cf-4fe6-b0b0-caca37f3d87b,,,1907,/collections/medical-imagery-of-the-15th-century/8555351826_8a78205cb7_o.jpg,458,592,,"astrology,zodiac"
+95ccb42e-08ce-4f06-abdf-3426d184f24f,,,1907,/collections/medical-imagery-of-the-15th-century/8554082599_b07d479431_o.jpg,500,608,,"astrology,zodiac"
+9e98e8af-4ecc-4964-99e1-ac0f23939678,,,1907,/collections/medical-imagery-of-the-15th-century/8554083977_b6ac2c9dca_o.jpg,600,934,,"astrology,zodiac"
+a764403d-c5f0-4a4a-b079-44b9222d112b,,,1907,/collections/medical-imagery-of-the-15th-century/8554081791_f0aced6365_o.jpg,600,821,,"astrology,zodiac"
+c66eb2f7-5b47-4dd7-ba79-9c43d35cfae5,,,1907,/collections/medical-imagery-of-the-15th-century/8554082569_9dfa326093_o.jpg,500,667,,"astrology,zodiac"
+fa8417e1-e2c9-4c56-8ef1-207461f19fbb,,,1907,/collections/medical-imagery-of-the-15th-century/8554082057_bac3749b99_o.jpg,450,613,,"astrology,zodiac"
+f761f2ef-6ca1-4c05-a004-b3cf2c3ae673,,,1907,/collections/medical-imagery-of-the-15th-century/8554082905_4be9fb3ebd_o.jpg,356,465,,"astrology,zodiac"
+a9f3b3b6-a059-4760-a8f4-873c4bcfff4f,Middle: Conjunction,Raphael Custos,1615,/collections/cabala-spiegel/cabala-3.jpg,1566,2082,,zodiac
